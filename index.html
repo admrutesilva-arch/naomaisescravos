@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não Mais Escravos – Rute Alves</title>
+    <style>
+        /* IMPORTAÇÃO DA FONTE MONTSERRAT PARA A OFERTA */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+        :root {
+            --verde: #00c853;
+            --verde-prof: #2ecc71; 
+            --verde-neon: #00ff66;
+            --verde-seguro: #28a745;
+            --dourado: #FFD700;
+            --dourado-metalico: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dourado-brilhante: #fff200;
+            --fundo: #061226;
+            --card-bg: rgba(11, 44, 107, 0.5);
+            --texto-claro: #f1f1f1;
+        }
+        /* PERFORMANCE - ANTI TRAVAMENTO */
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #061226;
+            background: linear-gradient(180deg, #1b3b80 0%, #061226 100%);
+            color: var(--texto-claro);
+            line-height: 1.6;
+            text-align: center;
+            font-size: 1.2em;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .container-850 {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        header, section, footer { 
+            padding: 30px 0; 
+            margin: 0 auto; 
+            display: block; 
+            position: relative;
+            transform: translateZ(0);
+            contain: content;
+        }
+        /* AJUSTE DE ALINHAMENTO DA HEADLINE */
+        h1 { 
+            font-size: 1.6em; 
+            color: var(--dourado); 
+            line-height: 1.3; 
+            margin: 0 auto 25px; 
+            max-width: 800px; 
+            text-wrap: balance; 
+        }
+        /* AJUSTE PARA O VÍDEO FICAR REALMENTE GRANDE */
+        .container-vsl-central {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 25px 0;
+            padding: 0 10px;
+        }
+        .video-box-ajustado {
+            width: 100%;
+            max-width: 1240px; 
+            position: relative;
+            padding-bottom: 90%; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #000;
+        }
+        .video-box-ajustado iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .banner-ano-novo {
+            background: rgba(11, 44, 107, 0.4); 
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-bottom: 2px solid var(--dourado);
+            padding: 18px 25px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 420px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-ano-novo::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -100%; width: 40%; height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(25deg);
+            animation: shimmer 4s infinite;
+        }
+        @keyframes shimmer { 0% { left: -100%; } 30% { left: 200%; } 100% { left: 200%; } }
+        .logo-box { padding: 10px 0; font-size: 1em; font-weight: 900; letter-spacing: 4px; color: var(--dourado); text-transform: uppercase; }
+        .img-familia { width: 100%; max-width: 400px; border-radius: 15px; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.6); margin-bottom: 20px; }
+        
+        .subheadline-container { background: rgba(255, 255, 255, 0.08); border-left: 6px solid var(--dourado); padding: 20px; margin: 0 auto 30px; text-align: left; border-radius: 4px; }
+        
+        .destaque-prisao { 
+            background: rgba(255, 255, 255, 0.08); 
+            border-left: 6px solid var(--verde); 
+            padding: 25px; 
+            margin: 30px auto; 
+            text-align: left; 
+            border-radius: 4px;
+            width: 100%;
+        }
+        .check-v { color: var(--verde-prof); font-weight: 900; margin-right: 8px; font-size: 1.2em; }
+        
+        .btn { display: inline-block; background: linear-gradient(180deg, #00c853 0%, #009624 100%); color: #fff; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; font-size: 1em; box-shadow: 0 6px 15px rgba(0, 200, 83, 0.3); animation: pulseBtn 2s infinite; border: none; cursor: pointer; }
+        @keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        .oferta-combo-container { 
+            margin: 40px 0; padding: 40px 15px; background: #0b2c6b; 
+            border-radius: 20px; border: 2px solid var(--dourado); width: 100%;
+        }
+        
+        .frase-maior-nova { 
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff; 
+            font-size: 1.8em; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            line-height: 1.2; 
+            margin: 0; 
+        }
+        .texto-dourado-metal {
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-top: 10px;
+        }
+        .frase-media-nova { color: #ffffff; font-size: 1.4em; margin: 15px 0 25px; font-weight: 800; }
+        .frase-menor-nova { color: #fff; font-size: 0.9em; margin-bottom: 10px; display: block; }
+        
+        .timer-moldura-nova { 
+            border: 2px solid var(--dourado); border-radius: 10px; padding: 10px 15px; 
+            display: inline-block; margin-bottom: 35px; background: rgba(0,0,0,0.3);
+            max-width: 90%; 
+        }
+        #countdown-combo-novo { font-size: clamp(2em, 8vw, 3.2em); font-weight: 900; color: var(--verde-neon); font-family: monospace; }
+        .mockup-3-ebooks-novo { display: flex; justify-content: center; align-items: center; margin: 10px auto 40px; width: 100%; }
+        .img-bonus-novo { width: 35%; max-width: 280px; filter: brightness(0.9) drop-shadow(0 4px 8px rgba(0,0,0,0.3)); z-index: 1; }
+        .img-principal-novo { width: 45%; max-width: 360px; z-index: 5; margin: 0 -12%; transform: scale(1.2); filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4)); }
+        
+        .btn-green-novo { display: block; background: linear-gradient(180deg, #00c853 0%, #008f3a 100%); color: #fff; text-decoration: none; padding: 18px 10px; border-radius: 12px; font-weight: 900; font-size: 1.1em; text-transform: uppercase; width: 100%; max-width: 550px; margin: 0 auto; box-shadow: 0 6px 15px rgba(0,200,83,0.3); border: none; cursor: pointer; }
+        
+        .seguranca-pdf-novo { 
+            display: flex; align-items: center; justify-content: center; gap: 8px; 
+            color: #ffffff; font-size: 0.85em; margin-top: 15px; font-weight: bold; 
+        }
+        .icon-cadeado-svg { width: 22px; height: 22px; fill: var(--verde-seguro); flex-shrink: 0; }
+        .escassez-box { background: rgba(255,255,255,0.03); padding: 40px 25px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); margin: 20px 0; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        
+        .titulo-escassez-premium { 
+            font-size: 1.8em; 
+            color: #ffffff;
+            font-weight: 900; 
+            margin-bottom: 30px; 
+        }
+        .check-list { list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 0 auto; }
+        .check-list li { 
+            background: rgba(255, 68, 68, 0.05);
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 12px; 
+            display: flex; 
+            align-items: center; 
+            font-size: 0.95em;
+            transition: 0.3s;
+        }
+        .check-list li:hover { background: rgba(255, 68, 68, 0.1); transform: translateX(5px); }
+        .emoji-premium { font-size: 1.3em; margin-right: 15px; filter: drop-shadow(0 0 5px rgba(255,0,0,0.5)); }
+        
+        .frase-mudanca { color: var(--dourado-brilhante); font-size: 1.5em; font-weight: 900; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); margin: 35px 0; display: block; }
+        .foguetes-inline { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; color: var(--verde-neon); font-weight: bold; margin: 30px 0; font-size: 1.1em; }
+        .foguetes-inline span { text-shadow: 0 0 10px rgba(0, 200, 83, 0.5); }
+        
+        .frase-impacto-brilho { font-size: 1.3em; font-weight: 800; color: #ffffff; text-shadow: 0 0 12px rgba(0, 200, 83, 0.8); margin: 25px 0; display: inline-block; }
+        .bonus-wrapper { background: rgba(11, 44, 107, 0.8); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 20px; padding: 40px 20px; margin: 40px 0; }
+        .bonus-img { width: 280px; border-radius: 12px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .bonus-nome { font-size: 1.1em; color: var(--dourado); font-weight: bold; }
+        .tabela-premium { 
+            background: #071c3d; border: 2px solid var(--dourado); border-radius: 20px; padding: 30px; 
+            max-width: 700px; width: 100%; margin: 30px auto; text-align: left; box-shadow: 0 15px 30px rgba(0,0,0,0.5); 
+        }
+        .tabela-header { text-align: center; color: var(--dourado); font-size: 1.2em; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 10px; }
+        .item-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.95em; }
+        
+        .price-new { 
+            text-align: center; 
+            color: var(--verde-neon); 
+            font-size: 2.2em; 
+            font-weight: 900; 
+            margin: 5px 0; 
+            text-shadow: 0 0 10px rgba(0,255,102,0.4); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .riscado { text-decoration: line-through; opacity: 0.8; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 15px; border-bottom: 3px solid var(--verde); }
+        .faq-item { background: #061a3f; margin-bottom: 12px; border-radius: 10px; overflow: hidden; text-align: left; border: 1px solid rgba(255,255,255,0.1); }
+        .faq-question { width: 100%; background: #061a3f; color: #fff; padding: 20px; border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; outline: none; }
+        .faq-answer { display: none; padding: 20px; color: #fffacd; background: rgba(0,0,0,0.2); }
+        
+        .zoom-pulsar { display: inline-block; animation: zoomPulsar 1.5s infinite; }
+        @keyframes zoomPulsar { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+        .zap-jump { width: 35px; height: 35px; vertical-align: middle; animation: jump 0.8s infinite alternate; }
+        @keyframes jump { 0% { transform: translateY(0); } 100% { transform: translateY(-12px); } }
+        .chamada-extra { color: var(--dourado); font-size: 0.9em; font-weight: bold; margin-top: 15px; display: block; text-transform: uppercase; }
+        
+        .frase-bonus-sophie {
+            color: var(--dourado);
+            font-size: 0.9em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            width: fit-content;
+            margin: 0 auto 20px;
+            padding-bottom: 5px;
+        }
+        .legal-content {
+            display: none; 
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            text-align: left;
+            max-width: 600px;
+            border: 2px solid var(--dourado);
+        }
+        .legal-content h3 { color: var(--dourado); margin-top: 0; }
+        .legal-content p { font-size: 0.9em; line-height: 1.6; color: #fff; }
+      
+        .btn-fechar-legal {
+            background: #ff4444; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; 
+            cursor: pointer; float: right; font-weight: bold; margin-bottom: 10px;
+        }
+        /* ESTILO DO NOVO BOTAO ZAP INTERNACIONAL */
+        .btn-zap-custom {
+            background: #25d366; color: white; border: none; padding: 18px 25px; border-radius: 50px; 
+            font-weight: 900; font-size: 1.2em; cursor: pointer; width: 100%; max-width: 420px;
+            display: flex; align-items: center; justify-content: center; gap: 12px; 
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-box">Não Mais Escravos</div>
+    <div class="banner-ano-novo">
+        <p>🌟 Que tal começar o ano novo com mentalidade nova? 🌟<br>
+        <span style="color:var(--dourado); font-weight: 800; text-transform: uppercase;">Você nasceu pra prosperar!</span><br>
+        E agora chegou o tempo! 🚀</p>
+    </div>
+
+    <header class="container-850">
+        <!-- NOVA IMAGEM DA FAMÍLIA EM WEBP -->
+        <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/Gemini_Generated_Image_nsxxk6nsxxk6nsxx.webp" class="img-familia">
+        
+        <h1>Descubra como destravar a prosperidade que foi ocultada por gerações. <span style="color:var(--dourado);">O ciclo de escassez da sua família termina em você!</span></h1>
+        
+        <div class="subheadline-container">
+            <p style="font-weight: 800; color: #fff; margin:0;">Você é a chave para uma nova história! Construa o legado que sua família merece, através do método <span style="color:var(--dourado);">Não Mais Escravos!</span></p>
+        </div>
+        
+        <p>Seja o <span class="zoom-pulsar" style="color:var(--dourado); font-weight:bold;">primeiro da sua família</span>, quebre o ciclo e destrave sua mente para prosperar.</p>
+    </header>
+
+    <div class="container-vsl-central">
+        <div class="video-box-ajustado">
+            <iframe src="https://www.youtube.com/embed/2otJX0c3Jmo?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="container-850">
+        <button onclick="irParaCheckout()" class="btn">QUERO ROMPER AS CORRENTES AGORA</button>
+        
+        <div style="display:flex; justify-content:center; gap:20px; margin:15px 0; font-size:0.8em; color:#ccc;">
+            <span>🔒 Site Protegido SSL</span> | <span>🛡️ Compra 100% Segura</span>
+        </div>
+
+        <div style="margin-top:20px; font-weight:bold; font-size:1.1em; text-align: center;">
+            <p><span class="check-v">✓</span> Quebrando paradigmas;</p>
+            <p><span class="check-v">✓</span> Conquistando uma mente livre;</p>
+            <p><span class="check-v">✓</span> Ensinamentos valiosos que te farão subir de nível e vencer!</p>
+        </div>
+
+        <section class="escassez-box">
+            <h2 class="titulo-escassez-premium">Você vive preso à mentalidade de escassez?</h2>
+            
+            <ul class="check-list">
+                <li><span class="emoji-premium">🚫</span> Sempre tenta, e nunca dá certo.</li>
+                <li><span class="emoji-premium">🚫</span> Parece que o sucesso acontece para todos, menos para você.</li>
+                <li><span class="emoji-premium">🚫</span> Não consegue sair da mesmice e subir de nível.</li>
+                <li><span class="emoji-premium">🚫</span> Já tentou várias formas de prosperar e nada funcionou.</li>
+                <li><span class="emoji-premium">🚫</span> Já perdeu muitos recursos na busca desenfreada pelo objetivo.</li>
+                <li><span class="emoji-premium">🚫</span> O dinheiro some da sua mão tão rápido quanto entra.</li>
+            </ul>
+            
+            <p class="frase-impacto-brilho">Se você tem todas essas características de uma mentalidade de escassez, essa nova mudança é pra você!</p>
+            <p style="margin-top:20px;">São milhares de pessoas que já tiveram a mentalidade transformada. Que tentavam e nunca dava certo. Não conseguiam prosperar e vencer na vida. Até que encontraram esse conteúdo, e agora são milhares de “Não mais escravos!”</p>
+            
+            <div class="foguetes-inline">
+                <span>🚀 Não mais escravos da escassez!</span>
+                <span>🚀 Não mais escravos do desemprego!</span>
+                <span>🚀 Não mais escravos do fracasso!</span>
+            </div>
+
+            <span class="frase-mudanca zoom-pulsar">Chegou o tempo da mudança de mentalidade!</span>
+
+            <div class="destaque-prisao">
+                <p>Muitas vezes, o que nos impede de crescer não são as circunstâncias externas, mas sim as "prisões mentais" que aceitamos como verdade. Frases como "dinheiro é difícil" ou "isso não é para mim" são as correntes que te seguram.</p>
+                <p>Chegou a hora de dar um basta. No e-book Não Mais Escravos, a Rute Alves te entrega o mapa para:</p>
+                <p><span class="check-v">✓</span> Identificar e quebrar bloqueios mentais.<br>
+                <span class="check-v">✓</span> Reprogramar sua mente para a prosperidade. <br>
+                <span class="check-v">✓</span> Assumir o controle real da sua vida e da sua paz.</p>
+                <p><strong>🎁 BÔNUS:</strong> Garanta hoje e leve o Planner de Rotina de Sucesso (incluído no e-book) E mais 2 bônus 🎁 extras grátis!</p>
+                <p><strong>🛡️ Risco Zero:</strong> Garantia de 7 dias ou seu dinheiro de volta.</p>
+            </div>
+
+            <div style="text-align:center; line-height:1.8em; margin-top:15px;">
+                <p><span class="check-v">✓</span> Você é capaz de superar limites;</p>
+                <p><span class="check-v">✓</span> Sua mente está pronta para prosperar;</p>
+                <p><span class="check-v">✓</span> O sucesso está ao seu alcance;</p>
+                <p><span class="check-v">✓</span> A <strong>transformação</strong> começa agora;</p>
+            </div>
+        </section>
+
+        <section class="oferta-combo-container">
+            <h2 class="frase-maior-nova">Oferta especial: <span class="texto-dourado-metal">leve 3 pelo preço de 1</span></h2>
+            <p class="frase-media-nova">Compre o e-book principal e leve 2 bônus exclusivos gratuitamente</p>
+            
+            <span class="frase-menor-nova">Garanta o valor promocional com os bônus por tempo limitado:</span>
+            <div class="timer-moldura-nova">
+                <div id="countdown-combo-novo">00:30:00</div>
+            </div>
+
+            <div class="mockup-3-ebooks-novo">
+                <!-- IMAGEM BÔNUS 9 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="img-bonus-novo">
+                <!-- IMAGEM PRINCIPAL 1 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="img-principal-novo">
+                <!-- IMAGEM BÔNUS 10 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="img-bonus-novo">
+            </div>
+
+            <button onclick="irParaCheckout()" class="btn-green-novo">GARANTIR MEU COMBO DE 3 E-BOOKS AGORA</button>
+            
+            <div class="seguranca-pdf-novo">
+                <svg class="icon-cadeado-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6z"/>
+                </svg>
+                Download seguro e instantâneo em PDF | Seus dados 100% seguros
+            </div>
+        </section>
+
+        <section class="bonus-wrapper">
+            <span class="frase-bonus-sophie">🎁 bônus exclusivos por tempo limitado</span>
+            
+            <p style="font-weight:bold; margin-bottom:30px; color: #ffffff;">Ao adquirir o e-book Não Mais Escravos, você não recebe apenas um conteúdo… você recebe um <span style="color:var(--verde);">PACOTE COMPLETO</span> para mudar a mente e gerar renda na prática!</p>
+
+            <div style="margin: 20px auto 40px; max-width: 450px;">
+                <!-- IMAGEM PRINCIPAL 1 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" alt="E-book" style="width: 100%; border-radius: 15px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+                <div style="text-align: left; margin-top: 20px; font-weight: bold;">
+                    <p><span class="check-v">✓</span> Identificar e quebrar bloqueios mentais.</p>
+                    <p><span class="check-v">✓</span> Reprogramar sua mente para a prosperidade.</p>
+                    <p><span class="check-v">✓</span> Assumir o controle real da sua vida e das suas finanças.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:40px;">
+                <div class="bonus-nome">🎁 BÔNUS 1- +50 Receitas de Brigadeiro Gourmet</div>
+                <p style="color:var(--verde); font-weight:bold;">💚 De <span class="riscado">R$ 19,90</span> Por R$ 0,00</p>
+                <!-- IMAGEM BÔNUS 9 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="bonus-img">
+                <p>Transforme sua nova mentalidade em uma renda prática e imediata faturando até R$ 3.000 por mês.</p>
+                <ul class="check-list-bonus" style="list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> Receitas fáceis e lucrativas (ideal para iniciantes)</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> Brigadeiros gourmet com altíssima procura no mercado</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> <span style="white-space: normal;">Possibilidade real de faturar até <strong>R$ 3.000 por mês</strong></span></li>
+                </ul>
+            </div>
+
+            <div style="margin-top:50px;">
+                <div class="bonus-nome">🎁 BÔNUS 2- 15 Receitas Saudáveis de Sucos Detox</div>
+                <p style="color:var(--verde); font-weight:bold;">💚 De <span class="riscado">R$ 19,90</span> Por R$ 0,00</p>
+                <!-- IMAGEM BÔNUS 10 EM WEBP -->
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="bonus-img">
+                <p>Venda saúde e bem-estar, um dos mercados que mais crescem.</p>
+                <ul class="check-list-bonus" style="list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> Receitas simples e rápidas com baixo custo de produção</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> Alta procura no mercado fitness e de saúde</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start;"><span class="check-v">✓</span> Potencial de lucro incrível para sua nova jornada</li>
+                </ul>
+            </div>
+
+            <div class="tabela-premium">
+                <div class="tabela-header">Oferta Especial de Acesso</div>
+                <div class="item-row"><span>📖 E-book Não Mais Escravos</span> <span>R$ 33,00</span></div>
+                <div class="item-row"><span>🧁 Bônus Brigadeiro Gourmet</span> <span><span class="riscado">R$ 19,90</span></span></div>
+                <div class="item-row"><span>🥤 Bônus Sucos Detox</span> <span><span class="riscado">R$ 19,90</span></span></div>
+                <div style="text-align: center; color: #fff; font-size: 1.1em; margin-top: 20px; font-weight: bold;">
+                    Valor Total Original: <span class="riscado" style="color: #ff4d4d;">R$ 72,80</span>
+                </div>
+                <p style="text-align:center; font-weight:bold; color:var(--dourado); font-size: 1.4em; margin: 15px 0 0 0;">Por Apenas</p>
+                <p class="price-new">R$ 33,00</p>
+                <div style="text-align: center; font-size: 0.8em; color: #ccc; font-weight: bold;">PAGAMENTO ÚNICO | ACESSO IMEDIATO</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.08); padding: 25px; border-radius: 15px; margin: 20px auto; max-width: 650px; border-left: 6px solid var(--verde); text-align: left;">
+                <p style="margin:0;">🍔 <strong>Pense nisso:</strong> O valor de um lanche que você gasta em minutos, pode ser o investimento que vai mudar o destino da sua família para sempre. <strong>Não perca a chance de destravar o seu futuro agora!</strong></p>
+            </div>
+            <button onclick="irParaCheckout()" class="btn">QUERO O E-BOOK + TODOS OS BÔNUS AGORA</button>
+            <p style="color:var(--dourado); font-weight:bold; margin-top:15px;">🔥 APROVEITE: Bônus disponível apenas nesta página oficial!</p>
+        </section>
+
+        <section>
+            <h2 style="color:var(--verde);">O que você vai destravar</h2>
+            <div class="grid">
+                <div class="card">🌟 Superar obstáculos e limites</div>
+                <div class="card">💡 Pensar sem fronteiras e crescer</div>
+                <div class="card">🔥 Ser motivado e disciplinado</div>
+                <div class="card">💰 Prosperar com propósito</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="color:var(--verde);">Dentro deste livro você vai aprender</h2>
+            <div class="grid">
+                <div class="card">⚡ Como identificar a mente de escravo que paralisa</div>
+                <div class="card">⚡ Como desenvolver a mentalidade de liberdade</div>
+                <div class="card">⚡ O segredo bíblico da prosperidade</div>
+                <div class="card">⚡ A chave poderosa que muda destinos</div>
+            </div>
+            <button onclick="irParaCheckout()" class="btn" style="margin-top:20px;">DESTRAVAR MINHA VIDA HOJE</button>
+            <span class="chamada-extra">🚀 ÚLTIMA CHANCE DE GARANTIR O PREÇO PROMOCIONAL COM BÔNUS!</span>
+        </section>
+
+        <section class="card" style="margin:40px auto; max-width:800px; border:2px solid var(--verde);">
+            <h2 style="color:var(--verde); margin-bottom:15px;">✅ Garantia de 7 Dias</h2>
+            <p>Você tem 7 dias para aplicar os ensinamentos deste e-book. Se não sentir sua mente destravada e transformada, devolvemos 100% do seu investimento.</p>
+        </section>
+
+        <section id="autor">
+            <h2 style="color:var(--verde); font-size:2em;">Sobre a autora</h2>
+            <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 35px; border-radius: 15px;">
+                <p><strong>Rute Alves</strong> já viveu os ciclos de frustração e limites de uma mente escrava. Mas ao aplicar os princípios revelados neste livro, experimentou <span style="color:var(--dourado); font-weight:bold;">transformação, prosperidade e paz!</span></p>
+                <p>Hoje, compartilha a mesma chave que mudou sua vida para mudar a de muitas pessoas também.</p>
+                <p>”Neste e-book eu irei abordar primeiramente sobre a mente de escravo, a mente que te faz atrofiar, não te deixa prosperar, te faz pensar pequeno, não se sente motivado, não se acha capaz, no momento difícil se desespera, é travado e anda em círculos.</p>
+                <p>Esses são alguns dos tópicos que irei abordar contigo, para trazer a clareza na tua mente, sobre a mente de escravo que você precisa deixar pra trás hoje!</p>
+                <p>E mais à frente, irei abordar os tópicos de uma mente de “Não mais escravos”, que supera obstáculos, consegue produzir, é motivado, pensa sem fronteiras, e está preparado para vencer!</p>
+                <p>E no meio deste capítulo irei te passar uma <span style="color:var(--dourado); font-weight:bold;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:bold;">te fazer disparar pra outro patamar!</span></p>
+                <p>Deus não nos fez pra viver na miséria, Ele quer nos ver prosperar, por isso, Ele me deu a inspiração pra eu escrever este livro que vai ajudar muitas pessoas.</p>
+                <p>Então se você não aguenta mais essa vida vazia, que não anda pra frente e só pra trás, <span style="color:var(--dourado); font-weight:bold;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
+                <div style="text-align:center; margin-top:30px;">
+                    <button onclick="irParaCheckout()" class="btn">QUERO ACESSAR O CONTEÚDO AGORA</button>
+                    <p style="color:var(--dourado); font-weight: bold; font-style: italic; margin-top: 15px; font-size: 1.1em;">
+                        "A sua família não precisa carregar o peso da escassez por mais uma geração. A mudança começa em você hoje."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2 style="color:var(--verde);">Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Como vou receber o e-book? <span>+</span></button>
+                <div class="faq-answer">Você receberá acesso imediato ao conteúdo do e-book diretamente no seu e-mail cadastrado após a compra.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Quando terei acesso aos bônus? <span>+</span></button>
+                <div class="faq-answer">Você terá acesso imediatamente aos bônus junto com o e-book principal assim que finalizar a compra.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Este site é confiável? <span>+</span></button>
+                <div class="faq-answer">Sim! Pagamento 100% seguro via Hotmart, a maior plataforma de infoprodutos do Brasil.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Preciso de conhecimento prévio? <span>+</span></button>
+                <div class="faq-answer">Não! O e-book traz métodos práticos e aplicáveis imediatamente por qualquer pessoa.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">E se eu não gostar do conteúdo? <span>+</span></button>
+                <div class="faq-answer">Oferecemos garantia de 7 dias! Devolvemos 100% do seu investimento se não estiver satisfeito.</div>
+            </div>
+        </section>
+
+        <footer style="padding-bottom: 50px;">
+            <h2 style="color:var(--verde);">Ficou com alguma dúvida?</h2>
+            <div class="contato-box" style="margin: 0 auto; max-width: 420px;">
+                <button onclick="contatoZap()" class="btn-zap-custom">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="zap-jump" width="30" alt="Zap">
+                    +55 (81) 99919-8026
+                </button>
+                <p id="msgSucesso" style="color: var(--verde-neon); font-size: 0.9em; margin-top: 12px; font-weight: bold; display: none; text-transform: uppercase;">✅ Número copiado!</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--verde-neon);">E-mail: adm.rute.silva@gmail.com</p>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <button onclick="toggleLegal('privacidade')" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Privacidade</button> | 
+                <button onclick="toggleLegal('uso')" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Política de Uso</button> |
+                <button onclick="toggleLegal('direitos')" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Direitos Autorais</button>
+            </div>
+
+            <div id="privacidade" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('privacidade')">X</button>
+                <h3>Privacidade</h3>
+                <p>Seus dados estão 100% protegidos. Utilizamos cookies apenas para melhorar sua experiênca no site. As informações fornecidas durante a compra são processadas com total segurança pela plataforma Hotmart.</p>
+            </div>
+            <div id="uso" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('uso')">X</button>
+                <h3>Política de Uso</h3>
+                <p>Este conteúdo é exclusivo para uso pessoal e intransferível. A reprodução, revenda ou compartilhamento não autorizado deste material é proibida e protegida por lei.</p>
+            </div>
+            <div id="direitos" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('direitos')">X</button>
+                <h3>Direitos Autorais</h3>
+                <p>Todo o material (textos, imagens e vídeos) contido nesta página e no e-book é de propriedade exclusiva de Rute Alves e protegido pelas leis de direitos autorais vigentes.</p>
+            </div>
+            <p>© 2026 Não Mais Escravos. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // REDIRECIONAMENTO BLINDADO PARA HOTMART (FACEBOOK)
+        function irParaCheckout() {
+            const url = "https://pay.hotmart.com/D101775305B";
+            const win = window.open(url, '_blank');
+            if (!win || win.closed || typeof win.closed == 'undefined') {
+                window.location.href = url;
+            }
+        }
+
+        // REDIRECIONAMENTO E CÓPIA PARA WHATSAPP INTERNACIONAL
+        function contatoZap() {
+            const numeroCompleto = "+5581999198026";
+            const link = "https://wa.me/5581999198026?text=Olá!%20Vim%20do%20site%20Não%20mais%20escravos";
+            
+            const tempInput = document.createElement("input");
+            tempInput.value = numeroCompleto;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const msg = document.getElementById("msgSucesso");
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 3000);
+
+            const a = document.createElement('a');
+            a.href = link;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            setTimeout(function() {
+                window.location.assign(link);
+            }, 500);
+        }
+
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.style.display === 'block';
+            document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+            if (!isOpen) { 
+                answer.style.display = 'block'; 
+                btn.querySelector('span').innerText = '-';
+            } else {
+                btn.querySelector('span').innerText = '+';
+            }
+        }
+
+        function toggleLegal(id) {
+            const box = document.getElementById(id);
+            const isVisible = box.style.display === 'block';
+            document.querySelectorAll('.legal-content').forEach(el => el.style.display = 'none');
+            if (!isVisible) {
+                box.style.display = 'block';
+                box.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        let tempoCombo = 30 * 60;
+        const displayCombo = document.getElementById('countdown-combo-novo');
+        setInterval(() => {
+            if (tempoCombo <= 0) return;
+            tempoCombo--;
+            let min = Math.floor(tempoCombo / 60);
+            let seg = tempoCombo % 60;
+            if (displayCombo) {
+                displayCombo.innerText = "00:" + (min < 10 ? '0' + min : min) + ":" + (seg < 10 ? '0' + seg : seg);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

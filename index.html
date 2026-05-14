@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Não Mais Escravos – Rute Alves | Como Destravar sua Prosperidade</title>
     <meta name="description" content="Descubra o método Não Mais Escravos de Rute Alves. Aprenda a quebrar bloqueios mentais de escassez e destravar a prosperidade financeira e emocional hoje.">
@@ -64,10 +64,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .delay-1 { transition-delay: 0.2s; }
-        .delay-2 { transition-delay: 0.3s; }
-        .delay-3 { transition-delay: 0.4s; }
-        .delay-4 { transition-delay: 0.5s; }
 
         .container-850 {
             max-width: 850px;
@@ -222,6 +218,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             animation: zoomPulsar 2s infinite ease-in-out;
+            max-width: 100%;
         }
         .btn:hover, .btn-cta-pro:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(34, 197, 94, 0.6); }
         
@@ -526,16 +523,139 @@
             display: inline;
         }
 
+        /* --- NOVAS SEÇÕES ADICIONADAS --- */
+        .secao-posicionamento {
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            margin: 40px 0;
+            border-radius: 40px;
+            width: 100%; 
+            box-sizing: border-box;
+        }
+        
+        .grid-caminhos {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .box-caminho {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 25px;
+            text-align: left;
+            border-top: 5px solid transparent;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .box-caminho:hover { transform: translateY(-10px); }
+        .box-caminho.errado { border-color: #ff4d4d; background: linear-gradient(180deg, rgba(255, 77, 77, 0.05) 0%, rgba(0,0,0,0.2) 100%); }
+        .box-caminho.certo { border-color: var(--verde-neon); background: linear-gradient(180deg, rgba(0, 255, 102, 0.05) 0%, rgba(0,0,0,0.2) 100%); box-shadow: 0 15px 35px rgba(0, 255, 102, 0.1); }
+        .box-caminho h4 { margin-top: 0; font-size: 1.35rem; text-transform: uppercase; font-family: 'Montserrat'; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+
+        .secao-recomeco {
+            background: linear-gradient(135deg, rgba(11, 44, 107, 0.8), rgba(6, 18, 38, 1));
+            padding: 70px 40px;
+            border-radius: 40px;
+            margin: 80px auto;
+            border: 2px solid rgba(255, 215, 0, 0.15);
+            max-width: 850px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            position: relative;
+            width: calc(100% - 20px); 
+            box-sizing: border-box;
+        }
+        .secao-recomeco::before {
+            content: "✨"; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 40px;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 850px) {
+            .grid-caminhos { grid-template-columns: 1fr; } 
+            .secao-recomeco { padding: 40px 20px; margin: 40px auto; width: 95%; }
+            .box-caminho { padding: 25px; width: 100%; }
+            .secao-posicionamento { padding: 40px 15px; border-radius: 20px; }
+        }
+
         @media (max-width: 600px) {
             .combo-explosao-wrapper { height: 300px; }
             .img-explosao { width: 190px; margin-left: -95px; }
             .combo-explosao-wrapper.ativo .lateral-esq { transform: translateX(-105px) rotate(-10deg); }
             .combo-explosao-wrapper.ativo .lateral-dir { transform: translateX(105px) rotate(10deg); }
+            .preco-novo { font-size: 3.5em; }
+            .headline-ultra { font-size: 2rem; }
         }
 
         @media (max-width: 480px) {
             .card-destino-lux { flex-direction: column; text-align: center; }
             .card-destino-lux .icon { margin-right: 0; margin-bottom: 10px; }
+            .btn, .btn-cta-pro { padding: 15px 25px; font-size: 1rem; }
+            .box-caminho h4 { font-size: 1.15rem; }
+        }
+        
+        /* FOOTER STYLES */
+        .footer-premium { 
+            padding: 60px 20px; 
+            background: #061226;
+            background: linear-gradient(180deg, #1b3b80 0%, #061226 100%);
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .links-container {
+            margin: 30px 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .link-footer {
+            background: none; 
+            border: none; 
+            color: #ffffff; 
+            cursor: pointer; 
+            text-decoration: underline;
+            font-size: 0.9em;
+            font-weight: 600;
+            padding: 5px;
+        }
+        .legal-content { 
+            display: none; 
+            background: rgba(0,0,0,0.5);
+            padding: 30px; 
+            margin: 20px auto; 
+            border-radius: 15px; 
+            text-align: left; 
+            width: 95%;
+            max-width: 600px;
+            border: 2px solid #FFD700;
+            color: #ffffff;
+        }
+        .btn-fechar-legal { 
+            background: #ff4444; 
+            color: #fff; 
+            border: none; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            float: right; 
+            font-weight: bold;
+        }
+        .copyright {
+            opacity: 0.7; 
+            font-size: 0.85em; 
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -595,6 +715,30 @@
                 </div>
             </div>
         </div>
+
+        <div class="secao-posicionamento revelar container-850">
+            <h2 class="titulo-secao" style="font-size: 1.8rem;">🚀 PARE DE SER ESCRAVO DO SEU PRÓPRIO NEGÓCIO!</h2>
+            <p class="descricao-longa">Trabalhar muito não é garantia de lucro. O que diferencia quem sobrevive de quem prospera não é o esforço, é o <b>posicionamento estratégico.</b></p>
+            
+            <div class="grid-caminhos">
+                <div class="box-caminho errado">
+                    <h4 style="color:#ff4d4d"><i class="fa-solid fa-lock"></i> O Posicionamento Errado</h4>
+                    <p>Onde você tenta ser tudo para todos, vira o "faz-tudo" e acaba sendo desvalorizado. O resultado? Estresse, invisibilidade e baixos lucros.</p>
+                </div>
+                <div class="box-caminho certo">
+                    <h4 style="color:var(--verde-neon)"><i class="fa-solid fa-key"></i> O Posicionamento Certo</h4>
+                    <p>Você define seu nicho, comunica seu valor único e se torna uma autoridade. O resultado? Crescimento, reconhecimento e liberdade geográfica e financeira.</p>
+                </div>
+            </div>
+
+            <div class="texto-impacto" style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; border-left: 5px solid var(--dourado-premium);">
+                <p style="margin-top:0;">Um negócio de sucesso começa com uma <b>quebra de mentalidade.</b> Se você não romper com as velhas crenças que te mantêm preso operacionalmente, nunca alcançará a estratégia que te liberta.</p>
+                <p style="font-weight: 700; color: #fff;">🧠 Quer mudar esse jogo e parar de ser escravo da sua rotina?</p>
+                <p>Eu escrevi o e-book <b>Não Mais Escravos</b> justamente para te ajudar a romper essas barreiras mentais e construir o caminho que vende.</p>
+                <button onclick="irParaCheckout()" class="btn-interativo" style="width:100%; border-color: var(--verde-neon); color: var(--verde-neon);">GARANTIR MEU ACESSO AGORA</button>
+            </div>
+        </div>
+
         <div class="secao-confronto">
             <h3>A Verdade que Ninguém te Contou</h3>
             <div class="texto-impacto">
@@ -615,9 +759,9 @@
     <div class="nova-sessao-bonus">
         <section class="hero-section" style="background: transparent; padding-top: 0;">
             <div class="container-850 revelar">
-                <div class="badge-hero revelar delay-1">🔥 Oferta Exclusiva: 3 por 1</div>
-                <h1 class="headline-ultra revelar delay-2">Renove sua mente e<br><span style="color:var(--dourado-premium)">Domine sua Liberdade</span></h1>
-                <p style="font-size: 1.3em; opacity: 0.8; max-width: 750px; margin: 10px auto;" class="revelar delay-3">O método definitivo para destravar sua vida financeira e ativar fontes de lucro imediato.</p>
+                <div class="badge-hero">🔥 Oferta Exclusiva: 3 por 1</div>
+                <h1 class="headline-ultra">Renove sua mente e<br><span style="color:var(--dourado-premium)">Domine sua Liberdade</span></h1>
+                <p style="font-size: 1.3em; opacity: 0.8; max-width: 750px; margin: 10px auto;">O método definitivo para destravar sua vida financeira e ativar fontes de lucro imediato.</p>
             </div>
         </section>
 
@@ -625,45 +769,45 @@
             <div class="secao-valor revelar">
                 <div class="chamada-principal">Tudo isso será seu agora:</div>
                 <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="mockup-vidal">
-                <div class="badge-premium revelar delay-1">E-book Principal</div>
-                <h2 class="titulo-secao revelar delay-1">Não Mais Escravos</h2>
-                <p class="descricao-longa revelar delay-2">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um sucesso financeiro duradouro.</p>
+                <div class="badge-premium">E-book Principal</div>
+                <h2 class="titulo-secao">Não Mais Escravos</h2>
+                <p class="descricao-longa">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um sucesso financeiro duradouro.</p>
                 <ul class="lista-check">
-                    <li class="revelar delay-1"><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
-                    <li class="revelar delay-2"><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
-                    <li class="revelar delay-3"><i class="fa-solid fa-check check-icon"></i> Plano prático para domínio da liberdade</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Plano prático para domínio da liberdade</li>
                 </ul>
             </div>
 
             <div class="secao-valor revelar">
                 <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="mockup-vidal">
-                <div class="badge-premium revelar delay-1">Bônus de Ouro 01</div>
-                <h2 class="titulo-secao revelar delay-1">Brigadeiro Gourmet</h2>
-                <p class="descricao-longa revelar delay-2">Precisa de dinheiro rápido? Este guia prático ensina como transformar poucos reais em um faturamento diário constante. Ideal para quem quer começar um negócio do zero com baixo investimento.</p>
+                <div class="badge-premium">Bônus de Ouro 01</div>
+                <h2 class="titulo-secao">Brigadeiro Gourmet</h2>
+                <p class="descricao-longa">Precisa de dinheiro rápido? Este guia prático ensina como transformar poucos reais em um faturamento diário constante. Ideal para quem quer começar um negócio do zero com baixo investimento.</p>
                 <ul class="lista-check">
-                    <li class="revelar delay-1"><i class="fa-solid fa-check check-icon"></i> Receitas profissionais e lucrativas</li>
-                    <li class="revelar delay-2"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas para lucro diário</li>
-                    <li class="revelar delay-3"><i class="fa-solid fa-check check-icon"></i> Ganhos extras de até R$ 3.000 por mês</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Receitas profissionais e lucrativas</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas para lucro diário</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Ganhos extras de até R$ 3.000 por mês</li>
                 </ul>
-                <button class="btn-interativo revelar delay-4" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+                <button class="btn-interativo" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
             </div>
 
             <div class="secao-valor revelar">
                 <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="mockup-vidal">
-                <div class="badge-premium revelar delay-1">Bônus de Ouro 02</div>
-                <h2 class="titulo-secao revelar delay-1">Sucos Detox</h2>
-                <p class="descricao-longa revelar delay-2">Entre no mercado de saúde e bem-estar com sucos funcionais de alta margem de lucro. Aprenda a criar sua própria marca e atrair clientes fiéis todos os dias.</p>
+                <div class="badge-premium">Bônus de Ouro 02</div>
+                <h2 class="titulo-secao">Sucos Detox</h2>
+                <p class="descricao-longa">Entre no mercado de saúde e bem-estar com sucos funcionais de alta margem de lucro. Aprenda a criar sua própria marca e atrair clientes fiéis todos os dias.</p>
                 <ul class="lista-check">
-                    <li class="revelar delay-1"><i class="fa-solid fa-check check-icon"></i> Mix para saúde e emagrecimento</li>
-                    <li class="revelar delay-2"><i class="fa-solid fa-check check-icon"></i> Método para criar sua marca do zero</li>
-                    <li class="revelar delay-3"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas recorrentes</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Mix para saúde e emagrecimento</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Método para criar sua marca do zero</li>
+                    <li><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas recorrentes</li>
                 </ul>
-                <button class="btn-interativo revelar delay-4" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+                <button class="btn-interativo" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
             </div>
 
             <div class="checkout-box revelar">
-                <div class="selo-oval-premium revelar delay-1">LEVE 3 PELO PREÇO DE 1</div>
-                <div style="margin: 20px 0;" class="revelar delay-2">
+                <div class="selo-oval-premium">LEVE 3 PELO PREÇO DE 1</div>
+                <div style="margin: 20px 0;">
                     <span class="preco-antigo">De R$ 72,80</span>
                     <span style="text-transform: uppercase; font-weight: 700; opacity: 0.8;">Por apenas</span>
                     <span class="preco-novo">R$ 33,00</span>
@@ -685,7 +829,7 @@
                     <span id="countdown">00:29:59</span>
                 </div>
                 <br>
-                <button onclick="irParaCheckout()" class="btn-cta-pro revelar">Garantir meu combo agora!</button>
+                <button onclick="irParaCheckout()" class="btn-cta-pro">Garantir meu combo agora!</button>
                 <div class="ajuste-seguranca revelar">
                     <i class="fa-solid fa-lock" style="color:var(--verde-conversao)"></i> PAGAMENTO SEGURO | ENTREGA IMEDIATA
                 </div>
@@ -694,6 +838,20 @@
     </div>
 
     <div class="container-850" style="background: linear-gradient(to bottom, #061226, #1b3b80); padding-top: 10px;">
+        
+        <section class="secao-recomeco revelar">
+            <h2 class="titulo-secao" style="font-size: clamp(1.4rem, 5vw, 2rem); margin-bottom:30px;">✨ RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
+            <div class="texto-impacto" style="font-size: 1.1rem; line-height: 1.8;">
+                <p>Muitas vezes, ficamos presos a padrões antigos, medos e uma mentalidade que nos limita. Mas a verdade é que o próximo capítulo da sua vida exige uma nova versão de você.</p>
+                <p>Se você sente que está trabalhando muito, mas não sai do lugar, o problema pode não estar no que você faz, mas em como você pensa. <span class="destaque-positivo">A prosperidade começa na mente</span> antes de se manifestar na conta bancária ou nos seus relacionamentos.</p>
+                <p>É hora de quebrar as correntes da escassez e assumir o controle da sua jornada. <strong>Você nasceu para prosperar, não apenas para sobreviver! 🚀</strong></p>
+                <div style="margin-top:40px; padding:30px; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px dashed var(--dourado-premium);">
+                    <p style="margin-top:0;">📚 <strong>Dê o primeiro passo hoje:</strong> O e-book Não Mais Escravos é o guia prático que você precisa para viver a liberdade que sempre sonhou.</p>
+                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="animation: none; background: var(--dourado-metalico); color: #000; box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);">QUERO RECOMEÇAR MINHA HISTÓRIA</button>
+                </div>
+            </div>
+        </section>
+
         <section class="secao-destravar" style="padding-top: 5px; margin-top: 5px;">
             <h2 class="titulo-final-dourado" style="margin-top: 0;">O que você vai destravar</h2>
             <div class="grid">
@@ -767,17 +925,44 @@
             </div>
         </section>
 
-        <footer style="padding-bottom: 50px;">
-            <h2 class="titulo-final-dourado">Ficou com alguma dúvida?</h2>
-            <div class="contato-box" style="margin: 0 auto; max-width: 420px;">
+        <footer class="footer-premium">
+            <h2 style="color:#00c853;">Ficou com alguma dúvida?</h2>
+            
+            <div class="contato-box">
                 <button onclick="contatoZap()" class="btn-zap-custom">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="zap-jump" width="30" alt="Zap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="zap-jump" alt="WhatsApp">
                     +55 (81) 99919-8026
                 </button>
-                <p id="msgSucesso" style="color: var(--verde-neon); font-size: 0.9em; margin-top: 12px; font-weight: bold; display: none; text-transform: uppercase;">✅ Número copiado!</p>
-                <p style="margin-top: 20px; font-weight: bold; color: var(--verde-neon); font-size: 1.1em;">E-mail: adm.rute.silva@gmail.com</p>
+                <p style="margin-top: 15px; font-weight: bold; color: #00ff66;">E-mail: adm.rute.silva@gmail.com</p>
             </div>
-            <p style="margin-top:40px; opacity: 0.6; font-size: 0.8em;">© 2026 Não Mais Escravos. Todos os direitos reservados.</p>
+
+            <div class="links-container">
+                <button onclick="toggleLegal('privacidade')" class="link-footer">Política de Privacidade</button>
+                <span style="color: rgba(255,255,255,0.3)">|</span>
+                <button onclick="toggleLegal('uso')" class="link-footer">Política de Uso</button>
+                <span style="color: rgba(255,255,255,0.3)">|</span>
+                <button onclick="toggleLegal('direitos')" class="link-footer">Direitos Autorais</button>
+            </div>
+
+            <div id="privacidade" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('privacidade')">X</button>
+                <h3 style="color:#FFD700;">Privacidade</h3>
+                <p>Seus dados estão 100% protegidos. Utilizamos cookies apenas para melhorar sua experiência no site. As informações fornecidas durante a compra são processadas com total segurança pela plataforma Hotmart.</p>
+            </div>
+
+            <div id="uso" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('uso')">X</button>
+                <h3 style="color:#FFD700;">Política de Uso</h3>
+                <p>Este conteúdo é exclusivo para uso pessoal e intransferível. A reprodução, revenda ou compartilhamento não autorizado deste material é proibida e protegida por lei.</p>
+            </div>
+
+            <div id="direitos" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('direitos')">X</button>
+                <h3 style="color:#FFD700;">Direitos Autorais</h3>
+                <p>Todo o material (textos, imagens e vídeos) contido nesta página e no e-book é de propriedade exclusiva de Rute Alves e protegido pelas leis de direitos autorais vigentes.</p>
+            </div>
+
+            <p class="copyright">© 2026 Não Mais Escravos. Todos os direitos reservados.</p>
         </footer>
     </div>
 
@@ -791,8 +976,63 @@
 
         document.querySelectorAll('.revelar, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
 
-        function irParaCheckout() { window.open("https://pay.hotmart.com/D101775305B", '_blank'); }
-        function contatoZap() { window.open(`https://wa.me/5581999198026?text=Olá!%20Vim%20do%20site`, '_blank'); }
+        function irParaCheckout() {
+            // Mantém checkout em versão mobile e preserva retorno da página sem tela branca
+            const hotmartUrl = "https://pay.hotmart.com/D101775305B?off=v33&uam=true&checkoutMode=10";
+
+            // Salva posição atual da página antes de ir para checkout
+            sessionStorage.setItem('ultimaPosicaoScroll', window.scrollY);
+            sessionStorage.setItem('retornoCheckout', 'true');
+
+            // Redirecionamento otimizado para mobile
+            window.location.assign(hotmartUrl);
+        }
+
+        // Corrige tela branca ao voltar do checkout no mobile
+        window.addEventListener('pageshow', function(event) {
+            const voltouCheckout = sessionStorage.getItem('retornoCheckout');
+
+            if (event.persisted || voltouCheckout === 'true') {
+                document.body.style.display = 'block';
+                document.body.style.opacity = '1';
+                document.body.style.visibility = 'visible';
+
+                // Restaura posição da página
+                const posicao = sessionStorage.getItem('ultimaPosicaoScroll');
+                if (posicao) {
+                    setTimeout(() => {
+                        window.scrollTo(0, parseInt(posicao));
+                    }, 100);
+                }
+
+                // Força repaint da página para evitar branco no mobile
+                document.body.offsetHeight;
+
+                sessionStorage.removeItem('retornoCheckout');
+            }
+        });
+
+        // Garante renderização correta ao retornar no Safari/Android
+        window.addEventListener('focus', function() {
+            document.body.style.display = 'block';
+            document.body.style.opacity = '1';
+            document.body.style.visibility = 'visible';
+        });
+        
+        function contatoZap() {
+            window.open("https://wa.me/5581999198026?text=Olá!%20Vim%20do%20site%20Não%20mais%20escravos", '_blank');
+        }
+
+        function toggleLegal(id) {
+            const boxes = document.querySelectorAll('.legal-content');
+            const target = document.getElementById(id);
+            const isOpen = target.style.display === 'block';
+            boxes.forEach(box => box.style.display = 'none');
+            if (!isOpen) {
+                target.style.display = 'block';
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
 
         function toggleFaq(btn) {
             const answer = btn.nextElementSibling;

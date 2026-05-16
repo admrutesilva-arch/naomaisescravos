@@ -594,8 +594,22 @@
             width: calc(100% - 20px); 
             box-sizing: border-box;
         }
-        .secao-recomeco::before {
-            content: "✨"; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 40px;
+
+        /* TÍTULO RECOMEÇAR ULTRA PREMIUM */
+        .titulo-recomecar-premium {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.6rem, 5vw, 2.4rem); 
+            margin-bottom: 35px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            text-shadow: none;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0px 0px 10px rgba(212, 175, 55, 0.3));
+            display: block;
         }
 
         /* ESTILO DA FOTO CIRCULAR PREMIUM (FIXO) */
@@ -625,17 +639,6 @@
             border-radius: 50%;
             border: 2px solid var(--dourado-premium);
             opacity: 0.7;
-        }
-        /* Detalhe de Brilho Fixo na Borda */
-        .box-foto-autora::before {
-            content: '✦';
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            color: var(--dourado);
-            font-size: 24px;
-            z-index: 3;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
         /* ESTILO AUTORA PREMIUM */
@@ -828,7 +831,7 @@
             <h3>A Verdade que Ninguém te Contou</h3>
             <div class="texto-impacto">
                 <p>Muitos acreditam na mentira silenciosa de que prosperidade é apenas para os <b>"sortudos"</b> ou que você precisa <b>ganhar na loteria</b> para mudar de vida. Essa é a maior prisão mental que existe.</p>
-                <p>A verdade é que a riqueza não é um lance de dados. Existe um <span class="destaque-positivo">Código Ocultado</span> por gerações, um fundamento que os mais prósperos sempre acessaram, enquanto o restante da população foi ensinado a apenas sobreviver.</p>
+                <p>A verdade é que a riqueza não é um lance de dados. Existe um <span class="destaque-positivo">Código Ocultado</span> por gerações, um fundamento que os mais prósperos sempre acessaram, enquanto o restante da população foi ensinado a apenas sobrevivir.</p>
                 <p>Você não precisa de sorte; você precisa de <span class="destaque-positivo">Acesso.</span> No e-book <b>Não Mais Escravos</b>, eu revelo essa chave poderosa que foi mantida longe dos seus olhos, para que você pare de lutar contra o sistema e comece a dominá-lo.</p>
             </div>
         </div>
@@ -856,7 +859,7 @@
                 <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="mockup-vidal revelar-subir">
                 <div class="badge-premium revelar-subir">E-book Principal</div>
                 <h2 class="titulo-secao revelar-subir">Não Mais Escravos</h2>
-                <p class="descricao-longa revelar-subir">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um success financeiro duradouro.</p>
+                <p class="descricao-longa revelar-subir">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um sucesso financeiro duradouro.</p>
                 <ul class="lista-check">
                     <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
                     <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
@@ -925,7 +928,7 @@
     <div class="container-850" style="background: linear-gradient(to bottom, #061226, #1b3b80); padding-top: 10px;">
         
         <section class="secao-recomeco revelar">
-            <h2 class="titulo-secao" style="font-size: clamp(1.4rem, 5vw, 2rem); margin-bottom:30px;">✨ RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
+            <h2 class="titulo-recomecar-premium">RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
             <div class="texto-impacto" style="font-size: 1.1rem; line-height: 1.8;">
                 <p>Muitas vezes, ficamos presos a padrões antigos, medos e uma mentalidade que nos limita. Mas a verdade é que o próximo capítulo da sua vida exige uma nova versão de você.</p>
                 <p>Se você sente que está trabalhando muito, mas não sai do lugar, o problema pode não estar no que você faz, mas em como você pensa. <span class="destaque-positivo">A prosperidade começa na mente</span> antes de se manifestar na conta bancária ou nos seus relacionamentos.</p>
@@ -970,18 +973,18 @@
             <h2 class="titulo-final-dourado" style="font-size:2em; text-align: center;">Sobre a autora</h2>
             
             <div class="box-foto-autora">
-                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Foto-escritora/main/ChatGPT%20Image%2015%20de%20mai.%20de%202026%2C%2021_36_16.webp" alt="Escritora Rute Alves" class="foto-circular">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Nova-foto-do-perfil-landing-page/main/ChatGPT%20Image%2016%20de%20mai.%20de%202026%2C%2015_26_52.webp" alt="Escritora Rute Alves" class="foto-circular">
             </div>
 
             <div class="secao-autor-premium">
                 <p><strong>Rute Alves</strong> já viveu os ciclos de frustração e limites de uma mente escrava. Mas ao aplicar os princípios revelados neste livro, experimentou <span class="frase-impacto-autor">transformação, prosperidade e paz!</span></p>
                 <p>Hoje, compartilha a mesma chave que mudou sua vida para mudar a de muitas pessoas também.</p>
-                <p>”Neste e-book eu irei abordar primeiramente sobre a mente de escravo, a mente que te faz atrofiar, não te deixa prosperar, te faz pessoalmente pequeno, não se sente motivado, não se acha capaz, no momento difícil se desespera, é travado e anda em círculos.</p>
+                <p>”Neste e-book eu irei abordar primeiramente sobre a mente de escravo, a mente que te faz atrofiar, não te deixa prosperar, te faz pensar pequeno, não se sente motivado, não se acha capaz, no momento difícil se desespera, é travado e anda em círculos.</p>
                 <p>Esses são alguns dos tópicos que irei abordar contigo, para trazer a clareza na tua mente, sobre a mente de escravo que você precisa deixar pra trás hoje!</p>
                 <p>E mais à frente, irei abordar os tópicos de uma mente de “Não mais escravos”, que supera obstáculos, consegue produzir, é motivado, pensa sem fronteiras, e está preparado para vencer!</p>
                 <p>E no meio deste capítulo irei te passar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:900;">te fazer disparar pra outro patamar!</span></p>
                 <p>Deus não nos fez pra viver na miséria, Ele quer nos ver prosperar, por isso, Ele me deu a inspiração pra eu escrever este livro que vai ajudar muitas pessoas.</p>
-                <p>Então se você não aguenta mais a estagnação, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">que não te deixa andar pra frente</span> e só pra trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
+                <p>Então se você não aguenta mais a estagnação, que não te deixa andar pra frente e só pra trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
                 
                 <div style="text-align:center; margin-top:40px;">
                     <button onclick="irParaCheckout()" class="btn">QUERO ACESSAR O CONTEÚDO AGORA</button>
@@ -1067,7 +1070,7 @@
         document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
 
         function irParaCheckout() {
-            const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10";
+            const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10&offMobile=false";
             sessionStorage.setItem('ultimaPosicaoScroll', window.scrollY);
             sessionStorage.setItem('retornoCheckout', 'true');
             window.location.assign(hotmartUrl);

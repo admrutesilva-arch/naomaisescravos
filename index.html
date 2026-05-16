@@ -55,12 +55,34 @@
             overflow-x: hidden;
         }
 
+        /* EFEITOS DE REVELAÇÃO */
         .revelar {
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.9s cubic-bezier(0.17, 0.88, 0.32, 1.15);
         }
         .revelar.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NOVOS EFEITOS ESPECÍFICOS SEÇÃO 3 POR 1 */
+        .revelar-direita {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+        .revelar-direita.ativo {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .revelar-subir {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .revelar-subir.ativo {
             opacity: 1;
             transform: translateY(0);
         }
@@ -576,6 +598,68 @@
             content: "✨"; position: absolute; top: -25px; left: 50%; transform: translateX(-50%); font-size: 40px;
         }
 
+        /* ESTILO DA FOTO CIRCULAR PREMIUM (FIXO) */
+        .box-foto-autora {
+            width: 240px;
+            height: 240px;
+            margin: 0 auto 35px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .foto-circular {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(191, 149, 63, 0.6);
+            z-index: 2;
+        }
+        /* Borda Externa Fixa Dourada Estilizada */
+        .box-foto-autora::after {
+            content: '';
+            position: absolute;
+            top: -12px; left: -12px; right: -12px; bottom: -12px;
+            border-radius: 50%;
+            border: 2px solid var(--dourado-premium);
+            opacity: 0.7;
+        }
+        /* Detalhe de Brilho Fixo na Borda */
+        .box-foto-autora::before {
+            content: '✦';
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            color: var(--dourado);
+            font-size: 24px;
+            z-index: 3;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        /* ESTILO AUTORA PREMIUM */
+        .secao-autor-premium {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 45px;
+            border-radius: 25px;
+            border: 1px solid rgba(191, 149, 63, 0.2);
+            text-align: left;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+        }
+        .frase-impacto-autor {
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            display: block;
+            margin: 15px 0;
+            letter-spacing: 1px;
+        }
+
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 850px) {
             .grid-caminhos { grid-template-columns: 1fr; } 
@@ -591,6 +675,7 @@
             .combo-explosao-wrapper.ativo .lateral-dir { transform: translateX(105px) rotate(10deg); }
             .preco-novo { font-size: 3.5em; }
             .headline-ultra { font-size: 2rem; }
+            .box-foto-autora { width: 190px; height: 190px; }
         }
 
         @media (max-width: 480px) {
@@ -758,7 +843,7 @@
     
     <div class="nova-sessao-bonus">
         <section class="hero-section" style="background: transparent; padding-top: 0;">
-            <div class="container-850 revelar">
+            <div class="container-850 revelar-subir">
                 <div class="badge-hero">🔥 Oferta Exclusiva: 3 por 1</div>
                 <h1 class="headline-ultra">Renove sua mente e<br><span style="color:var(--dourado-premium)">Domine sua Liberdade</span></h1>
                 <p style="font-size: 1.3em; opacity: 0.8; max-width: 750px; margin: 10px auto;">O método definitivo para destravar sua vida financeira e ativar fontes de lucro imediato.</p>
@@ -766,46 +851,46 @@
         </section>
 
         <div class="container-850">
-            <div class="secao-valor revelar">
-                <div class="chamada-principal">Tudo isso será seu agora:</div>
-                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="mockup-vidal">
-                <div class="badge-premium">E-book Principal</div>
-                <h2 class="titulo-secao">Não Mais Escravos</h2>
-                <p class="descricao-longa">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um sucesso financeiro duradouro.</p>
+            <div class="secao-valor">
+                <div class="chamada-principal revelar-subir">Tudo isso será seu agora:</div>
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">E-book Principal</div>
+                <h2 class="titulo-secao revelar-subir">Não Mais Escravos</h2>
+                <p class="descricao-longa revelar-subir">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um success financeiro duradouro.</p>
                 <ul class="lista-check">
-                    <li><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Plano prático para domínio da liberdade</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Plano prático para domínio da liberdade</li>
                 </ul>
             </div>
 
-            <div class="secao-valor revelar">
-                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="mockup-vidal">
-                <div class="badge-premium">Bônus de Ouro 01</div>
-                <h2 class="titulo-secao">Brigadeiro Gourmet</h2>
-                <p class="descricao-longa">Precisa de dinheiro rápido? Este guia prático ensina como transformar poucos reais em um faturamento diário constante. Ideal para quem quer começar um negócio do zero com baixo investimento.</p>
+            <div class="secao-valor">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">Bônus de Ouro 01</div>
+                <h2 class="titulo-secao revelar-subir">Brigadeiro Gourmet</h2>
+                <p class="descricao-longa revelar-subir">Precisa de dinheiro rápido? Este guia prático ensina como transformar poucos reais em um faturamento diário constante. Ideal para quem quer começar um negócio do zero com baixo investimento.</p>
                 <ul class="lista-check">
-                    <li><i class="fa-solid fa-check check-icon"></i> Receitas profissionais e lucrativas</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas para lucro diário</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Ganhos extras de até R$ 3.000 por mês</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Receitas profissionais e lucrativas</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas para lucro diário</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Ganhos extras de até R$ 3.000 por mês</li>
                 </ul>
-                <button class="btn-interativo" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+                <button class="btn-interativo revelar-subir" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
             </div>
 
-            <div class="secao-valor revelar">
-                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="mockup-vidal">
-                <div class="badge-premium">Bônus de Ouro 02</div>
-                <h2 class="titulo-secao">Sucos Detox</h2>
-                <p class="descricao-longa">Entre no mercado de saúde e bem-estar com sucos funcionais de alta margem de lucro. Aprenda a criar sua própria marca e atrair clientes fiéis todos os dias.</p>
+            <div class="secao-valor">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">Bônus de Ouro 02</div>
+                <h2 class="titulo-secao revelar-subir">Sucos Detox</h2>
+                <p class="descricao-longa revelar-subir">Entre no mercado de saúde e bem-estar com sucos funcionais de alta margem de lucro. Aprenda a criar sua própria marca e atrair clientes fiéis todos os dias.</p>
                 <ul class="lista-check">
-                    <li><i class="fa-solid fa-check check-icon"></i> Mix para saúde e emagrecimento</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Método para criar sua marca do zero</li>
-                    <li><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas recorrentes</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Mix para saúde e emagrecimento</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Método para criar sua marca do zero</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas recorrentes</li>
                 </ul>
-                <button class="btn-interativo" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+                <button class="btn-interativo revelar-subir" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
             </div>
 
-            <div class="checkout-box revelar">
+            <div class="checkout-box revelar-subir">
                 <div class="selo-oval-premium">LEVE 3 PELO PREÇO DE 1</div>
                 <div style="margin: 20px 0;">
                     <span class="preco-antigo">De R$ 72,80</span>
@@ -814,23 +899,23 @@
                     <p style="color: var(--dourado-premium); font-weight: 800; margin-top: 5px;">OU 4X DE R$ 8,98*</p>
                 </div>
 
-                <div class="combo-explosao-wrapper revelar">
+                <div class="combo-explosao-wrapper">
                     <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="img-explosao lateral-esq">
                     <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="img-explosao lateral-dir">
                     <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="img-explosao principal-centro">
                 </div>
 
-                <div class="frase-lanche revelar">
+                <div class="frase-lanche">
                     <p style="margin:0;">"Não perca esta oportunidade! O valor de um lanche que você gasta em minutos pode mudar a história da sua família. <span class="destaque-chance">Essa é sua chance!"</span></p>
                 </div>
 
-                <div class="box-timer revelar">
+                <div class="box-timer">
                     <span style="font-size: 0.7em; color: var(--dourado-premium); display: block; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Oferta por tempo limitado:</span>
                     <span id="countdown">00:29:59</span>
                 </div>
                 <br>
                 <button onclick="irParaCheckout()" class="btn-cta-pro">Garantir meu combo agora!</button>
-                <div class="ajuste-seguranca revelar">
+                <div class="ajuste-seguranca">
                     <i class="fa-solid fa-lock" style="color:var(--verde-conversao)"></i> PAGAMENTO SEGURO | ENTREGA IMEDIATA
                 </div>
             </div>
@@ -881,20 +966,26 @@
             </div>
         </section>
 
-        <section id="autor">
-            <h2 class="titulo-final-dourado" style="font-size:2em;">Sobre a autora</h2>
-            <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 35px; border-radius: 15px;">
-                <p><strong>Rute Alves</strong> já viveu os ciclos de frustração e limites de uma mente escrava. Mas ao aplicar os princípios revelados neste livro, experimentou <span class="texto-dourado-inline">transformação, prosperidade e paz!</span></p>
+        <section id="autor" class="container-850">
+            <h2 class="titulo-final-dourado" style="font-size:2em; text-align: center;">Sobre a autora</h2>
+            
+            <div class="box-foto-autora">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Foto-escritora/main/ChatGPT%20Image%2015%20de%20mai.%20de%202026%2C%2021_36_16.webp" alt="Escritora Rute Alves" class="foto-circular">
+            </div>
+
+            <div class="secao-autor-premium">
+                <p><strong>Rute Alves</strong> já viveu os ciclos de frustração e limites de uma mente escrava. Mas ao aplicar os princípios revelados neste livro, experimentou <span class="frase-impacto-autor">transformação, prosperidade e paz!</span></p>
                 <p>Hoje, compartilha a mesma chave que mudou sua vida para mudar a de muitas pessoas também.</p>
                 <p>”Neste e-book eu irei abordar primeiramente sobre a mente de escravo, a mente que te faz atrofiar, não te deixa prosperar, te faz pessoalmente pequeno, não se sente motivado, não se acha capaz, no momento difícil se desespera, é travado e anda em círculos.</p>
                 <p>Esses são alguns dos tópicos que irei abordar contigo, para trazer a clareza na tua mente, sobre a mente de escravo que você precisa deixar pra trás hoje!</p>
                 <p>E mais à frente, irei abordar os tópicos de uma mente de “Não mais escravos”, que supera obstáculos, consegue produzir, é motivado, pensa sem fronteiras, e está preparado para vencer!</p>
-                <p>E no meio deste capítulo irei te passar uma <span class="titulo-final-dourado" style="font-size:1.2rem; display:inline; margin:0;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:bold;">te fazer disparar pra outro patamar!</span></p>
+                <p>E no meio deste capítulo irei te passar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:900;">te fazer disparar pra outro patamar!</span></p>
                 <p>Deus não nos fez pra viver na miséria, Ele quer nos ver prosperar, por isso, Ele me deu a inspiração pra eu escrever este livro que vai ajudar muitas pessoas.</p>
-                <p>Então se você não aguenta mais a estagnação, que não anda pra frente e só pra trás, <span class="titulo-final-dourado" style="font-size:1.2rem; display:inline; margin:0;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
-                <div style="text-align:center; margin-top:30px;">
+                <p>Então se você não aguenta mais a estagnação, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">que não te deixa andar pra frente</span> e só pra trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
+                
+                <div style="text-align:center; margin-top:40px;">
                     <button onclick="irParaCheckout()" class="btn">QUERO ACESSAR O CONTEÚDO AGORA</button>
-                    <p style="color:var(--dourado); font-weight: bold; font-style: italic; margin-top: 15px; font-size: 1.1em;">
+                    <p style="color:var(--dourado-premium); font-weight: 800; font-style: italic; margin-top: 20px; font-size: 1.1em;">
                         "A sua família não precisa carregar o peso da escassez por mais uma geração. A mudança começa em você hoje."
                     </p>
                 </div>
@@ -930,7 +1021,6 @@
             
             <div class="contato-box">
                 <button onclick="contatoZap()" class="btn-zap-custom">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="zap-jump" alt="WhatsApp">
                     +55 (81) 99919-8026
                 </button>
                 <p style="margin-top: 15px; font-weight: bold; color: #00ff66;">E-mail: adm.rute.silva@gmail.com</p>
@@ -974,45 +1064,32 @@
             });
         }, obsOptions);
 
-        document.querySelectorAll('.revelar, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
+        document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
 
         function irParaCheckout() {
-            // Mantém checkout em versão mobile e preserva retorno da página sem tela branca
-            const hotmartUrl = "https://pay.hotmart.com/D101775305B?off=v33&uam=true&checkoutMode=10";
-
-            // Salva posição atual da página antes de ir para checkout
+            const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10";
             sessionStorage.setItem('ultimaPosicaoScroll', window.scrollY);
             sessionStorage.setItem('retornoCheckout', 'true');
-
-            // Redirecionamento otimizado para mobile
             window.location.assign(hotmartUrl);
         }
 
-        // Corrige tela branca ao voltar do checkout no mobile
         window.addEventListener('pageshow', function(event) {
             const voltouCheckout = sessionStorage.getItem('retornoCheckout');
-
             if (event.persisted || voltouCheckout === 'true') {
                 document.body.style.display = 'block';
                 document.body.style.opacity = '1';
                 document.body.style.visibility = 'visible';
-
-                // Restaura posição da página
                 const posicao = sessionStorage.getItem('ultimaPosicaoScroll');
                 if (posicao) {
                     setTimeout(() => {
                         window.scrollTo(0, parseInt(posicao));
                     }, 100);
                 }
-
-                // Força repaint da página para evitar branco no mobile
                 document.body.offsetHeight;
-
                 sessionStorage.removeItem('retornoCheckout');
             }
         });
 
-        // Garante renderização correta ao retornar no Safari/Android
         window.addEventListener('focus', function() {
             document.body.style.display = 'block';
             document.body.style.opacity = '1';
@@ -1020,7 +1097,7 @@
         });
         
         function contatoZap() {
-            window.open("https://wa.me/5581999198026?text=Olá!%20Vim%20do%20site%20Não%20mais%20escravos", '_blank');
+            window.open("https://wa.me/5581999198026?text=Olá!%20Vim%20pelo%20Site%20do%20e-book%20Não%20mais%20escravos,%20gostaria%20de%20mais%20informações.%20Poderia%20me%20ajudar?", '_blank');
         }
 
         function toggleLegal(id) {

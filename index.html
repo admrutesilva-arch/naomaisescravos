@@ -55,7 +55,7 @@
             overflow-x: hidden;
         }
 
-        /* EFEITOS DE REVELAÇÃO */
+        /* EFEITOS DE REVELAÇÃO PADRÃO */
         .revelar {
             opacity: 0;
             transform: translateY(40px);
@@ -66,11 +66,12 @@
             transform: translateY(0);
         }
 
-        /* NOVOS EFEITOS ESPECÍFICOS SEÇÃO 3 POR 1 */
+        /* SISTEMA DE SLIDE LENTO E HARMONIOSO PARA A SEÇÃO 3 POR 1 */
         .revelar-direita {
             opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease-out;
+            transform: translateX(40px);
+            transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: transform, opacity;
         }
         .revelar-direita.ativo {
             opacity: 1;
@@ -79,10 +80,23 @@
 
         .revelar-subir {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(40px);
+            transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: transform, opacity;
         }
         .revelar-subir.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* EFEITO DE SUBIDA RÁPIDA E IMEDIATA SEM ESPAÇO VAZIO */
+        .revelar-subir-rapido {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-subir-rapido.ativo {
             opacity: 1;
             transform: translateY(0);
         }
@@ -324,7 +338,7 @@
 
         .descricao-longa { font-size: 1.15em; line-height: 1.6; opacity: 0.95; margin-bottom: 20px; color: #e0e0e0; max-width: 850px; text-align: center; margin-left: auto; margin-right: auto;}
 
-        .lista-check { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 580px; margin: 0 auto 20px; }
+        .grid-caminhos, .lista-check { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 580px; margin: 0 auto 20px; }
         .lista-check li {
             font-size: 1.1em; text-align: left; display: flex; align-items: center;
             background: rgba(23, 42, 69, 0.7); padding: 18px 25px; border-radius: 12px;
@@ -391,6 +405,12 @@
             padding-left: 5px;
         }
 
+        /* ANIMAÇÃO INDIVIDUAL PREMIUM DO ZOOM PULSAR PARA A FRASE CHANCE */
+        .animacao-chance-pulsar {
+            display: inline-block;
+            animation: zoomPulsar 2s infinite ease-in-out;
+        }
+
         .box-timer { 
             margin: 30px auto; 
             padding: 15px 25px; 
@@ -413,30 +433,20 @@
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
         .card { background: var(--card-bg); padding: 25px; border-radius: 15px; border: 2px solid var(--dourado-premium); }
-        .faq-item { background: var(--fundo-caixa-azul); margin-bottom: 12px; border-radius: 10px; overflow: hidden; text-align: left; border: 1px solid var(--dourado-premium); }
+        
+        /* ESTILO DO FAQ E AGORA TAMBÉM DO FALE CONOSCO */
+        .faq-item, .fale-conosco-box { background: var(--fundo-caixa-azul); margin-bottom: 12px; border-radius: 10px; overflow: hidden; text-align: left; border: 1px solid var(--dourado-premium); }
         .faq-question { width: 100%; background: var(--fundo-caixa-azul); color: #fff; padding: 20px; border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; outline: none; }
         .faq-answer { display: none; padding: 20px; color: #fffacd; background: rgba(0,0,0,0.2); }
         
         @keyframes zoomPulsar { 
             0%, 100% { transform: scale(1); filter: brightness(1); } 
-            50% { transform: scale(1.05); filter: brightness(1.2); } 
+            50% { transform: scale(1.04); filter: brightness(1.2); } 
         }
 
         .zap-jump { width: 35px; height: 35px; vertical-align: middle; animation: jump 0.8s infinite alternate; }
         @keyframes jump { 0% { transform: translateY(0); } 100% { transform: translateY(-12px); } }
         .chamada-extra { color: var(--dourado); font-size: 1em; font-weight: 600; margin-top: 15px; display: block; }
-        
-        .btn-zap-custom { 
-            background: linear-gradient(135deg, #25d366, #128c7e); 
-            color: white; border: 1px solid rgba(255,255,255,0.2); 
-            padding: 20px 30px; border-radius: 50px; 
-            font-weight: 900; font-size: 1.3em; cursor: pointer; 
-            width: 100%; max-width: 440px; display: flex; 
-            align-items: center; justify-content: center; gap: 12px; 
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); margin: 0 auto; 
-            transition: 0.3s;
-        }
-        .btn-zap-custom:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6); }
 
         .secao-premium-mentalidade {
             background: linear-gradient(180deg, #1b3b80 0%, #1b3b80 15%, #061226 100%);
@@ -465,31 +475,49 @@
         .card-premium-dor b { color: #FCF6BA; display: block; margin-bottom: 10px; text-transform: uppercase; font-size: 0.95rem; }
         .card-premium-dor p { margin: 0; font-size: 1.05rem; line-height: 1.4; color: #ffffff; }
 
-        .contraste-destinos { max-width: 850px; margin: 0 auto 60px; display: flex; flex-direction: column; gap: 20px; }
-        .card-destino-lux { display: flex; align-items: center; padding: 35px 25px; border-radius: 20px; text-align: left; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;}
-        
-        .card-destino-lux.negativo { 
-            background: linear-gradient(90deg, rgba(255, 77, 77, 0.15) 0%, transparent 100%); 
-            border-left: 5px solid #ff4d4d; 
+        /* NOVA ESTRUTURA REFINADA - CAIXAS INDIVIDUAIS COM RELEVU AZUL E CONTORNO DOURADO SUTIL */
+        .contraste-destinos { 
+            position: relative; 
+            z-index: 2; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 25px; 
+            max-width: 850px;
+            margin: 40px auto 60px;
         }
-        
-        .card-destino-lux.positivo { 
-            background: linear-gradient(90deg, rgba(0, 255, 102, 0.15) 0%, transparent 100%); 
-            border-left: 5px solid #00ff66; 
+        .card-destino-lux { 
+            display: flex; 
+            align-items: center; 
+            padding: 28px 25px; 
+            border-radius: 15px; 
+            text-align: left; 
+            position: relative; 
+            overflow: hidden; 
+            background: var(--fundo-caixa-azul); 
+            border: 1px solid rgba(191, 149, 63, 0.3); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease; 
         }
-
+        .card-destino-lux:hover { transform: translateY(-3px); }
+        .card-destino-lux.negativo { border-left: 5px solid #ff4d4d; background: linear-gradient(90deg, rgba(255, 77, 77, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
+        .card-destino-lux.positivo { border-left: 5px solid var(--verde-neon); background: linear-gradient(90deg, rgba(0, 255, 102, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
+        
+        /* Efeito Shimmer de Luz discreto no cenário liberto */
         .card-destino-lux.positivo::after {
             content: '';
             position: absolute;
-            top: -50%; left: -100%; width: 50%; height: 200%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: skewX(-20deg);
-            animation: shimmerBloco 2s infinite ease-in-out;
+            top: -50%; left: -100%; width: 45%; height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            transform: skewX(-25deg);
+            animation: reflexoDouradoLP 4.5s infinite ease-in-out;
         }
-        @keyframes shimmerBloco { 0% { left: -100%; } 40% { left: 150%; } 100% { left: 150%; } }
-
-        .card-destino-lux .icon { font-size: 2.2rem; margin-right: 20px; flex-shrink: 0; }
-        .card-destino-lux h4 { margin: 0 0 5px; font-size: 1.5rem; text-transform: uppercase; }
+        @keyframes reflexoDouradoLP { 0% { left: -100%; } 30% { left: 160%; } 100% { left: 160%; } }
+        
+        .card-destino-lux .icon-container { font-size: 1.8rem; margin-right: 25px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; }
+        .card-destino-lux.negativo .icon-container { color: #ff4d4d; border: 1px solid rgba(255, 77, 77, 0.2); background: rgba(255, 77, 77, 0.05); }
+        .card-destino-lux.positivo .icon-container { color: var(--verde-neon); border: 1px solid rgba(0, 255, 102, 0.2); background: rgba(0, 255, 102, 0.05); }
+        .card-destino-lux h4 { margin: 0 0 6px; font-family: 'Montserrat', sans-serif; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff; }
+        .card-destino-lux p { margin: 0; font-size: 1.05rem; line-height: 1.55; color: var(--texto-claro); }
 
         .secao-confronto { max-width: 850px; margin: 0 auto 50px; padding: 50px 25px; background: rgba(0, 0, 0, 0.3); border-radius: 25px; border: 1px solid rgba(191, 149, 63, 0.2); }
         .secao-confronto h3 { font-size: 1.6rem; color: #FCF6BA; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
@@ -545,7 +573,7 @@
             display: inline;
         }
 
-        /* --- NOVAS SEÇÕES ADICIONADAS --- */
+        /* --- SEÇÕES DE POSICIONAMENTO --- */
         .secao-posicionamento {
             padding: 80px 20px;
             background: rgba(0, 0, 0, 0.4);
@@ -566,21 +594,32 @@
             width: 100%;
         }
 
+        /* ESTILIZAÇÃO ULTRA-PREMIUM DOS CAMINHOS DE POSICIONAMENTO */
         .box-caminho {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 25px;
+            background: linear-gradient(135deg, rgba(6, 26, 63, 0.8) 0%, rgba(6, 18, 38, 0.95) 100%);
+            padding: 40px 35px;
+            border-radius: 20px;
             text-align: left;
-            border-top: 5px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
             width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
-        .box-caminho:hover { transform: translateY(-10px); }
-        .box-caminho.errado { border-color: #ff4d4d; background: linear-gradient(180deg, rgba(255, 77, 77, 0.05) 0%, rgba(0,0,0,0.2) 100%); }
-        .box-caminho.certo { border-color: var(--verde-neon); background: linear-gradient(180deg, rgba(0, 255, 102, 0.05) 0%, rgba(0,0,0,0.2) 100%); box-shadow: 0 15px 35px rgba(0, 255, 102, 0.1); }
-        .box-caminho h4 { margin-top: 0; font-size: 1.35rem; text-transform: uppercase; font-family: 'Montserrat'; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+        .box-caminho:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); }
+        .box-caminho::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+        }
+        .box-caminho.errado::before { background: #ff4d4d; }
+        .box-caminho.errado { border-top: 1px solid rgba(255, 77, 77, 0.3); box-shadow: inset 0 0 20px rgba(255, 77, 77, 0.02); }
+        .box-caminho.certo::before { background: var(--verde-neon); }
+        .box-caminho.certo { border-top: 1px solid rgba(0, 255, 102, 0.3); box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.02), 0 15px 35px rgba(0, 255, 102, 0.05); }
+        
+        .box-caminho h4 { margin-top: 0; font-size: 1.4rem; text-transform: uppercase; font-family: 'Montserrat'; font-weight: 800; display: flex; align-items: center; gap: 12px; letter-spacing: 0.5px; }
+        .box-caminho p { margin: 0; font-size: 1.1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); font-family: 'Inter', sans-serif; }
 
         .secao-recomeco {
             background: linear-gradient(135deg, rgba(11, 44, 107, 0.8), rgba(6, 18, 38, 1));
@@ -595,7 +634,7 @@
             box-sizing: border-box;
         }
 
-        /* TÍTULO RECOMEÇAR ULTRA PREMIUM */
+        /* TÍTULO RECOMEÇAR REESTILIZADO */
         .titulo-recomecar-premium {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
@@ -603,13 +642,12 @@
             margin-bottom: 35px; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            background: var(--dourado-metalico);
+            background: var(--dourado-branco); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-            text-shadow: none;
-            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0px 0px 10px rgba(212, 175, 55, 0.3));
+            line-height: 1.25;
             display: block;
+            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 15px rgba(255, 242, 0, 0.2));
         }
 
         /* ESTILO DA FOTO CIRCULAR PREMIUM (FIXO) */
@@ -631,7 +669,6 @@
             box-shadow: 0 0 25px rgba(191, 149, 63, 0.6);
             z-index: 2;
         }
-        /* Borda Externa Fixa Dourada Estilizada */
         .box-foto-autora::after {
             content: '';
             position: absolute;
@@ -641,15 +678,18 @@
             opacity: 0.7;
         }
 
-        /* ESTILO AUTORA PREMIUM */
+        /* SEÇÃO AUTORA - AMPLIADA E DESIGN CORRIGIDO */
         .secao-autor-premium {
             background: rgba(255, 255, 255, 0.03);
-            padding: 45px;
+            padding: 45px 50px;
             border-radius: 25px;
             border: 1px solid rgba(191, 149, 63, 0.2);
             text-align: left;
             position: relative;
             box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+            max-width: 1000px; 
+            margin: 0 auto;
+            width: 100%;
         }
         .frase-impacto-autor {
             background: var(--dourado-metalico);
@@ -667,8 +707,9 @@
         @media (max-width: 850px) {
             .grid-caminhos { grid-template-columns: 1fr; } 
             .secao-recomeco { padding: 40px 20px; margin: 40px auto; width: 95%; }
-            .box-caminho { padding: 25px; width: 100%; }
+            .box-caminho { padding: 30px 20px; width: 100%; }
             .secao-posicionamento { padding: 40px 15px; border-radius: 20px; }
+            .secao-autor-premium { padding: 35px 20px; }
         }
 
         @media (max-width: 600px) {
@@ -685,14 +726,14 @@
             .card-destino-lux { flex-direction: column; text-align: center; }
             .card-destino-lux .icon { margin-right: 0; margin-bottom: 10px; }
             .btn, .btn-cta-pro { padding: 15px 25px; font-size: 1rem; }
-            .box-caminho h4 { font-size: 1.15rem; }
+            .box-caminho h4 { font-size: 1.2rem; }
         }
         
-        /* FOOTER STYLES */
+        /* FOOTER PREMIUM CORRIGIDO */
         .footer-premium { 
-            padding: 60px 20px; 
+            padding: 30px 20px 20px; 
             background: #061226;
-            background: linear-gradient(180deg, #1b3b80 0%, #061226 100%);
+            background: linear-gradient(180deg, rgba(27, 59, 128, 0.3) 0%, #061226 100%);
             color: #ffffff;
             text-align: center;
             display: flex;
@@ -700,9 +741,92 @@
             align-items: center;
             width: 100%;
             overflow-x: hidden;
+            border-top: 1px solid rgba(255, 215, 0, 0.08);
         }
+        
+        /* CONTATO BOX */
+        .contato-box {
+            background-color: var(--fundo-caixa-azul);
+            border: 1px solid var(--dourado-premium);
+            padding: 40px 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            margin: 0 auto 20px;
+        }
+        
+        /* NOME FALE CONOSCO */
+        .subtitulo-fale-conosco {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.15rem; 
+            letter-spacing: 3px; 
+            text-transform: uppercase;
+            background: var(--ouro-branco-suave);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 10px 0;
+            display: block;
+        }
+
+        /* LINHA SEPARADORA ESTILIZADA (FIO METÁLICO) */
+        .linha-separadora-fale {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+            margin: 15px auto;
+            width: 80%;
+            display: block;
+        }
+
+        /* TEXTO FICOU COM ALGUMA DÚVIDA EM BRANCO PURO */
+        .titulo-duvida-footer {
+            color: #ffffff; 
+            margin-top: 5px; 
+            margin-bottom: 30px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 800;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* BOTÃO DO WHATSAPP REAJUSTADO */
+        .btn-zap-custom { 
+            background: linear-gradient(135deg, #25d366, #128c7e); 
+            color: #ffffff; 
+            border: 1px solid rgba(255,255,255,0.2); 
+            padding: 18px 45px; 
+            border-radius: 50px; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900; 
+            font-size: 1.15rem; 
+            cursor: pointer; 
+            width: 100%; 
+            max-width: 650px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); 
+            margin: 0 auto; 
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: zapPulseSutil 2s infinite ease-in-out;
+            line-height: 1.3; 
+        }
+        .btn-zap-custom:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6); }
+
+        @keyframes zapPulseSutil {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* LINKS DOS MODAIS E TEXTOS - AJUSTADOS PARA MÁXIMA NITIDEZ */
         .links-container {
-            margin: 30px 0 10px;
+            margin: 15px 0 5px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -711,24 +835,28 @@
         .link-footer {
             background: none; 
             border: none; 
-            color: #ffffff; 
+            color: rgba(255, 255, 255, 0.75); 
             cursor: pointer; 
             text-decoration: underline;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: 600;
             padding: 5px;
+            transition: color 0.3s;
         }
+        .link-footer:hover { color: #ffffff; }
+        
         .legal-content { 
             display: none; 
-            background: rgba(0,0,0,0.5);
+            background: rgba(6, 18, 38, 0.98);
             padding: 30px; 
-            margin: 20px auto; 
+            margin: 15px auto; 
             border-radius: 15px; 
             text-align: left; 
             width: 95%;
             max-width: 600px;
-            border: 2px solid #FFD700;
+            border: 1px solid var(--dourado-premium);
             color: #ffffff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
         }
         .btn-fechar-legal { 
             background: #ff4444; 
@@ -741,9 +869,11 @@
             font-weight: bold;
         }
         .copyright {
-            opacity: 0.7; 
-            font-size: 0.85em; 
-            margin-top: 40px;
+            opacity: 0.75; 
+            font-size: 0.8em; 
+            margin-top: 20px;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -771,7 +901,7 @@
     <div class="container-850">
         <button onclick="irParaCheckout()" class="btn">QUERO ROMPER AS CORRENTES AGORA</button>
         <div style="display:flex; justify-content:center; gap:20px; margin:15px 0; font-size:0.8em; color:#ccc;">
-            <span>🔒 Site Protegido SSL</span> | <span>🛡️ Compra 100% Segura</span>
+            <span>🔒 Site protegido com SSL</span> | <span>🛡️ Compra 100% Segura</span>
         </div>
     </div>
 
@@ -787,24 +917,29 @@
             <div class="card-premium-dor"><b>Frustração</b><p>Já tentou várias formas de prosperar e nada funcionou. O deserto emocional de ver o tempo passar sem colher frutos trava seu destino.</p></div>
             <div class="card-premium-dor"><b>Escassez</b><p>O dinheiro some da sua mão tão rápido quanto entra. Você vive sob a sombra da instabilidade e do medo do amanhã.</p></div>
         </div>
+        
         <div class="contraste-destinos">
             <div class="card-destino-lux negativo">
-                <span class="icon">✕</span>
+                <div class="icon-container">
+                    <i class="fa-solid fa-link"></i>
+                </div>
                 <div>
-                    <h4 style="color: #ff4d4d; text-transform: lowercase;">se você decidir ignorar...</h4>
-                    <p style="margin:0; opacity: 0.9;">Você continuará escravo de ciclos financeiros e aceitará viver abaixo do seu potencial por mais alguns anos.</p>
+                    <h4 style="color: #ff4d4d;">Se você decidir ignorar essa chave...</h4>
+                    <p>Você continuará preso aos mesmos limites e ciclos financeiros antigos, aceitando carregar o peso invisível da escassez por mais alguns anos.</p>
                 </div>
             </div>
             <div class="card-destino-lux positivo">
-                <span class="icon">✓</span>
+                <div class="icon-container">
+                    <i class="fa-solid fa-key"></i>
+                </div>
                 <div>
-                    <h4 style="color: #00ff66;">Se você decidir agir agora...</h4>
-                    <p style="margin:0; font-weight: 600;">Você destravará a prosperidade real e construirá um legado de abundância para sua família.</p>
+                    <h4 style="color: var(--verde-neon);">Se você decidir agir agora...</h4>
+                    <p style="font-weight: 600;">Você romperá definitivamente essas amarras ocultas, ativará a mentalidade de abundância e construirá o verdadeiro legado que sua família merece.</p>
                 </div>
             </div>
         </div>
 
-        <div class="secao-posicionamento revelar container-850">
+        <div class="secao-posicionamento container-850">
             <h2 class="titulo-secao" style="font-size: 1.8rem;">🚀 PARE DE SER ESCRAVO DO SEU PRÓPRIO NEGÓCIO!</h2>
             <p class="descricao-longa">Trabalhar muito não é garantia de lucro. O que diferencia quem sobrevive de quem prospera não é o esforço, é o <b>posicionamento estratégico.</b></p>
             
@@ -831,7 +966,7 @@
             <h3>A Verdade que Ninguém te Contou</h3>
             <div class="texto-impacto">
                 <p>Muitos acreditam na mentira silenciosa de que prosperidade é apenas para os <b>"sortudos"</b> ou que você precisa <b>ganhar na loteria</b> para mudar de vida. Essa é a maior prisão mental que existe.</p>
-                <p>A verdade é que a riqueza não é um lance de dados. Existe um <span class="destaque-positivo">Código Ocultado</span> por gerações, um fundamento que os mais prósperos sempre acessaram, enquanto o restante da população foi ensinado a apenas sobrevivir.</p>
+                <p>A verdade é que a riqueza não é um lance de dados. Existe um <span class="destaque-positivo">Código Ocultado</span> por gerações, um fundamento que os mais prósperos sempre acessaram, enquanto o restante da população foi ensinado a apenas sobreviver.</p>
                 <p>Você não precisa de sorte; você precisa de <span class="destaque-positivo">Acesso.</span> No e-book <b>Não Mais Escravos</b>, eu revelo essa chave poderosa que foi mantida longe dos seus olhos, para que você pare de lutar contra o sistema e comece a dominá-lo.</p>
             </div>
         </div>
@@ -847,7 +982,7 @@
     <div class="nova-sessao-bonus">
         <section class="hero-section" style="background: transparent; padding-top: 0;">
             <div class="container-850 revelar-subir">
-                <div class="badge-hero">🔥 Oferta Exclusiva: 3 por 1</div>
+                <div class="badge-hero">🔥 Oferta Exclusiva: 3 em 1</div>
                 <h1 class="headline-ultra">Renove sua mente e<br><span style="color:var(--dourado-premium)">Domine sua Liberdade</span></h1>
                 <p style="font-size: 1.3em; opacity: 0.8; max-width: 750px; margin: 10px auto;">O método definitivo para destravar sua vida financeira e ativar fontes de lucro imediato.</p>
             </div>
@@ -909,7 +1044,7 @@
                 </div>
 
                 <div class="frase-lanche">
-                    <p style="margin:0;">"Não perca esta oportunidade! O valor de um lanche que você gasta em minutos pode mudar a história da sua família. <span class="destaque-chance">Essa é sua chance!"</span></p>
+                    <p style="margin:0;">"Não perca esta oportunidade! O valor de um lanche que você gasta em minutos pode mudar a história da sua família. <span class="destaque-chance animacao-chance-pulsar">Essa é sua chance!"</span></p>
                 </div>
 
                 <div class="box-timer">
@@ -927,7 +1062,7 @@
 
     <div class="container-850" style="background: linear-gradient(to bottom, #061226, #1b3b80); padding-top: 10px;">
         
-        <section class="secao-recomeco revelar">
+        <section class="secao-recomeco revelar-subir-rapido">
             <h2 class="titulo-recomecar-premium">RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
             <div class="texto-impacto" style="font-size: 1.1rem; line-height: 1.8;">
                 <p>Muitas vezes, ficamos presos a padrões antigos, medos e uma mentalidade que nos limita. Mas a verdade é que o próximo capítulo da sua vida exige uma nova versão de você.</p>
@@ -969,7 +1104,7 @@
             </div>
         </section>
 
-        <section id="autor" class="container-850">
+        <section id="autor" style="max-width: 100%; width: 100%;">
             <h2 class="titulo-final-dourado" style="font-size:2em; text-align: center;">Sobre a autora</h2>
             
             <div class="box-foto-autora">
@@ -980,15 +1115,15 @@
                 <p><strong>Rute Alves</strong> já viveu os ciclos de frustração e limites de uma mente escrava. Mas ao aplicar os princípios revelados neste livro, experimentou <span class="frase-impacto-autor">transformação, prosperidade e paz!</span></p>
                 <p>Hoje, compartilha a mesma chave que mudou sua vida para mudar a de muitas pessoas também.</p>
                 <p>”Neste e-book eu irei abordar primeiramente sobre a mente de escravo, a mente que te faz atrofiar, não te deixa prosperar, te faz pensar pequeno, não se sente motivado, não se acha capaz, no momento difícil se desespera, é travado e anda em círculos.</p>
-                <p>Esses são alguns dos tópicos que irei abordar contigo, para trazer a clareza na tua mente, sobre a mente de escravo que você precisa deixar pra trás hoje!</p>
+                <p>Esses são alguns dos tópicos que irei abordar contigo, para trazer a clareza na tua mente, sobre a mente de escravo que você precisa deixar para trás hoje!</p>
                 <p>E mais à frente, irei abordar os tópicos de uma mente de “Não mais escravos”, que supera obstáculos, consegue produzir, é motivado, pensa sem fronteiras, e está preparado para vencer!</p>
-                <p>E no meio deste capítulo irei te passar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:900;">te fazer disparar pra outro patamar!</span></p>
-                <p>Deus não nos fez pra viver na miséria, Ele quer nos ver prosperar, por isso, Ele me deu a inspiração pra eu escrever este livro que vai ajudar muitas pessoas.</p>
-                <p>Então se você não aguenta mais a estagnação, que não te deixa andar pra frente e só pra trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
+                <p>E no meio deste capítulo irei te passar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar a tua mente</span> e vai <span style="color:#ffffff; font-weight:900;">te fazer disparar para outro patamar!</span></p>
+                <p>Deus não nos fez para viver na miséria, Ele quer nos ver prosperar, por isso, Ele me deu a inspiração para eu escrever este livro que vai ajudar muitas pessoas.</p>
+                <p>Então se você não aguenta mais a estagnação, que não te deixa andar pra frente e só para trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não deixe mais a paralisação te dominar, tenha controle da sua vida, para dar saltos de prosperidade e paz!”</span></p>
                 
                 <div style="text-align:center; margin-top:40px;">
                     <button onclick="irParaCheckout()" class="btn">QUERO ACESSAR O CONTEÚDO AGORA</button>
-                    <p style="color:var(--dourado-premium); font-weight: 800; font-style: italic; margin-top: 20px; font-size: 1.1em;">
+                    <p style="color: #fffef0; background: var(--ouro-branco-suave); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-style: italic; margin-top: 20px; font-size: 1.15em; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));">
                         "A sua família não precisa carregar o peso da escassez por mais uma geração. A mudança começa em você hoje."
                     </p>
                 </div>
@@ -1020,20 +1155,25 @@
         </section>
 
         <footer class="footer-premium">
-            <h2 style="color:#00c853;">Ficou com alguma dúvida?</h2>
-            
             <div class="contato-box">
+                <span class="subtitulo-fale-conosco">Fale conosco</span>
+                
+                <hr class="linha-separadora-fale">
+                
+                <h2 class="titulo-duvida-footer">Ficou com alguma dúvida?</h2>
+                
                 <button onclick="contatoZap()" class="btn-zap-custom">
-                    +55 (81) 99919-8026
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.45em;"></i> CHAMAR NO WHATSAPP AGORA
                 </button>
-                <p style="margin-top: 15px; font-weight: bold; color: #00ff66;">E-mail: adm.rute.silva@gmail.com</p>
+                
+                <p style="margin-top: 25px; font-weight: bold; color: #00ff66; font-size: 1rem; letter-spacing: 0.5px;">E-mail: adm.rute.silva@gmail.com</p>
             </div>
 
             <div class="links-container">
                 <button onclick="toggleLegal('privacidade')" class="link-footer">Política de Privacidade</button>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
+                <span style="color: rgba(255,255,255,0.4)">|</span>
                 <button onclick="toggleLegal('uso')" class="link-footer">Política de Uso</button>
-                <span style="color: rgba(255,255,255,0.3)">|</span>
+                <span style="color: rgba(255,255,255,0.4)">|</span>
                 <button onclick="toggleLegal('direitos')" class="link-footer">Direitos Autorais</button>
             </div>
 
@@ -1060,14 +1200,18 @@
     </div>
 
     <script>
-        const obsOptions = { threshold: 0.05 };
+        const obsOptions = { 
+            threshold: 0.15, 
+            rootMargin: "0px 0px -80px 0px" 
+        };
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) { entry.target.classList.add('ativo'); }
             });
         }, obsOptions);
 
-        document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
+        document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .revelar-subir-rapido, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
 
         function irParaCheckout() {
             const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10&offMobile=false";

@@ -188,17 +188,49 @@
         h1::before {
             content: "";
             position: absolute;
-            top: 0; left: -150%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            top: 0;
+            left: -220%;
+            width: 85%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255,255,255,0.00) 15%,
+                rgba(255,255,255,0.28) 35%,
+                rgba(255,255,255,0.92) 50%,
+                rgba(255,255,255,0.28) 65%,
+                rgba(255,255,255,0.00) 85%,
+                transparent 100%
+            );
             transform: skewX(-20deg);
-            animation: flashBaseSuave 3s infinite ease-in-out;
+            animation: flashBaseSuave 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            filter: blur(0.2px) brightness(1.15);
             pointer-events: none;
         }
 
         @keyframes flashBaseSuave {
-            0% { left: -150%; }
-            30% { left: 150%; }
-            100% { left: 150%; }
+            0% {
+                left: -240%;
+                opacity: 0;
+            }
+
+            4% {
+                opacity: 0.25;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            22% {
+                left: 170%;
+                opacity: 0.5;
+            }
+
+            100% {
+                left: 160%;
+                opacity: 0;
+            }
         }
 
         .container-vsl-central {
@@ -435,9 +467,17 @@
         .card { background: var(--card-bg); padding: 25px; border-radius: 15px; border: 2px solid var(--dourado-premium); }
         
         /* ESTILO DO FAQ E AGORA TAMBÉM DO FALE CONOSCO */
-        .faq-item, .fale-conosco-box { background: var(--fundo-caixa-azul); margin-bottom: 12px; border-radius: 10px; overflow: hidden; text-align: left; border: 1px solid var(--dourado-premium); }
+        .faq-item, .fale-conosco-box { 
+            background: var(--fundo-caixa-azul); 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            text-align: left; 
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 12px rgba(212,175,55,0.18);
+        }
         .faq-question { width: 100%; background: var(--fundo-caixa-azul); color: #fff; padding: 20px; border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; outline: none; }
-        .faq-answer { display: none; padding: 20px; color: #fffacd; background: rgba(0,0,0,0.2); }
+        .faq-answer { display: none; padding: 20px; color: #fffacd; background: rgba(255,255,255,0.08); border-top: 1px solid rgba(255,215,0,0.15); }
         
         @keyframes zoomPulsar { 
             0%, 100% { transform: scale(1); filter: brightness(1); } 
@@ -535,7 +575,7 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
         .img-selo-garantia { width: 100%; max-width: 320px; margin-bottom: 25px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); }
-        .texto-garantia-vidal { font-size: 1.25em; line-height: 1.7; color: #fff; max-width: 700px; margin: 0 auto; font-weight: 600; }
+        .texto-garantia-vidal { font-size: 1.25em; line-height: 1.7; color: #fff; max-width: 850px; margin: 0 auto; font-weight: 600; }
 
         .chamada-ebook {
             font-family: 'Montserrat', sans-serif;
@@ -550,19 +590,41 @@
         }
 
         .check-v-lux { 
-            margin-bottom: 15px; 
-            font-weight: 600; 
-            font-size: 1.15rem; 
-            background: rgba(23, 42, 69, 0.7); 
-            padding: 15px 25px; 
-            border-radius: 12px; 
-            border-left: 5px solid var(--verde-conversao); 
+            margin-bottom: 14px; 
+            font-weight: 800; 
+            font-size: 1.08rem; 
+            background: transparent;
+            padding: 14px 6px; 
+            border-radius: 0; 
+            border: none;
+            border-left: 5px solid var(--verde-conversao); border-bottom: 1px solid rgba(255,215,0,0.12); padding-left:16px;
             text-align: left;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
+            transition: all 0.3s ease; box-shadow: inset 0 0 0 rgba(0,0,0,0);
+            position: relative;
         }
-        .check-v-lux i { color: var(--verde-conversao); font-weight: 900; font-size: 1.3em; }
+
+        .check-v-lux::before{
+            content:'✔';
+            color: #22c55e;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-shadow: 0 0 12px rgba(34,197,94,0.35);
+            margin-right: 2px;
+        }
+
+        .check-v-lux:hover {
+            transform: translateX(8px) scale(1.01);
+            box-shadow: 
+                0 22px 42px rgba(0,0,0,0.42),
+                0 0 18px rgba(34,197,94,0.10);
+        }
+
+        .check-v-lux i {
+            display:none;
+        }
 
         /* DESTAQUE DOURADO INTERNO TEXTO */
         .texto-dourado-inline {
@@ -744,7 +806,7 @@
         .footer-premium { 
             padding: 30px 20px 20px; 
             background: #061226;
-            background: linear-gradient(180deg, rgba(27, 59, 128, 0.3) 0%, #061226 100%);
+            background: #061226;
             color: #ffffff;
             text-align: center;
             display: flex;
@@ -763,7 +825,7 @@
             border-radius: 15px;
             width: 100%;
             max-width: 700px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: none;
             margin: 0 auto 20px;
         }
         
@@ -822,7 +884,7 @@
             gap: 12px; 
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); 
             margin: 0 auto; 
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; box-shadow: inset 0 0 0 rgba(0,0,0,0);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             animation: zapPulseSutil 2s infinite ease-in-out;
@@ -837,7 +899,7 @@
 
         /* LINKS DOS MODAIS E TEXTOS - AJUSTADOS PARA MÁXIMA NITIDEZ */
         .links-container {
-            margin: 15px 0 5px;
+            margin: 25px 0 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -983,9 +1045,9 @@
         </div>
         <div class="checkpoint-final-premium container-850">
             <span class="chamada-ebook">Ao garantir o seu acesso ao e-book hoje, você recebe:</span>
-            <div class="check-v-lux"><i class="fa-solid fa-check"></i> O método para o rompimento definitivo de bloqueios mentais</div>
-            <div class="check-v-lux"><i class="fa-solid fa-check"></i> O passo a passo para ativação da mentalidade de abundância</div>
-            <div class="check-v-lux"><i class="fa-solid fa-check"></i> O mapa prático para alcançar o seu próximo patamar de vitória</div>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O método para o rompimento definitivo de bloqueios mentais</div>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O passo a passo para ativação da mentalidade de abundância</div>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O mapa prático para alcançar o seu próximo patamar de vitória</div>
         </div>
         <span class="titulo-final-dourado">O ciclo de escassez termina em você agora</span>
     </section>
@@ -1073,7 +1135,7 @@
 
     <div class="container-850" style="background: linear-gradient(to bottom, #061226, #1b3b80); padding-top: 10px;">
         
-        <section class="secao-recomeco revelar-subir-rapido">
+        <section class="secao-recomeco">
             <h2 class="titulo-recomecar-premium">RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
             <div class="texto-impacto" style="font-size: 1.1rem; line-height: 1.8;">
                 <p>Muitas vezes, ficamos presos a padrões antigos, medos e uma mentalidade que nos limita. Mas a verdade é que o próximo capítulo da sua vida exige uma nova versão de você.</p>
@@ -1086,20 +1148,61 @@
             </div>
         </section>
 
-        <section class="secao-destravar" style="padding-top: 5px; margin-top: 5px;">
-            <h2 class="titulo-final-dourado" style="margin-top: 0;">O que você vai destravar</h2>
-            <div class="grid">
-                <div class="card">🌟 Superar obstáculos e limites</div>
-                <div class="card">💡 Pensar sem fronteiras e crescer</div>
-                <div class="card">🔥 Ser motivado e disciplinado</div>
-                <div class="card">💰 Prosperar com propósito</div>
+        <section class="secao-destravar" style="padding-top: 15px; margin-top: 10px;">
+            <h2 class="titulo-final-dourado" style="margin-top: 0;">Quantas dores você ainda está carregando sem perceber?</h2>
+
+            <div style="background: linear-gradient(135deg, rgba(6,26,63,0.92), rgba(11,44,107,0.75)); border: 1px solid rgba(255,215,0,0.18); border-radius: 30px; padding: 45px 30px; max-width: 900px; margin: 0 auto; box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+
+                <div style="position:absolute; top:-40px; right:-40px; width:120px; height:120px; background: rgba(255,215,0,0.05); border-radius:50%; filter: blur(5px);"></div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:28px;">
+                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(212,175,55,0.16), rgba(255,255,255,0.04)); border:1px solid rgba(212,175,55,0.28); color:#ffe9a8; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🧠 Medos</span>
+
+                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,204,204,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,204,204,0.22); color:#ffe3e3; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">😔 Culpas</span>
+
+                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,250,205,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,250,205,0.22); color:#fff7c7; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">💔 Mágoas</span>
+
+                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,215,0,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,215,0,0.22); color:#ffe066; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🩹 Traumas</span>
+
+                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); border:1px solid rgba(255,255,255,0.18); color:#ffffff; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🚫 Rejeições</span>
+                </div>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    Tudo isso pesa… e impede você de viver o novo que Deus preparou para a sua vida.
+                </p>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    A verdadeira superação começa quando você decide <span class="texto-dourado-inline">soltar o que te prende ao passado</span> e assumir uma nova mentalidade. 💭🔥
+                </p>
+
+                <div style="background: rgba(255,255,255,0.04); border-left: 5px solid var(--verde-neon); padding: 25px; border-radius: 18px; margin: 35px auto;">
+                    <p style="font-size:1.2rem; font-weight:700; line-height:1.8; margin:0; color:#ffffff;">
+                        Você não nasceu para viver travado, desmotivado e andando em círculos.
+                        <span style="color: var(--verde-neon); font-weight:900;">Você nasceu para prosperar, evoluir e vencer.</span>
+                    </p>
+                </div>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    Chegou a hora de tirar o peso emocional das costas e destravar sua mente de uma vez por todas.
+                </p>
+
+                <div style="margin-top:40px;">
+                    <p style="font-size:1.25rem; font-weight:900; text-transform:uppercase; background: var(--dourado-metalico); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:25px;">
+                        📘 Conheça o e-book Não Mais Escravos e transforme sua mentalidade
+                    </p>
+
+                    <button onclick="irParaCheckout()" class="btn-cta-pro">
+                        QUERO DESTRAVAR MINHA MENTE AGORA
+                    </button>
+                </div>
+
             </div>
         </section>
 
         <section>
             <h2 class="titulo-final-dourado">Dentro deste livro você vai aprender</h2>
             <div class="grid">
-                <div class="card">⚡ Como identificar a mente de escravo que paralisa</div>
+                <div class="card">⚡ Como identificar a mentalidade escrava que paralisa</div>
                 <div class="card">⚡ Como desenvolver a mentalidade de liberdade</div>
                 <div class="card">⚡ O segredo bíblico da prosperidade</div>
                 <div class="card">⚡ A chave poderosa que muda destinos</div>
@@ -1131,7 +1234,7 @@
                 
                 <p>”Neste e-book, eu vou te mostrar exatamente como funciona a 'mente de escravo' — aquela mentalidade oculta que paralisa os seus passos, te faz pensar pequeno, destrói a sua motivação e te impede de prosperar. Se você sente que não é capaz, se desespera nos momentos difíceis ou percebe que está sempre andando em círculos, saiba que esses são os sintomas claros de um bloqueio que precisa ser deixado para trás hoje mesmo!</p>
                 
-                <p>Mais adiante, vou te guiar na construção de uma mente <b>'Não Mais Escrava'</b>: uma mentalidade forte, preparada para superar qualquer obstáculo, altamente produtiva, focada e desenhada para vencer.</p>
+                <p>Mais adiante, vou te guiar na construção de uma mente <b>Não Mais Escrava:</b> uma mentalidade forte, preparada para superar qualquer obstáculo, altamente produtiva, focada e desenhada para vencer.</p>
                 
                 <p>E bem no coração deste livro, eu vou te entregar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar o seu modelo mental</span> e <span style="color:#ffffff; font-weight:900;">fazer a sua vida disparar para um novo patamar!</span></p>
                 

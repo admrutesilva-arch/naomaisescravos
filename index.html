@@ -89,6 +89,18 @@
             transform: translateY(0);
         }
 
+        /* REVELAÇÃO RÁPIDA EXCLUSIVA PARA SEÇÃO DE PREÇO */
+        .revelar-preco {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-preco.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* EFEITO DE SUBIDA RÁPIDA E IMEDIATA SEM ESPAÇO VAZIO */
         .revelar-subir-rapido {
             opacity: 0;
@@ -171,7 +183,7 @@
             letter-spacing: -1px;
             filter: drop-shadow(0 3px 6px rgba(0,0,0,0.7));
             position: relative;
-            overflow: visible; 
+            overflow: hidden; 
             padding: 10px 0;
         }
 
@@ -188,49 +200,20 @@
         h1::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: -220%;
-            width: 85%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255,255,255,0.00) 15%,
-                rgba(255,255,255,0.28) 35%,
-                rgba(255,255,255,0.92) 50%,
-                rgba(255,255,255,0.28) 65%,
-                rgba(255,255,255,0.00) 85%,
-                transparent 100%
-            );
-            transform: skewX(-20deg);
-            animation: flashBaseSuave 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
-            filter: blur(0.2px) brightness(1.15);
+            top: -50%;
+            left: -100%;
+            width: 45%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            transform: skewX(-25deg);
+            animation: flashBaseSuave 4.5s infinite ease-in-out;
             pointer-events: none;
         }
 
         @keyframes flashBaseSuave {
-            0% {
-                left: -240%;
-                opacity: 0;
-            }
-
-            4% {
-                opacity: 0.25;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            22% {
-                left: 170%;
-                opacity: 0.5;
-            }
-
-            100% {
-                left: 160%;
-                opacity: 0;
-            }
+            0% { left: -100%; }
+            30% { left: 160%; }
+            100% { left: 160%; }
         }
 
         .container-vsl-central {
@@ -293,12 +276,21 @@
         .btn::after, .btn-cta-pro::after {
             content: '';
             position: absolute;
-            top: -50%; left: -100%; width: 50%; height: 200%;
-            background: rgba(255, 255, 255, 0.4);
-            transform: rotate(30deg);
-            animation: brilho-premium 2s infinite ease-in-out;
+            top: -50%; left: -70%; width: 22%; height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                transparent 38%,
+                rgba(255,255,255,0.05) 47%,
+                rgba(255,255,255,0.13) 50%,
+                rgba(255,255,255,0.05) 53%,
+                transparent 62%,
+                transparent 100%
+            );
+            transform: rotate(18deg);
+            animation: brilho-premium 7s infinite ease-in-out;
         }
-        @keyframes brilho-premium { 0% { left: -100%; } 40% { left: 150%; } 100% { left: 150%; } }
+        @keyframes brilho-premium { 0%, 18% { left: -70%; } 52% { left: 120%; } 100% { left: 120%; } }
 
         .nova-sessao-bonus {
             background-color: var(--fundo-azul-marinho);
@@ -331,6 +323,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             word-wrap: break-word;
+            position: relative;
+            overflow: hidden;
+        }
+        .headline-ultra::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -100%; width: 45%; height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            transform: skewX(-25deg);
+            animation: flashBaseSuave 4.5s infinite ease-in-out;
+            pointer-events: none;
         }
 
         .badge-hero {
@@ -372,13 +375,32 @@
 
         .grid-caminhos, .lista-check { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 580px; margin: 0 auto 20px; }
         .lista-check li {
-            font-size: 1.1em; text-align: left; display: flex; align-items: center;
-            background: rgba(23, 42, 69, 0.7); padding: 18px 25px; border-radius: 12px;
-            border-left: 5px solid var(--verde-conversao); line-height: 1.4; color: #fff;
-            transition: 0.3s;
+            font-size: 1.05em; text-align: left; display: flex; align-items: center;
+            background: linear-gradient(135deg, rgba(6,26,63,0.88) 0%, rgba(23,42,69,0.55) 100%);
+            padding: 16px 22px; border-radius: 14px;
+            border: 1px solid rgba(0,255,102,0.22);
+            border-left: 3px solid rgba(0,255,102,0.55);
+            line-height: 1.4; color: #fff;
+            transition: all 0.32s ease;
+            position: relative; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 6px rgba(0,255,102,0.05);
         }
-        .lista-check li:hover { background: rgba(23, 42, 69, 0.9); transform: translateX(10px); }
-        .check-icon { color: var(--verde-conversao); font-weight: 900; margin-right: 20px; font-size: 1.3em; }
+        .lista-check li::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, rgba(0,255,102,0.18), transparent);
+        }
+        .lista-check li:hover { 
+            background: linear-gradient(135deg, rgba(6,26,63,0.97) 0%, rgba(23,42,69,0.85) 100%);
+            transform: translateX(6px); 
+            border-color: rgba(0,255,102,0.42);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.38), 0 0 8px rgba(0,255,102,0.08);
+        }
+        .check-icon { 
+            color: #00e55a; font-weight: 900; margin-right: 18px; font-size: 1.15em; flex-shrink: 0;
+            text-shadow: 0 0 6px rgba(0,255,102,0.35);
+        }
 
         .btn-interativo {
             background: transparent; border: 2px solid var(--dourado-premium); color: var(--dourado-premium);
@@ -542,12 +564,12 @@
         .card-destino-lux.negativo { border-left: 5px solid #ff4d4d; background: linear-gradient(90deg, rgba(255, 77, 77, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
         .card-destino-lux.positivo { border-left: 5px solid var(--verde-neon); background: linear-gradient(90deg, rgba(0, 255, 102, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
         
-        /* Efeito Shimmer de Luz discreto no cenário liberto */
+        /* Efeito Shimmer de Luz no cenário liberto */
         .card-destino-lux.positivo::after {
             content: '';
             position: absolute;
             top: -50%; left: -100%; width: 45%; height: 200%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
             transform: skewX(-25deg);
             animation: reflexoDouradoLP 4.5s infinite ease-in-out;
         }
@@ -593,33 +615,53 @@
             margin-bottom: 14px; 
             font-weight: 800; 
             font-size: 1.08rem; 
-            background: transparent;
-            padding: 14px 6px; 
-            border-radius: 0; 
-            border: none;
-            border-left: 5px solid var(--verde-conversao); border-bottom: 1px solid rgba(255,215,0,0.12); padding-left:16px;
+            background: linear-gradient(135deg, rgba(6,26,63,0.88) 0%, rgba(11,44,107,0.55) 100%);
+            padding: 18px 24px 18px 22px; 
+            border-radius: 16px; 
+            border: 1.5px solid rgba(0,255,102,0.30);
+            box-shadow: 
+                0 0 14px rgba(0,255,102,0.07),
+                0 8px 28px rgba(0,0,0,0.38),
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                inset 0 -1px 0 rgba(0,0,0,0.2);
             text-align: left;
             display: flex;
             align-items: center;
             gap: 14px;
-            transition: all 0.3s ease; box-shadow: inset 0 0 0 rgba(0,0,0,0);
+            transition: all 0.35s ease;
             position: relative;
+            overflow: hidden;
+        }
+
+        .check-v-lux::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 5px; height: 100%;
+            background: linear-gradient(to bottom, #00ff66, #22c55e, #16a34a);
+            border-radius: 16px 0 0 16px;
+            box-shadow: 0 0 14px rgba(0,255,102,0.65);
         }
 
         .check-v-lux::before{
             content:'✔';
-            color: #22c55e;
+            color: #00ff66;
             font-size: 1.5rem;
             font-weight: 900;
-            text-shadow: 0 0 12px rgba(34,197,94,0.35);
+            text-shadow: 0 0 18px rgba(0,255,102,0.8), 0 0 35px rgba(0,255,102,0.35);
             margin-right: 2px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
         }
 
         .check-v-lux:hover {
             transform: translateX(8px) scale(1.01);
+            border-color: rgba(0,255,102,0.52);
             box-shadow: 
-                0 22px 42px rgba(0,0,0,0.42),
-                0 0 18px rgba(34,197,94,0.10);
+                0 0 18px rgba(0,255,102,0.12),
+                0 14px 38px rgba(0,0,0,0.48),
+                inset 0 1px 0 rgba(255,255,255,0.09);
         }
 
         .check-v-lux i {
@@ -637,14 +679,24 @@
 
         /* --- SEÇÕES DE POSICIONAMENTO --- */
         .secao-posicionamento {
-            padding: 80px 20px;
-            background: rgba(0, 0, 0, 0.4);
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 70px 30px;
+            background: linear-gradient(145deg, rgba(6,18,38,0.95) 0%, rgba(11,44,107,0.35) 50%, rgba(6,18,38,0.95) 100%);
+            border: 1px solid rgba(212,175,55,0.28);
+            border-top: 2px solid rgba(212,175,55,0.45);
             margin: 40px 0;
             border-radius: 40px;
             width: 100%; 
             box-sizing: border-box;
+            box-shadow: 0 0 60px rgba(212,175,55,0.06), 0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .secao-posicionamento::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
         }
         
         .grid-caminhos {
@@ -658,27 +710,37 @@
 
         /* ESTILIZAÇÃO ULTRA-PREMIUM DOS CAMINHOS DE POSICIONAMENTO */
         .box-caminho {
-            background: linear-gradient(135deg, rgba(6, 26, 63, 0.8) 0%, rgba(6, 18, 38, 0.95) 100%);
-            padding: 40px 35px;
-            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(6,26,63,0.92) 0%, rgba(6,18,38,0.98) 100%);
+            padding: 38px 32px;
+            border-radius: 22px;
             text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.06);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
             width: 100%;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
         }
-        .box-caminho:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); }
+        .box-caminho:hover { transform: translateY(-10px); }
         .box-caminho::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
+            top: 0; left: 0; width: 100%; height: 4px;
+            border-radius: 22px 22px 0 0;
         }
-        .box-caminho.errado::before { background: #ff4d4d; }
-        .box-caminho.errado { border-top: 1px solid rgba(255, 77, 77, 0.3); box-shadow: inset 0 0 20px rgba(255, 77, 77, 0.02); }
-        .box-caminho.certo::before { background: var(--verde-neon); }
-        .box-caminho.certo { border-top: 1px solid rgba(0, 255, 102, 0.3); box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.02), 0 15px 35px rgba(0, 255, 102, 0.05); }
+        .box-caminho::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 20%; width: 60%; height: 1px;
+        }
+        .box-caminho.errado::before { background: linear-gradient(90deg, #ff4d4d, #ff8080, #ff4d4d); box-shadow: 0 0 12px rgba(255,77,77,0.5); }
+        .box-caminho.errado::after { background: linear-gradient(90deg, transparent, rgba(255,77,77,0.3), transparent); }
+        .box-caminho.errado { border: 1px solid rgba(255,77,77,0.2); box-shadow: 0 0 35px rgba(255,77,77,0.06), 0 20px 50px rgba(0,0,0,0.5); }
+        .box-caminho.errado:hover { box-shadow: 0 0 50px rgba(255,77,77,0.12), 0 25px 60px rgba(0,0,0,0.6); }
+        .box-caminho.certo::before { background: linear-gradient(90deg, #00ff66, #22c55e, #00ff66); box-shadow: 0 0 14px rgba(0,255,102,0.6); }
+        .box-caminho.certo::after { background: linear-gradient(90deg, transparent, rgba(0,255,102,0.3), transparent); }
+        .box-caminho.certo { border: 1px solid rgba(0,255,102,0.22); box-shadow: 0 0 40px rgba(0,255,102,0.08), 0 20px 50px rgba(0,255,102,0.04), 0 20px 50px rgba(0,0,0,0.5); }
+        .box-caminho.certo:hover { box-shadow: 0 0 55px rgba(0,255,102,0.18), 0 25px 60px rgba(0,0,0,0.6); }
         
         .box-caminho h4 { margin-top: 0; font-size: 1.4rem; text-transform: uppercase; font-family: 'Montserrat'; font-weight: 800; display: flex; align-items: center; gap: 12px; letter-spacing: 0.5px; }
         .box-caminho p { margin: 0; font-size: 1.1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); font-family: 'Inter', sans-serif; }
@@ -802,11 +864,10 @@
             .box-caminho h4 { font-size: 1.2rem; }
         }
         
-        /* FOOTER PREMIUM CORRIGIDO */
+        /* FOOTER PREMIUM REFINADO */
         .footer-premium { 
-            padding: 30px 20px 20px; 
-            background: #061226;
-            background: #061226;
+            padding: 64px 24px 44px; 
+            background: linear-gradient(180deg, #0d2654 0%, #071535 50%, #061226 100%);
             color: #ffffff;
             text-align: center;
             display: flex;
@@ -814,139 +875,182 @@
             align-items: center;
             width: 100%;
             overflow-x: hidden;
-            border-top: 1px solid rgba(255, 215, 0, 0.08);
+            border-radius: 52px 52px 0 0;
+            margin-top: 10px;
+            position: relative;
+            border-top: 1px solid rgba(11, 60, 160, 0.35);
         }
-        
-        /* CONTATO BOX */
+        .footer-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
+            border-radius: 2px;
+        }
+
+        /* CARD DE CONTATO */
         .contato-box {
-            background-color: var(--fundo-caixa-azul);
-            border: 1px solid var(--dourado-premium);
-            padding: 40px 30px;
-            border-radius: 15px;
+            background: linear-gradient(145deg, rgba(11,44,107,0.65) 0%, rgba(6,26,63,0.85) 100%);
+            border: 1px solid rgba(30, 90, 200, 0.38);
+            box-shadow: 0 8px 40px rgba(0, 30, 120, 0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+            padding: 48px 40px 44px;
+            border-radius: 28px;
             width: 100%;
-            max-width: 700px;
-            box-shadow: none;
-            margin: 0 auto 20px;
+            max-width: 480px;
+            margin: 0 auto 0;
+            backdrop-filter: blur(12px);
         }
-        
-        /* NOME FALE CONOSCO */
+
+        /* LABEL TOPO DO CARD */
         .subtitulo-fale-conosco {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.15rem; 
-            letter-spacing: 3px; 
+            font-weight: 500;
+            font-size: 0.68rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            background: var(--ouro-branco-suave);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0 0 10px 0;
+            color: rgba(212,175,55,0.75);
+            margin: 0 0 18px 0;
             display: block;
         }
 
-        /* LINHA SEPARADORA ESTILIZADA (FIO METÁLICO) */
+        /* LINHA SEPARADORA */
         .linha-separadora-fale {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
-            margin: 15px auto;
-            width: 80%;
+            background: rgba(255,255,255,0.07);
+            margin: 18px auto 24px;
+            width: 100%;
             display: block;
         }
 
-        /* TEXTO FICOU COM ALGUMA DÚVIDA EM BRANCO PURO */
+        /* TÍTULO DÚVIDA */
         .titulo-duvida-footer {
-            color: #ffffff; 
-            margin-top: 5px; 
-            margin-bottom: 30px; 
-            font-family: 'Montserrat', sans-serif; 
-            font-weight: 800;
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #ffffff;
+            margin: 0 0 6px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: none;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
         }
-        
-        /* BOTÃO DO WHATSAPP REAJUSTADO */
+
+        /* SUBTEXTO */
+        .footer-subtexto {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.82);
+            margin: 0 0 28px 0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* BOTÃO WHATSAPP REFINADO */
         .btn-zap-custom { 
-            background: linear-gradient(135deg, #25d366, #128c7e); 
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%); 
             color: #ffffff; 
-            border: 1px solid rgba(255,255,255,0.2); 
-            padding: 18px 45px; 
+            border: none;
+            padding: 15px 28px; 
             border-radius: 50px; 
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900; 
-            font-size: 1.15rem; 
+            font-weight: 700; 
+            font-size: 0.92rem; 
             cursor: pointer; 
-            width: 100%; 
-            max-width: 650px; 
+            width: 100%;
+            max-width: 380px;
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            gap: 12px; 
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); 
-            margin: 0 auto; 
-            transition: all 0.3s ease; box-shadow: inset 0 0 0 rgba(0,0,0,0);
+            gap: 10px; 
+            box-shadow: 0 8px 24px rgba(34,197,94,0.22);
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            animation: zapPulseSutil 2s infinite ease-in-out;
-            line-height: 1.3; 
+            letter-spacing: 0.8px;
+            line-height: 1;
         }
-        .btn-zap-custom:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6); }
+        .btn-zap-custom:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(34,197,94,0.38); }
 
-        @keyframes zapPulseSutil {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+        /* EMAIL NO FOOTER */
+        .footer-email {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.84rem;
+            color: rgba(255,255,255,0.70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            margin: 0;
+            transition: color 0.25s;
+        }
+        .footer-email:hover { color: rgba(255,255,255,0.95); }
+
+        /* DIVISOR */
+        .footer-divider {
+            width: 100%;
+            max-width: 380px;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 36px auto;
         }
 
-        /* LINKS DOS MODAIS E TEXTOS - AJUSTADOS PARA MÁXIMA NITIDEZ */
+        /* LINKS LEGAIS */
         .links-container {
-            margin: 25px 0 10px;
+            margin: 0 0 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
+            gap: 4px;
+            align-items: center;
         }
         .link-footer {
             background: none; 
             border: none; 
-            color: rgba(255, 255, 255, 0.75); 
+            color: rgba(255,255,255,0.68); 
             cursor: pointer; 
-            text-decoration: underline;
-            font-size: 0.85em;
-            font-weight: 600;
-            padding: 5px;
-            transition: color 0.3s;
+            font-size: 0.76rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            padding: 5px 8px;
+            transition: color 0.2s;
+            letter-spacing: 0.2px;
+            text-decoration: none;
         }
-        .link-footer:hover { color: #ffffff; }
+        .link-footer:hover { color: rgba(255,255,255,0.95); }
         
         .legal-content { 
             display: none; 
-            background: rgba(6, 18, 38, 0.98);
-            padding: 30px; 
-            margin: 15px auto; 
-            border-radius: 15px; 
+            background: rgba(4,12,28,0.98);
+            padding: 28px; 
+            margin: 12px auto; 
+            border-radius: 20px; 
             text-align: left; 
             width: 95%;
-            max-width: 600px;
-            border: 1px solid var(--dourado-premium);
-            color: #ffffff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            max-width: 480px;
+            border: 1px solid rgba(212,175,55,0.45);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 18px rgba(212,175,55,0.08);
+            color: rgba(255,255,255,0.78);
         }
         .btn-fechar-legal { 
-            background: #ff4444; 
-            color: #fff; 
+            background: rgba(255,255,255,0.08); 
+            color: rgba(255,255,255,0.7); 
             border: none; 
-            padding: 5px 10px; 
-            border-radius: 5px; 
+            padding: 5px 12px; 
+            border-radius: 50px; 
             cursor: pointer; 
-            float: right; 
-            font-weight: bold;
+            float: right;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s;
         }
+        .btn-fechar-legal:hover { background: rgba(255,255,255,0.16); }
         .copyright {
-            opacity: 0.75; 
-            font-size: 0.8em; 
-            margin-top: 20px;
+            opacity: 0.62; 
+            font-size: 0.73rem; 
+            margin-top: 4px;
             font-family: 'Inter', sans-serif;
             color: #ffffff;
+            letter-spacing: 0.3px;
         }
     </style>
 </head>
@@ -1027,11 +1131,14 @@
                 </div>
             </div>
 
-            <div class="texto-impacto" style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; border-left: 5px solid var(--dourado-premium);">
+            <div class="texto-impacto" style="background: linear-gradient(135deg, rgba(6,18,38,0.95) 0%, rgba(11,44,107,0.4) 100%); padding: 38px 32px; border-radius: 24px; border: 1px solid rgba(212,175,55,0.22); border-left: 4px solid var(--dourado-premium); box-shadow: 0 0 40px rgba(212,175,55,0.05), 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); position: relative; overflow: hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);"></div>
                 <p style="margin-top:0;">Um negócio de sucesso começa com uma <b>quebra de mentalidade.</b> Se você não romper com as velhas crenças que te mantêm preso operacionalmente, nunca alcançará a estratégia que te liberta.</p>
                 <p style="font-weight: 700; color: #fff;">🧠 Quer mudar esse jogo e parar de ser escravo da sua rotina?</p>
                 <p>Eu escrevi o e-book <b>Não Mais Escravos</b> justamente para te ajudar a romper essas barreiras mentais e construir o caminho que vende.</p>
-                <button onclick="irParaCheckout()" class="btn-interativo" style="width:100%; border-color: var(--verde-neon); color: var(--verde-neon);">GARANTIR MEU ACESSO AGORA</button>
+                <div style="margin-top:28px;">
+                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="width:100%;">GARANTIR MEU ACESSO AGORA</button>
+                </div>
             </div>
         </div>
 
@@ -1101,7 +1208,7 @@
                 <button class="btn-interativo revelar-subir" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
             </div>
 
-            <div class="checkout-box revelar-subir">
+            <div class="checkout-box revelar-preco">
                 <div class="selo-oval-premium">LEVE 3 PELO PREÇO DE 1</div>
                 <div style="margin: 20px 0;">
                     <span class="preco-antigo">De R$ 72,80</span>
@@ -1148,23 +1255,126 @@
             </div>
         </section>
 
-        <section class="secao-destravar" style="padding-top: 15px; margin-top: 10px;">
-            <h2 class="titulo-final-dourado" style="margin-top: 0;">Quantas dores você ainda está carregando sem perceber?</h2>
+        <section class="secao-destravar" style="padding-top: 70px; margin-top: 20px;">
+            <h2 class="titulo-final-dourado" style="margin-top: 0; background: none; -webkit-text-fill-color: initial; color: #ffffff; font-size: clamp(1.5rem, 5vw, 2.2rem); line-height: 1.3;">Quantas <span style="color: #CBB36B; -webkit-text-fill-color: #CBB36B;">dores</span> você ainda está carregando sem perceber?</h2>
 
             <div style="background: linear-gradient(135deg, rgba(6,26,63,0.92), rgba(11,44,107,0.75)); border: 1px solid rgba(255,215,0,0.18); border-radius: 30px; padding: 45px 30px; max-width: 900px; margin: 0 auto; box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
 
                 <div style="position:absolute; top:-40px; right:-40px; width:120px; height:120px; background: rgba(255,215,0,0.05); border-radius:50%; filter: blur(5px);"></div>
 
-                <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:28px;">
-                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(212,175,55,0.16), rgba(255,255,255,0.04)); border:1px solid rgba(212,175,55,0.28); color:#ffe9a8; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🧠 Medos</span>
+                <style>
+                    /* Container principal — coluna centralizada */
+                    .dor-grid-neon {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                        max-width: 500px;
+                        margin: 0 auto 28px;
+                        width: 100%;
+                    }
+                    /* Linha dupla: Medos + Culpas lado a lado */
+                    .dor-linha-dupla {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        width: 100%;
+                    }
+                    @media (max-width: 360px) {
+                        .dor-linha-dupla { flex-direction: column; }
+                        .dor-linha-dupla .dor-card-neon { flex: none; width: 100%; }
+                    }
+                    /* Card pílula horizontal */
+                    .dor-card-neon {
+                        background: rgba(255,255,255,0.06);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        border-radius: 50px;
+                        padding: 14px 22px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        width: 100%;
+                        transition: all 0.28s ease;
+                        cursor: default;
+                        backdrop-filter: blur(6px);
+                    }
+                    .dor-linha-dupla .dor-card-neon { flex: 1; }
+                    .dor-card-neon:hover {
+                        background: rgba(255,255,255,0.1);
+                        border-color: rgba(255,255,255,0.22);
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+                    }
+                    /* Cores individuais por card via classe */
+                    .dor-c1 { border-color: rgba(147,51,234,0.4); }
+                    .dor-c1:hover { border-color: rgba(147,51,234,0.75); box-shadow: 0 6px 20px rgba(147,51,234,0.2); }
+                    .dor-c2 { border-color: rgba(59,130,246,0.4); }
+                    .dor-c2:hover { border-color: rgba(59,130,246,0.75); box-shadow: 0 6px 20px rgba(59,130,246,0.2); }
+                    .dor-c3 { border-color: rgba(239,68,68,0.4); }
+                    .dor-c3:hover { border-color: rgba(239,68,68,0.75); box-shadow: 0 6px 20px rgba(239,68,68,0.2); }
+                    .dor-c4 { border-color: rgba(245,158,11,0.4); }
+                    .dor-c4:hover { border-color: rgba(245,158,11,0.75); box-shadow: 0 6px 20px rgba(245,158,11,0.2); }
+                    .dor-c5 { border-color: rgba(99,102,241,0.4); }
+                    .dor-c5:hover { border-color: rgba(99,102,241,0.75); box-shadow: 0 6px 20px rgba(99,102,241,0.2); }
+                    .dor-c6 { border-color: rgba(20,184,166,0.4); }
+                    .dor-c6:hover { border-color: rgba(20,184,166,0.75); box-shadow: 0 6px 20px rgba(20,184,166,0.2); }
+                    /* Ícone emoji — sem moldura, só o emoji */
+                    .dor-icon-neon {
+                        font-size: 22px;
+                        line-height: 1;
+                        flex-shrink: 0;
+                    }
+                    /* Label */
+                    .dor-label-neon {
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 800;
+                        font-size: 0.82rem;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .dor-c1 .dor-label-neon,
+                    .dor-c2 .dor-label-neon,
+                    .dor-c3 .dor-label-neon,
+                    .dor-c4 .dor-label-neon,
+                    .dor-c5 .dor-label-neon,
+                    .dor-c6 .dor-label-neon { color: #ffffff; }
+                </style>
 
-                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,204,204,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,204,204,0.22); color:#ffe3e3; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">😔 Culpas</span>
-
-                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,250,205,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,250,205,0.22); color:#fff7c7; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">💔 Mágoas</span>
-
-                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,215,0,0.14), rgba(255,255,255,0.04)); border:1px solid rgba(255,215,0,0.22); color:#ffe066; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🩹 Traumas</span>
-
-                    <span style="padding:10px 16px; border-radius:14px; background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); border:1px solid rgba(255,255,255,0.18); color:#ffffff; font-weight:900; letter-spacing:0.5px; box-shadow:0 10px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08); font-size:0.92rem;; text-transform:uppercase; backdrop-filter: blur(10px); position:relative;">🚫 Rejeições</span>
+                <div class="dor-grid-neon">
+                    <!-- Linha dupla: Medos + Culpas -->
+                    <div class="dor-linha-dupla">
+                        <div class="dor-card-neon dor-c1">
+                            <span class="dor-icon-neon">🧠</span>
+                            <span class="dor-label-neon">Medos</span>
+                        </div>
+                        <div class="dor-card-neon dor-c2">
+                            <span class="dor-icon-neon">😔</span>
+                            <span class="dor-label-neon">Culpas</span>
+                        </div>
+                    </div>
+                    <!-- Mágoas -->
+                    <div class="dor-card-neon dor-c3">
+                        <span class="dor-icon-neon">💔</span>
+                        <span class="dor-label-neon">Mágoas</span>
+                    </div>
+                    <!-- Traumas -->
+                    <div class="dor-card-neon dor-c4">
+                        <span class="dor-icon-neon">🩹</span>
+                        <span class="dor-label-neon">Traumas</span>
+                    </div>
+                    <!-- Rejeições -->
+                    <div class="dor-card-neon dor-c5">
+                        <span class="dor-icon-neon">🚫</span>
+                        <span class="dor-label-neon">Rejeições</span>
+                    </div>
+                    <!-- Decepções -->
+                    <div class="dor-card-neon dor-c6">
+                        <span class="dor-icon-neon">😢</span>
+                        <span class="dor-label-neon">Decepções</span>
+                    </div>
                 </div>
 
                 <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
@@ -1276,47 +1486,50 @@
         </section>
 
         <footer class="footer-premium">
+
             <div class="contato-box">
-                <span class="subtitulo-fale-conosco">Fale conosco</span>
-                
-                <hr class="linha-separadora-fale">
-                
+                <span class="subtitulo-fale-conosco">Suporte</span>
                 <h2 class="titulo-duvida-footer">Ficou com alguma dúvida?</h2>
-                
+                <p class="footer-subtexto">Estamos aqui para te ajudar.<br>Fale com a gente quando precisar.</p>
+
                 <button onclick="contatoZap()" class="btn-zap-custom">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.45em;"></i> CHAMAR NO WHATSAPP AGORA
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2em;"></i> Chamar no WhatsApp
                 </button>
-                
-                <p style="margin-top: 25px; font-weight: bold; color: #00ff66; font-size: 1rem; letter-spacing: 0.5px;">E-mail: adm.rute.silva@gmail.com</p>
+
+                <p class="footer-email">
+                    <i class="fa-regular fa-envelope"></i> adm.rute.silva@gmail.com
+                </p>
             </div>
+
+            <div class="footer-divider"></div>
 
             <div class="links-container">
                 <button onclick="toggleLegal('privacidade')" class="link-footer">Política de Privacidade</button>
-                <span style="color: rgba(255,255,255,0.4)">|</span>
+                <span style="color:rgba(255,255,255,0.18); font-size:0.6rem;">•</span>
                 <button onclick="toggleLegal('uso')" class="link-footer">Política de Uso</button>
-                <span style="color: rgba(255,255,255,0.4)">|</span>
+                <span style="color:rgba(255,255,255,0.18); font-size:0.6rem;">•</span>
                 <button onclick="toggleLegal('direitos')" class="link-footer">Direitos Autorais</button>
             </div>
 
             <div id="privacidade" class="legal-content">
-                <button class="btn-fechar-legal" onclick="toggleLegal('privacidade')">X</button>
-                <h3 style="color:#FFD700;">Privacidade</h3>
+                <button class="btn-fechar-legal" onclick="toggleLegal('privacidade')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Privacidade</h3>
                 <p>Seus dados estão 100% protegidos. Utilizamos cookies apenas para melhorar sua experiência no site. As informações fornecidas durante a compra são processadas com total segurança pela plataforma Hotmart.</p>
             </div>
 
             <div id="uso" class="legal-content">
-                <button class="btn-fechar-legal" onclick="toggleLegal('uso')">X</button>
-                <h3 style="color:#FFD700;">Política de Uso</h3>
+                <button class="btn-fechar-legal" onclick="toggleLegal('uso')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Política de Uso</h3>
                 <p>Este conteúdo é exclusivo para uso pessoal e intransferível. A reprodução, revenda ou compartilhamento não autorizado deste material é proibida e protegida por lei.</p>
             </div>
 
             <div id="direitos" class="legal-content">
-                <button class="btn-fechar-legal" onclick="toggleLegal('direitos')">X</button>
-                <h3 style="color:#FFD700;">Direitos Autorais</h3>
+                <button class="btn-fechar-legal" onclick="toggleLegal('direitos')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Direitos Autorais</h3>
                 <p>Todo o material (textos, imagens e vídeos) contido nesta página e no e-book é de propriedade exclusiva de Rute Alves e protegido pelas leis de direitos autorais vigentes.</p>
             </div>
 
-            <p class="copyright">© 2026 Não Mais Escravos. Todos os direitos reservados.</p>
+            <p class="copyright">© 2026 Não Mais Escravos — Todos os direitos reservados.</p>
         </footer>
     </div>
 
@@ -1333,6 +1546,15 @@
         }, obsOptions);
 
         document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .revelar-subir-rapido, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
+
+        /* Observador dedicado e imediato apenas para a seção de preço */
+        const obsPreco = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('ativo'); }
+            });
+        }, { threshold: 0.01, rootMargin: "120px 0px 120px 0px" });
+
+        document.querySelectorAll('.revelar-preco').forEach(el => { obsPreco.observe(el); });
 
         function irParaCheckout() {
             const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10&offMobile=false";

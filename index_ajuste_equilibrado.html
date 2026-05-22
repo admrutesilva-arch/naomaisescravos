@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Não Mais Escravos – Rute Alves | Como Destravar sua Prosperidade</title>
+    <meta name="description" content="Descubra o método Não Mais Escravos de Rute Alves. Aprenda a quebrar bloqueios mentais de escassez e destravar a prosperidade financeira e emocional hoje.">
+    <meta name="keywords" content="Rute Alves, Não Mais Escravos, prosperidade, liberdade financeira, mentalidade de sucesso, e-book desenvolvimento pessoal, destravar vida">
+    <meta name="author" content="Rute Alves">
+
+    <meta property="og:title" content="Não Mais Escravos – O Ciclo da Escassez Termina em Você!">
+    <meta property="og:description" content="Acesse o mapa prático para o seu próximo patamar de vitória.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp">
+    <meta property="og:url" content="https://naomaisescravos.com.br">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;600;700&display=swap');
+        
+        :root {
+            --verde: #00c853;
+            --verde-prof: #2ecc71; 
+            --verde-neon: #00ff66;
+            --verde-seguro: #28a745;
+            --verde-cta: #22c55e;
+            --dourado: #FFD700;
+            --dourado-metalico: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --dourado-branco: linear-gradient(to bottom, #ffffff 0%, #FCF6BA 45%, #BF953F 100%);
+            --dourado-brilhante: #fff200;
+            --fundo: #061226;
+            --card-bg: rgba(11, 44, 107, 0.5);
+            --texto-claro: #f1f1f1;
+            --fundo-azul-marinho: #0a1e3d; 
+            --fundo-caixa-azul: #061a3f;
+            --verde-conversao: #22c55e;
+            --dourado-premium: #D4AF37;
+            --ouro-branco-suave: linear-gradient(to bottom, #FFFEF0 0%, #ffffff 50%, #FFFEF0 100%);
+        }
+
+        /* PERFORMANCE - ANTI TRAVAMENTO */
+        html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #061226;
+            background: linear-gradient(180deg, #1b3b80 0%, #061226 100%);
+            color: var(--texto-claro);
+            line-height: 1.6;
+            text-align: center;
+            font-size: 1.2em;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* EFEITOS DE REVELAÇÃO PADRÃO */
+        .revelar {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.17, 0.88, 0.32, 1.15);
+        }
+        .revelar.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SISTEMA DE SLIDE LENTO E HARMONIOSO PARA A SEÇÃO 3 POR 1 */
+        .revelar-direita {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-direita.ativo {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .revelar-subir {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-subir.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* REVELAÇÃO RÁPIDA EXCLUSIVA PARA SEÇÃO DE PREÇO */
+        .revelar-preco {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-preco.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* EFEITO DE SUBIDA RÁPIDA E IMEDIATA SEM ESPAÇO VAZIO */
+        .revelar-subir-rapido {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+        .revelar-subir-rapido.ativo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container-850 {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        header, section, footer { 
+            padding: 30px 0; 
+            margin: 0 auto; 
+            display: block; 
+            position: relative;
+            transform: translateZ(0);
+            contain: content;
+        }
+
+        h2, .titulo-secao { 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2; 
+            margin: 0 auto 25px; 
+            max-width: 800px; 
+            text-wrap: balance; 
+            display: block;
+        }
+
+        .titulo-final-dourado {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin: 40px auto 25px; 
+            font-size: 1.6rem;
+            animation: zoomPulsar 2s infinite ease-in-out;
+        }
+
+        .subtitulo-topo-dourado {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: var(--dourado-branco);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1.1;
+            margin: 10px auto 30px;
+            text-transform: uppercase;
+            font-size: clamp(1.8rem, 6vw, 2.8rem); 
+            max-width: 850px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.2rem, 7vw, 3rem); 
+            background: var(--ouro-branco-suave);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2; 
+            margin: 20px auto;
+            max-width: 850px;
+            text-wrap: balance;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.7));
+            position: relative;
+            overflow: hidden; 
+            padding: 10px 0;
+        }
+
+        .destaque-ouro-vidal {
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            filter: brightness(1.2) drop-shadow(0 0 10px rgba(252, 246, 186, 0.4));
+            padding: 0 5px;
+            margin: 0 -5px;
+        }
+
+        h1::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 45%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            transform: skewX(-25deg);
+            animation: flashBaseSuave 3s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes flashBaseSuave {
+            0% { left: -100%; }
+            30% { left: 160%; }
+            100% { left: 160%; }
+        }
+
+        .container-vsl-central {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 25px 0;
+            padding: 0 10px;
+        }
+
+        .video-box-ajustado {
+            width: 100%;
+            max-width: 1240px; 
+            position: relative;
+            padding-bottom: 90%; 
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #000;
+        }
+
+        .video-box-ajustado iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .logo-box { padding: 20px 0 10px; font-size: 1.1em; font-weight: 900; letter-spacing: 4px; color: var(--dourado); text-transform: uppercase; }
+        .img-familia { width: 100%; max-width: 450px; border-radius: 15px; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.6); margin-bottom: 15px; }
+        
+        .subheadline-container { background: rgba(255, 255, 255, 0.08); border-left: 6px solid var(--dourado); padding: 20px; margin: 0 auto 30px; text-align: left; border-radius: 4px; }
+        
+        .btn, .btn-cta-pro {
+            position: relative;
+            display: inline-block; 
+            background: linear-gradient(135deg, #22c55e, #16a34a); 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 18px 45px;
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem; 
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4); 
+            transition: 0.3s;
+            overflow: hidden;
+            border: none; 
+            cursor: pointer; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: zoomPulsar 2s infinite ease-in-out;
+            max-width: 100%;
+        }
+        .btn:hover, .btn-cta-pro:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(34, 197, 94, 0.6); }
+        
+        .btn::after, .btn-cta-pro::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -70%; width: 22%; height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                transparent 38%,
+                rgba(255,255,255,0.05) 47%,
+                rgba(255,255,255,0.13) 50%,
+                rgba(255,255,255,0.05) 53%,
+                transparent 62%,
+                transparent 100%
+            );
+            transform: rotate(18deg);
+            animation: brilho-premium 3s infinite ease-in-out;
+        }
+        @keyframes brilho-premium { 0%, 18% { left: -70%; } 52% { left: 120%; } 100% { left: 120%; } }
+
+        .nova-sessao-bonus {
+            background-color: var(--fundo-azul-marinho);
+            background-image: radial-gradient(circle at center, #162d50 0%, #0a1e3d 100%);
+            padding: 60px 0;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+        }
+
+        .nova-sessao-bonus::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #061226);
+            pointer-events: none;
+        }
+
+        .headline-ultra {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.2rem, 8vw, 4.2rem); 
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1; 
+            margin: 15px 0;
+            background: linear-gradient(to bottom, #fff, var(--dourado-premium));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-wrap: break-word;
+            position: relative;
+            overflow: hidden;
+        }
+        .headline-ultra::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -100%; width: 45%; height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+            transform: skewX(-25deg);
+            animation: flashBaseSuave 3s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .badge-hero {
+            background: var(--dourado-metalico);
+            color: #000; padding: 12px 40px;
+            font-family: 'Montserrat'; font-weight: 900; font-size: 1.1em;
+            text-transform: uppercase; display: inline-block; margin-bottom: 20px; 
+            border-radius: 50px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .badge-hero::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: rgba(255,255,255,0.4); transform: skewX(-30deg);
+            animation: brilho-premium 3s infinite;
+        }
+
+        .badge-premium {
+            background: var(--dourado-premium); color: #000; padding: 7px 20px; 
+            font-family: 'Montserrat'; font-weight: 900; font-size: 0.85em;
+            text-transform: uppercase; display: inline-block; margin-bottom: 15px;
+            clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 93% 100%, 0% 100%);
+        }
+
+        .secao-valor { display: flex; flex-direction: column; align-items: center; margin: 60px 0 80px; gap: 15px; }
+
+        .chamada-principal {
+            font-family: 'Montserrat'; font-weight: 800; font-size: clamp(1.4em, 4vw, 1.8em);
+            text-transform: uppercase; color: #fff; margin-bottom: 35px; letter-spacing: 2px;
+            border-left: 6px solid var(--dourado-premium); padding-left: 20px; display: block; text-align: center; margin-left: auto; margin-right: auto;
+        }
+
+        .mockup-vidal { width: 105%; max-width: 420px; filter: drop-shadow(0 30px 40px rgba(0,0,0,0.8)); transition: 0.5s; margin-top: -20px; }
+        .mockup-vidal:hover { transform: translateY(-10px) scale(1.05); }
+
+        .descricao-longa { font-size: 1.15em; line-height: 1.6; opacity: 0.95; margin-bottom: 20px; color: #e0e0e0; max-width: 850px; text-align: center; margin-left: auto; margin-right: auto;}
+
+        .grid-caminhos, .lista-check { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 580px; margin: 0 auto 20px; }
+        .lista-check li {
+            font-size: 1.05em; text-align: left; display: flex; align-items: center;
+            background: linear-gradient(135deg, rgba(6,26,63,0.88) 0%, rgba(23,42,69,0.55) 100%);
+            padding: 16px 22px; border-radius: 14px;
+            border: 1px solid rgba(0,255,102,0.22);
+            border-left: 3px solid rgba(0,255,102,0.55);
+            line-height: 1.4; color: #fff;
+            transition: all 0.32s ease;
+            position: relative; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 6px rgba(0,255,102,0.05);
+        }
+        .lista-check li::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, rgba(0,255,102,0.18), transparent);
+        }
+        .lista-check li:hover { 
+            background: linear-gradient(135deg, rgba(6,26,63,0.97) 0%, rgba(23,42,69,0.85) 100%);
+            transform: translateX(6px); 
+            border-color: rgba(0,255,102,0.42);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.38), 0 0 8px rgba(0,255,102,0.08);
+        }
+        .check-icon { 
+            color: #00e55a; font-weight: 900; margin-right: 18px; font-size: 1.15em; flex-shrink: 0;
+            text-shadow: 0 0 6px rgba(0,255,102,0.35);
+        }
+
+        .btn-interativo {
+            background: transparent; border: 2px solid var(--dourado-premium); color: var(--dourado-premium);
+            padding: 15px 35px; border-radius: 50px; font-weight: 800; text-transform: uppercase;
+            cursor: pointer; transition: 0.3s; outline: none; margin-top: 15px;
+        }
+        .btn-interativo.check { background: var(--verde-conversao); color: #fff; border-color: var(--verde-conversao); transform: scale(1.05); }
+
+        .checkout-box {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px; padding: 60px 20px; margin: 50px auto; overflow: visible; position: relative;
+            max-width: 950px;
+        }
+
+        .combo-explosao-wrapper {
+            position: relative; height: 380px; width: 100%; max-width: 650px; margin: 40px auto;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .img-explosao {
+            position: absolute; width: 280px; transition: all 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7)); left: 50%; margin-left: -140px;
+            opacity: 0;
+        }
+
+        .lateral-esq { transform: translateX(0) rotate(0) scale(0.5); }
+        .lateral-dir { transform: translateX(0) rotate(0) scale(0.5); }
+        .principal-centro { z-index: 5; opacity: 1; transform: scale(0.8); }
+
+        .combo-explosao-wrapper.ativo .lateral-esq { opacity: 1; transform: translateX(-200px) rotate(-12deg) scale(1.1); }
+        .combo-explosao-wrapper.ativo .lateral-dir { opacity: 1; transform: translateX(200px) rotate(12deg) scale(1.1); }
+        .combo-explosao-wrapper.ativo .principal-centro { opacity: 1; transform: scale(1.25); animation: floatCentro 3.5s infinite ease-in-out; }
+        @keyframes floatCentro { 0%, 100% { transform: scale(1.25) translateY(0); } 50% { transform: scale(1.25) translateY(-15px); } }
+
+        .selo-oval-premium {
+            background: linear-gradient(145deg, #D4AF37, #FFD700);
+            color: #000; padding: 15px 45px; border-radius: 100px;
+            display: inline-block; font-weight: 900; font-family: 'Montserrat';
+            font-size: 1.25em; margin-bottom: 15px; position: relative; overflow: hidden;
+        }
+
+        .preco-antigo { text-decoration: line-through; opacity: 0.5; font-size: 1.1em; display: block; margin-bottom: 10px; }
+        .preco-novo { color: var(--verde-conversao); font-size: clamp(3.5em, 12vw, 5em); font-weight: 900; line-height: 1; margin: 10px 0; display: block; }
+        
+        .frase-lanche {
+            background: rgba(255,255,255,0.03); padding: 22px; border-radius: 20px; 
+            margin: 25px auto; border-left: 5px solid var(--dourado-premium); max-width: 650px; font-style: italic;
+        }
+
+        .destaque-chance {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            padding-left: 5px;
+        }
+
+        /* ANIMAÇÃO INDIVIDUAL PREMIUM DO ZOOM PULSAR PARA A FRASE CHANCE */
+        .animacao-chance-pulsar {
+            display: inline-block;
+            animation: zoomPulsar 2s infinite ease-in-out;
+        }
+
+        .box-timer { 
+            margin: 30px auto; 
+            padding: 15px 25px; 
+            border: 2px solid var(--dourado-premium); 
+            border-radius: 15px; 
+            background: rgba(0,0,0,0.4); 
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+        }
+        #countdown {
+            font-size: clamp(1.6em, 7vw, 2.5em); 
+            font-weight: 900; 
+            color: var(--verde-neon); 
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+        }
+
+        .ajuste-seguranca { margin-top: 20px; opacity: 0.7; font-weight: 700; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 15px; border: 2px solid var(--dourado-premium); }
+        
+        /* ESTILO DO FAQ E AGORA TAMBÉM DO FALE CONOSCO */
+        .faq-item, .fale-conosco-box { 
+            background: var(--fundo-caixa-azul); 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            text-align: left; 
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 12px rgba(212,175,55,0.18);
+        }
+        .faq-question { width: 100%; background: var(--fundo-caixa-azul); color: #fff; padding: 20px; border: none; font-size: 1.1em; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; outline: none; }
+        .faq-answer { display: none; padding: 20px; color: #fffacd; background: rgba(255,255,255,0.08); border-top: 1px solid rgba(255,215,0,0.15); }
+        
+        @keyframes zoomPulsar { 
+            0%, 100% { transform: scale(1); filter: brightness(1); } 
+            50% { transform: scale(1.04); filter: brightness(1.2); } 
+        }
+
+        @keyframes pulseWhatsPremium {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0 rgba(37,211,102,0.0));
+            }
+            50% {
+                transform: scale(1.18);
+                filter: drop-shadow(0 0 16px rgba(37,211,102,0.75));
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 0 rgba(37,211,102,0.0));
+            }
+        }
+
+        .zap-jump { width: 52px; height: 52px; vertical-align: middle; animation: zapPulse 1.2s infinite ease-in-out; }
+        @keyframes zapPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.16); } }
+        .chamada-extra { color: var(--dourado); font-size: 1em; font-weight: 600; margin-top: 15px; display: block; }
+
+        .secao-premium-mentalidade {
+            background: linear-gradient(180deg, #1b3b80 0%, #1b3b80 15%, #061226 100%);
+            padding: 80px 15px;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .headline-impacto-retro { margin-bottom: 60px; position: relative; z-index: 2; }
+        .headline-impacto-retro h2 { font-size: clamp(1.2rem, 5vw, 1.8rem); font-weight: 400; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 2px; background: none; -webkit-text-fill-color: initial; }
+        .headline-impacto-retro .subtitulo-destaque-print { 
+            font-size: clamp(1.4rem, 6vw, 2.4rem); 
+            font-weight: 900; 
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .grid-escassez-premium { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 60px; }
+        .card-premium-dor { background: rgba(255, 255, 255, 0.06); border-left: 4px solid #BF953F; padding: 30px 20px; border-radius: 12px; text-align: left; }
+        .card-premium-dor b { color: #FCF6BA; display: block; margin-bottom: 10px; text-transform: uppercase; font-size: 0.95rem; }
+        .card-premium-dor p { margin: 0; font-size: 1.05rem; line-height: 1.4; color: #ffffff; }
+
+        /* NOVA ESTRUTURA REFINADA - CAIXAS INDIVIDUAIS COM RELEVU AZUL E CONTORNO DOURADO SUTIL */
+        .contraste-destinos { 
+            position: relative; 
+            z-index: 2; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 25px; 
+            max-width: 850px;
+            margin: 40px auto 60px;
+        }
+        .card-destino-lux { 
+            display: flex; 
+            align-items: center; 
+            padding: 28px 25px; 
+            border-radius: 15px; 
+            text-align: left; 
+            position: relative; 
+            overflow: hidden; 
+            background: var(--fundo-caixa-azul); 
+            border: 1px solid rgba(191, 149, 63, 0.3); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease; 
+        }
+        .card-destino-lux:hover { transform: translateY(-3px); }
+        .card-destino-lux.negativo { border-left: 5px solid #ff4d4d; background: linear-gradient(90deg, rgba(255, 77, 77, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
+        .card-destino-lux.positivo { border-left: 5px solid var(--verde-neon); background: linear-gradient(90deg, rgba(0, 255, 102, 0.02) 0%, var(--fundo-caixa-azul) 100%); }
+        
+        /* Efeito Shimmer de Luz no cenário liberto */
+        .card-destino-lux.positivo::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -100%; width: 45%; height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+            transform: skewX(-25deg);
+            animation: reflexoDouradoLP 3s infinite ease-in-out;
+        }
+        @keyframes reflexoDouradoLP { 0% { left: -100%; } 30% { left: 160%; } 100% { left: 160%; } }
+        
+        .card-destino-lux .icon-container { font-size: 1.8rem; margin-right: 25px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; }
+        .card-destino-lux.negativo .icon-container { color: #ff4d4d; border: 1px solid rgba(255, 77, 77, 0.2); background: rgba(255, 77, 77, 0.05); }
+        .card-destino-lux.positivo .icon-container { color: var(--verde-neon); border: 1px solid rgba(0, 255, 102, 0.2); background: rgba(0, 255, 102, 0.05); }
+        .card-destino-lux h4 { margin: 0 0 6px; font-family: 'Montserrat', sans-serif; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff; }
+        .card-destino-lux p { margin: 0; font-size: 1.05rem; line-height: 1.55; color: var(--texto-claro); }
+
+        .secao-confronto { max-width: 850px; margin: 0 auto 50px; padding: 50px 25px; background: rgba(0, 0, 0, 0.3); border-radius: 25px; border: 1px solid rgba(191, 149, 63, 0.2); }
+        .secao-confronto h3 { font-size: 1.6rem; color: #FCF6BA; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .texto-impacto { font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.95); text-align: left; }
+        .destaque-positivo { color: #00ff66; font-weight: 800; }
+
+        .box-garantia-premium { 
+            margin: 60px auto; 
+            max-width: 850px; 
+            padding: 50px; 
+            text-align: center; 
+            background: var(--fundo-caixa-azul);
+            border: 2px solid var(--dourado-premium); 
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+        .img-selo-garantia { width: 100%; max-width: 320px; margin-bottom: 25px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); }
+        .texto-garantia-vidal { font-size: 1.25em; line-height: 1.7; color: #fff; max-width: 850px; margin: 0 auto; font-weight: 600; }
+
+        .chamada-ebook {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.45rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .check-v-lux { 
+            margin-bottom: 14px; 
+            font-weight: 800; 
+            font-size: 1.08rem; 
+            background: linear-gradient(135deg, rgba(6,26,63,0.88) 0%, rgba(11,44,107,0.55) 100%);
+            padding: 18px 24px 18px 22px; 
+            border-radius: 16px; 
+            border: 1.5px solid rgba(0,255,102,0.30);
+            box-shadow: 
+                0 0 14px rgba(0,255,102,0.07),
+                0 8px 28px rgba(0,0,0,0.38),
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                inset 0 -1px 0 rgba(0,0,0,0.2);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .check-v-lux::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 5px; height: 100%;
+            background: linear-gradient(to bottom, #00ff66, #22c55e, #16a34a);
+            border-radius: 16px 0 0 16px;
+            box-shadow: 0 0 14px rgba(0,255,102,0.65);
+        }
+
+        .check-v-lux::before{
+            content:'✔';
+            color: #00ff66;
+            -webkit-text-fill-color: #00ff66 !important;
+            font-size: 1.38rem;
+            font-weight: 900;
+            text-shadow: 0 0 6px rgba(0,255,102,0.22);
+            margin-right: 4px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            opacity: 1;
+            filter: none;
+        }
+
+        .check-v-lux:hover {
+            transform: translateX(8px) scale(1.01);
+            border-color: rgba(0,255,102,0.52);
+            box-shadow: 
+                0 0 18px rgba(0,255,102,0.12),
+                0 14px 38px rgba(0,0,0,0.48),
+                inset 0 1px 0 rgba(255,255,255,0.09);
+        }
+
+        .check-v-lux i {
+            display:none;
+        }
+
+        /* AJUSTE PREMIUM DOS CHECKLISTS EM CELULARES MENORES */
+        .checkpoint-final-premium .check-v-lux{
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+            transform: translateZ(0);
+        }
+
+        @media (max-width: 430px){
+            .checkpoint-final-premium .check-v-lux{
+                padding: 16px 18px 16px 18px;
+                gap: 12px;
+                font-size: 0.98rem;
+                line-height: 1.45;
+                box-shadow:
+                    0 6px 18px rgba(0,0,0,0.34),
+                    inset 0 1px 0 rgba(255,255,255,0.05);
+            }
+
+            .checkpoint-final-premium .check-v-lux::before{
+                font-size: 1.32rem;
+                text-shadow: 0 0 10px rgba(0,255,102,0.45);
+            }
+
+            .checkpoint-final-premium .check-v-lux::after{
+                box-shadow: 0 0 8px rgba(0,255,102,0.45);
+            }
+        }
+
+        /* DESTAQUE DOURADO INTERNO TEXTO */
+        .texto-dourado-inline {
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: inline;
+        }
+
+        /* --- SEÇÕES DE POSICIONAMENTO --- */
+        .secao-posicionamento {
+            padding: 70px 30px;
+            background: linear-gradient(145deg, rgba(6,18,38,0.95) 0%, rgba(11,44,107,0.35) 50%, rgba(6,18,38,0.95) 100%);
+            border: 1px solid rgba(212,175,55,0.28);
+            border-top: 2px solid rgba(212,175,55,0.45);
+            margin: 40px 0;
+            border-radius: 40px;
+            width: 100%; 
+            box-sizing: border-box;
+            box-shadow: 0 0 60px rgba(212,175,55,0.06), 0 25px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .secao-posicionamento::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
+        }
+        
+        .grid-caminhos {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* ESTILIZAÇÃO ULTRA-PREMIUM DOS CAMINHOS DE POSICIONAMENTO */
+        .box-caminho {
+            background: linear-gradient(145deg, rgba(6,26,63,0.92) 0%, rgba(6,18,38,0.98) 100%);
+            padding: 38px 32px;
+            border-radius: 22px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+        .box-caminho:hover { transform: translateY(-10px); }
+        .box-caminho::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            border-radius: 22px 22px 0 0;
+        }
+        .box-caminho::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 20%; width: 60%; height: 1px;
+        }
+        .box-caminho.errado::before { background: linear-gradient(90deg, #ff4d4d, #ff8080, #ff4d4d); box-shadow: 0 0 12px rgba(255,77,77,0.5); }
+        .box-caminho.errado::after { background: linear-gradient(90deg, transparent, rgba(255,77,77,0.3), transparent); }
+        .box-caminho.errado { border: 1px solid rgba(255,77,77,0.2); box-shadow: 0 0 35px rgba(255,77,77,0.06), 0 20px 50px rgba(0,0,0,0.5); }
+        .box-caminho.errado:hover { box-shadow: 0 0 50px rgba(255,77,77,0.12), 0 25px 60px rgba(0,0,0,0.6); }
+        .box-caminho.certo::before { background: linear-gradient(90deg, #00ff66, #22c55e, #00ff66); box-shadow: 0 0 14px rgba(0,255,102,0.6); }
+        .box-caminho.certo::after { background: linear-gradient(90deg, transparent, rgba(0,255,102,0.3), transparent); }
+        .box-caminho.certo { border: 1px solid rgba(0,255,102,0.22); box-shadow: 0 0 40px rgba(0,255,102,0.08), 0 20px 50px rgba(0,255,102,0.04), 0 20px 50px rgba(0,0,0,0.5); }
+        .box-caminho.certo:hover { box-shadow: 0 0 55px rgba(0,255,102,0.18), 0 25px 60px rgba(0,0,0,0.6); }
+        
+        .box-caminho h4 { margin-top: 0; font-size: 1.4rem; text-transform: uppercase; font-family: 'Montserrat'; font-weight: 800; display: flex; align-items: center; gap: 12px; letter-spacing: 0.5px; }
+        .box-caminho p { margin: 0; font-size: 1.1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); font-family: 'Inter', sans-serif; }
+
+        .secao-recomeco {
+            background: linear-gradient(135deg, rgba(11, 44, 107, 0.8), rgba(6, 18, 38, 1));
+            padding: 70px 40px;
+            border-radius: 40px;
+            margin: 80px auto;
+            border: 2px solid rgba(255, 215, 0, 0.15);
+            max-width: 850px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            position: relative;
+            width: calc(100% - 20px); 
+            box-sizing: border-box;
+        }
+
+        /* TÍTULO RECOMEÇAR REESTILIZADO */
+        .titulo-recomecar-premium {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.6rem, 5vw, 2.4rem); 
+            margin-bottom: 35px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--dourado-branco); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.25;
+            display: block;
+            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.9)) drop-shadow(0px 0px 15px rgba(255, 242, 0, 0.2));
+        }
+
+        /* ESTILO DA FOTO CIRCULAR PREMIUM (FIXO) */
+        .box-foto-autora {
+            width: 240px;
+            height: 240px;
+            margin: 0 auto 35px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .foto-circular {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 25px rgba(191, 149, 63, 0.6);
+            z-index: 2;
+        }
+        .box-foto-autora::after {
+            content: '';
+            position: absolute;
+            top: -12px; left: -12px; right: -12px; bottom: -12px;
+            border-radius: 50%;
+            border: 2px solid var(--dourado-premium);
+            opacity: 0.7;
+        }
+
+        /* SEÇÃO AUTORA - AMPLIADA E DESIGN CORRIGIDO */
+        .secao-autor-premium {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 45px 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(191, 149, 63, 0.2);
+            text-align: left;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+            max-width: 1000px; 
+            margin: 0 auto;
+            width: 100%;
+        }
+        .frase-impacto-autor {
+            background: var(--dourado-metalico);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            display: block;
+            margin: 15px 0;
+            letter-spacing: 1px;
+        }
+
+        /* LINHA SEPARADORA DA AUTORA (DOURADA E REFORÇADA PARA MÁXIMO CONTRASTE NO MARINHO) */
+        .linha-separadora-autora {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(90deg, transparent, rgba(252, 246, 186, 0.85), transparent);
+            margin: 35px auto 30px;
+            width: 85%;
+            display: block;
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 850px) {
+            .grid-caminhos { grid-template-columns: 1fr; } 
+            .secao-recomeco { padding: 40px 20px; margin: 40px auto; width: 95%; }
+            .box-caminho { padding: 30px 20px; width: 100%; }
+            .secao-posicionamento { padding: 40px 15px; border-radius: 20px; }
+            .secao-autor-premium { padding: 35px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .combo-explosao-wrapper { height: 300px; }
+            .img-explosao { width: 190px; margin-left: -95px; }
+            .combo-explosao-wrapper.ativo .lateral-esq { transform: translateX(-105px) rotate(-10deg); }
+            .combo-explosao-wrapper.ativo .lateral-dir { transform: translateX(105px) rotate(10deg); }
+            .preco-novo { font-size: 3.5em; }
+            .headline-ultra { font-size: 2rem; }
+            .box-foto-autora { width: 190px; height: 190px; }
+        }
+
+
+        @media (max-width: 480px) {
+            .card-destino-lux { flex-direction: column; text-align: center; }
+            .card-destino-lux .icon { margin-right: 0; margin-bottom: 10px; }
+            .btn, .btn-cta-pro { padding: 15px 25px; font-size: 1rem; }
+            .box-caminho h4 { font-size: 1.2rem; }
+
+            .checkpoint-final-premium .check-v-lux{
+                padding: 21px 22px 21px 20px;
+                gap: 15px;
+                align-items: center;
+                border-radius: 22px;
+                min-height: 132px;
+                font-size: 1.16rem;
+                line-height: 1.48;
+            }
+
+            .checkpoint-final-premium .check-v-lux::before{
+                font-size: 1.7rem;
+                text-shadow: none !important;
+                filter: none !important;
+                opacity: 1;
+                margin-right: 6px;
+            }
+
+            .checkpoint-final-premium .chamada-ebook{
+                font-size: 1.7rem !important;
+                line-height: 1.32;
+                margin-bottom: 30px;
+            }
+
+            .checkpoint-final-premium{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        
+        /* FOOTER PREMIUM REFINADO */
+        .footer-premium { 
+            padding: 64px 24px 44px; 
+            background: linear-gradient(180deg, #0d2654 0%, #071535 50%, #061226 100%);
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow-x: hidden;
+            border-radius: 52px 52px 0 0;
+            margin-top: 10px;
+            position: relative;
+            border-top: 1px solid rgba(11, 60, 160, 0.35);
+        }
+        .footer-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
+            border-radius: 2px;
+        }
+
+        /* CARD DE CONTATO */
+        .contato-box {
+            background: linear-gradient(145deg, rgba(11,44,107,0.65) 0%, rgba(6,26,63,0.85) 100%);
+            border: 1px solid rgba(30, 90, 200, 0.38);
+            box-shadow: 0 8px 40px rgba(0, 30, 120, 0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+            padding: 48px 40px 44px;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto 0;
+            backdrop-filter: blur(12px);
+        }
+
+        /* LABEL TOPO DO CARD */
+        .subtitulo-fale-conosco {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.68rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(212,175,55,0.75);
+            margin: 0 0 18px 0;
+            display: block;
+        }
+
+        /* LINHA SEPARADORA */
+        .linha-separadora-fale {
+            border: 0;
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+            margin: 18px auto 24px;
+            width: 100%;
+            display: block;
+        }
+
+        /* TÍTULO DÚVIDA */
+        .titulo-duvida-footer {
+            color: #ffffff;
+            margin: 0 0 6px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: none;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+        }
+
+        /* SUBTEXTO */
+        .footer-subtexto {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.82);
+            margin: 0 0 28px 0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* BOTÃO WHATSAPP REFINADO */
+        .btn-zap-custom { 
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%); 
+            color: #ffffff; 
+            border: none;
+            padding: 15px 28px; 
+            border-radius: 50px; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; 
+            font-size: 0.92rem; 
+            cursor: pointer; 
+            width: 100%;
+            max-width: 380px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            box-shadow: 0 8px 24px rgba(34,197,94,0.22);
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            line-height: 1;
+        }
+        .btn-zap-custom:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(34,197,94,0.38); }
+
+        /* EMAIL NO FOOTER */
+        .footer-email {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.84rem;
+            color: rgba(255,255,255,0.70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            margin: 0;
+            transition: color 0.25s;
+        }
+        .footer-email:hover { color: rgba(255,255,255,0.95); }
+
+        /* DIVISOR */
+        .footer-divider {
+            width: 100%;
+            max-width: 380px;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 36px auto;
+        }
+
+        /* LINKS LEGAIS */
+        .links-container {
+            margin: 0 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+            align-items: center;
+        }
+        .link-footer {
+            background: none; 
+            border: none; 
+            color: rgba(255,255,255,0.68); 
+            cursor: pointer; 
+            font-size: 0.76rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            padding: 5px 8px;
+            transition: color 0.2s;
+            letter-spacing: 0.2px;
+            text-decoration: none;
+        }
+        .link-footer:hover { color: rgba(255,255,255,0.95); }
+        
+        .legal-content { 
+            display: none; 
+            background: rgba(4,12,28,0.98);
+            padding: 28px; 
+            margin: 12px auto; 
+            border-radius: 20px; 
+            text-align: left; 
+            width: 95%;
+            max-width: 480px;
+            border: 1px solid rgba(212,175,55,0.45);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 18px rgba(212,175,55,0.08);
+            color: rgba(255,255,255,0.78);
+        }
+        .btn-fechar-legal { 
+            background: rgba(255,255,255,0.08); 
+            color: rgba(255,255,255,0.7); 
+            border: none; 
+            padding: 5px 12px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            float: right;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-fechar-legal:hover { background: rgba(255,255,255,0.16); }
+        .copyright {
+            opacity: 0.62; 
+            font-size: 0.73rem; 
+            margin-top: 4px;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+    <header class="container-850" style="background: transparent;">
+        <div class="logo-box">Não Mais Escravos</div>
+        
+        <h2 class="subtitulo-topo-dourado">O ciclo de escassez da sua família termina em você agora!</h2>
+
+        <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/Gemini_Generated_Image_nsxxk6nsxxk6nsxx.webp" class="img-familia">
+        
+        <h1>Descubra como destravar a <span class="destaque-ouro-vidal">Prosperidade</span> que foi <span class="destaque-ouro-vidal">Ocultada por gerações.</span></h1>
+        
+        <div class="subheadline-container">
+            <p style="font-weight: 800; color: #fff; margin:0;">Você é a chave para uma nova história! Construa o legado que sua família merece, através do método <span style="color:var(--dourado);">Não Mais Escravos!</span></p>
+        </div>
+    </header>
+
+    <div class="container-vsl-central">
+        <div class="video-box-ajustado">
+            <iframe src="https://www.youtube.com/embed/2otJX0c3Jmo?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="container-850">
+        <button onclick="irParaCheckout()" class="btn">QUERO ROMPER AS CORRENTES AGORA</button>
+        <div style="display:flex; justify-content:center; gap:20px; margin:15px 0; font-size:0.8em; color:#ccc;">
+            <span>🔒 Site protegido com SSL</span> | <span>🛡️ Compra 100% Segura</span>
+        </div>
+    </div>
+
+    <section class="secao-premium-mentalidade">
+        <div class="headline-impacto-retro">
+            <h2>Até quando você aceitará</h2>
+            <span class="subtitulo-destaque-print">A SOBREVIVÊNCIA COMO DESTINO?</span>
+        </div>
+        <div class="grid-escassez-premium">
+            <div class="card-premium-dor"><b>Estagnação</b><p>Sempre tenta, e nunca dá certo. Você trabalha incansavelmente, mas parece que nada sai do lugar.</p></div>
+            <div class="card-premium-dor"><b>Exclusão</b><p>Parece que o sucesso acontece para todos, menos para você. Você se sente um eterno espectador da vitória alheia.</p></div>
+            <div class="card-premium-dor"><b>Bloqueio</b><p>Sempre que você está prestes a avançar, algo invisível te puxa de volta. Isso não é azar, é uma barreira mental.</p></div>
+            <div class="card-premium-dor"><b>Frustração</b><p>Já tentou várias formas de prosperar e nada funcionou. O deserto emocional de ver o tempo passar sem colher frutos trava seu destino.</p></div>
+            <div class="card-premium-dor"><b>Escassez</b><p>O dinheiro some da sua mão tão rápido quanto entra. Você vive sob a sombra da instabilidade e do medo do amanhã.</p></div>
+        </div>
+        
+        <div class="contraste-destinos">
+            <div class="card-destino-lux negativo">
+                <div class="icon-container">
+                    <i class="fa-solid fa-link"></i>
+                </div>
+                <div>
+                    <h4 style="color: #ff4d4d;">Se você decidir ignorar essa chave...</h4>
+                    <p>Você continuará preso aos mesmos limites e ciclos financeiros antigos, aceitando carregar o peso invisível da escassez por mais alguns anos.</p>
+                </div>
+            </div>
+            <div class="card-destino-lux positivo">
+                <div class="icon-container">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <div>
+                    <h4 style="color: var(--verde-neon);">Se você decidir agir agora...</h4>
+                    <p style="font-weight: 600;">Você romperá definitivamente essas amarras ocultas, ativará a mentalidade de abundância e construirá o verdadeiro legado que sua família merece.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="secao-posicionamento container-850">
+            <h2 class="titulo-secao" style="font-size: 1.8rem;">🚀 PARE DE SER ESCRAVO DO SEU PRÓPRIO NEGÓCIO!</h2>
+            <p class="descricao-longa">Trabalhar muito não é garantia de lucro. O que diferencia quem sobrevive de quem prospera não é o esforço, é o <b>posicionamento estratégico.</b></p>
+            
+            <div class="grid-caminhos">
+                <div class="box-caminho errado">
+                    <h4 style="color:#ff4d4d"><i class="fa-solid fa-lock"></i> O Posicionamento Errado</h4>
+                    <p>Onde você tenta ser tudo para todos, vira o "faz-tudo" e acaba sendo desvalorizado. O resultado? Estresse, invisibilidade e baixos lucros.</p>
+                </div>
+                <div class="box-caminho certo">
+                    <h4 style="color:var(--verde-neon)"><i class="fa-solid fa-key"></i> O Posicionamento Certo</h4>
+                    <p>Você define seu nicho, comunica seu valor único e se torna uma autoridade. O resultado? Crescimento, reconhecimento e liberdade geográfica e financeira.</p>
+                </div>
+            </div>
+
+            <div class="texto-impacto" style="background: linear-gradient(135deg, rgba(6,18,38,0.95) 0%, rgba(11,44,107,0.4) 100%); padding: 38px 32px; border-radius: 24px; border: 1px solid rgba(212,175,55,0.22); border-left: 4px solid var(--dourado-premium); box-shadow: 0 0 40px rgba(212,175,55,0.05), 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); position: relative; overflow: hidden;">
+                <div style="position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);"></div>
+                <p style="margin-top:0;">Um negócio de sucesso começa com uma <b>quebra de mentalidade.</b> Se você não romper com as velhas crenças que te mantêm preso operacionalmente, nunca alcançará a estratégia que te liberta.</p>
+                <p style="font-weight: 700; color: #fff;">🧠 Quer mudar esse jogo e parar de ser escravo da sua rotina?</p>
+                <p>Eu escrevi o e-book <b>Não Mais Escravos</b> justamente para te ajudar a romper essas barreiras mentais e construir o caminho que vende.</p>
+                <div style="margin-top:28px;">
+                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="width:100%;">GARANTIR MEU ACESSO AGORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="secao-confronto">
+            <h3>A Verdade que Ninguém te Contou</h3>
+            <div class="texto-impacto">
+                <p>Muitos acreditam na mentira silenciosa de que prosperidade é apenas para os <b>"sortudos"</b> ou que você precisa <b>ganhar na loteria</b> para mudar de vida. Essa é a maior prisão mental que existe.</p>
+                <p>A verdade é que a riqueza não é um lance de dados. Existe um <span class="destaque-positivo">Código Ocultado</span> por gerações, um fundamento que os mais prósperos sempre acessaram, enquanto o restante da população foi ensinado a apenas sobreviver.</p>
+                <p>Você não precisa de sorte; você precisa de <span class="destaque-positivo">Acesso.</span> No e-book <b>Não Mais Escravos</b>, eu revelo essa chave poderosa que foi mantida longe dos seus olhos, para que você pare de lutar contra o sistema e comece a dominá-lo.</p>
+            </div>
+        </div>
+        <div class="checkpoint-final-premium container-850">
+            <span class="chamada-ebook">Ao garantir o seu acesso ao e-book hoje, você recebe:</span>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O método para o rompimento definitivo de bloqueios mentais</div>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O passo a passo para ativação da mentalidade de abundância</div>
+            <div class="check-v-lux"><i class="fa-solid fa-check-double"></i> O mapa prático para alcançar o seu próximo patamar de vitória</div>
+        </div>
+        <span class="titulo-final-dourado">O ciclo de escassez termina em você agora</span>
+    </section>
+    
+    <div class="nova-sessao-bonus">
+        <section class="hero-section" style="background: transparent; padding-top: 0;">
+            <div class="container-850 revelar-subir">
+                <div class="badge-hero">🔥 Oferta Exclusiva: 3 em 1</div>
+                <h1 class="headline-ultra">Renove sua mente e<br><span style="color:var(--dourado-premium)">Domine sua Liberdade</span></h1>
+                <p style="font-size: 1.3em; opacity: 0.8; max-width: 750px; margin: 10px auto;">O método definitivo para destravar sua vida financeira e ativar fontes de lucro imediato.</p>
+            </div>
+        </section>
+
+        <div class="container-850">
+            <div class="secao-valor">
+                <div class="chamada-principal revelar-subir">Tudo isso será seu agora:</div>
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">E-book Principal</div>
+                <h2 class="titulo-secao revelar-subir">Não Mais Escravos</h2>
+                <p class="descricao-longa revelar-subir">Este não é apenas um livro, é um sistema de despertar completo. Você vai identificar as "travas" invisíveis instaladas na sua história que fazem o dinheiro fugir de você. Desperte a sabedoria prática da prosperidade e aprenda a blindar sua vida para um sucesso financeiro duradouro.</p>
+                <ul class="lista-check">
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Quebra total de bloqueios de escassez</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Ativação da sabedoria para prosperidade</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Plano prático para domínio da liberdade</li>
+                </ul>
+            </div>
+
+            <div class="secao-valor">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">Bônus de Ouro 01</div>
+                <h2 class="titulo-secao revelar-subir">Brigadeiro Gourmet</h2>
+                <p class="descricao-longa revelar-subir">Precisa de dinheiro rápido? Este guia prático ensina como transformar poucos reais em um faturamento diário constante. Ideal para quem quer começar um negócio do zero com baixo investimento.</p>
+                <ul class="lista-check">
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Receitas profissionais e lucrativas</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas para lucro diário</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Ganhos extras de até R$ 3.000 por mês</li>
+                </ul>
+                <button class="btn-interativo revelar-subir" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+            </div>
+
+            <div class="secao-valor">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="mockup-vidal revelar-subir">
+                <div class="badge-premium revelar-subir">Bônus de Ouro 02</div>
+                <h2 class="titulo-secao revelar-subir">Sucos Detox</h2>
+                <p class="descricao-longa revelar-subir">Entre no mercado de saúde e bem-estar com sucos funcionais de alta margem de lucro. Aprenda a criar sua própria marca e atrair clientes fiéis todos os dias.</p>
+                <ul class="lista-check">
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Mix para saúde e emagrecimento</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Método para criar sua marca do zero</li>
+                    <li class="revelar-direita"><i class="fa-solid fa-check check-icon"></i> Estratégia de vendas recorrentes</li>
+                </ul>
+                <button class="btn-interativo revelar-subir" onclick="toggleBtn(this)">Garantir este Bônus 🎁</button>
+            </div>
+
+            <div class="checkout-box revelar-preco">
+                <div class="selo-oval-premium">LEVE 3 PELO PREÇO DE 1</div>
+                <div style="margin: 20px 0;">
+                    <span class="preco-antigo">De R$ 72,80</span>
+                    <span style="text-transform: uppercase; font-weight: 700; opacity: 0.8;">Por apenas</span>
+                    <span class="preco-novo">R$ 33,00</span>
+                    <p style="color: var(--dourado-premium); font-weight: 800; margin-top: 5px;">OU 4X DE R$ 8,98*</p>
+                </div>
+
+                <div class="combo-explosao-wrapper">
+                    <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(9).webp" class="img-explosao lateral-esq">
+                    <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(10).webp" class="img-explosao lateral-dir">
+                    <img src="https://raw.githubusercontent.com/admrutesilva-arch/Imagens-webp-2.0/main/meuEbookResetei%20(1).webp" class="img-explosao principal-centro">
+                </div>
+
+                <div class="frase-lanche">
+                    <p style="margin:0;">"Não perca esta oportunidade! O valor de um lanche que você gasta em minutos pode mudar a história da sua família. <span class="destaque-chance animacao-chance-pulsar">Essa é sua chance!"</span></p>
+                </div>
+
+                <div class="box-timer">
+                    <span style="font-size: 0.7em; color: var(--dourado-premium); display: block; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Oferta por tempo limitado:</span>
+                    <span id="countdown">00:29:59</span>
+                </div>
+                <br>
+                <button onclick="irParaCheckout()" class="btn-cta-pro">Garantir meu combo agora!</button>
+                <div class="ajuste-seguranca">
+                    <i class="fa-solid fa-lock" style="color:var(--verde-conversao)"></i> PAGAMENTO SEGURO | ENTREGA IMEDIATA
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-850" style="background: linear-gradient(to bottom, #061226, #1b3b80); padding-top: 10px;">
+        
+        <section class="secao-recomeco">
+            <h2 class="titulo-recomecar-premium">RECOMEÇAR não é desistir, é ter a coragem de tentar de um jeito novo.</h2>
+            <div class="texto-impacto" style="font-size: 1.1rem; line-height: 1.8;">
+                <p>Muitas vezes, ficamos presos a padrões antigos, medos e uma mentalidade que nos limita. Mas a verdade é que o próximo capítulo da sua vida exige uma nova versão de você.</p>
+                <p>Se você sente que está trabalhando muito, mas não sai do lugar, o problema pode não estar no que você faz, mas em como você pensa. <span class="destaque-positivo">A prosperidade começa na mente</span> antes de se manifestar na conta bancária ou nos seus relacionamentos.</p>
+                <p>É hora de quebrar as correntes da escassez e assumir o controle da sua jornada. <strong>Você nasceu para prosperar, não apenas para sobreviver! 🚀</strong></p>
+                <div style="margin-top:40px; padding:30px; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px dashed var(--dourado-premium);">
+                    <p style="margin-top:0;">📚 <strong>Dê o primeiro passo hoje:</strong> O e-book Não Mais Escravos é o guia prático que você precisa para viver a liberdade que sempre sonhou.</p>
+                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="background: var(--dourado-metalico); color: #000; box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);">QUERO RECOMEÇAR MINHA HISTÓRIA</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-destravar" style="padding-top: 70px; margin-top: 20px;">
+            <h2 class="titulo-final-dourado" style="margin-top: 0; background: none; -webkit-text-fill-color: initial; color: #ffffff; font-size: clamp(1.5rem, 5vw, 2.2rem); line-height: 1.3;">Quantas <span style="color: #CBB36B; -webkit-text-fill-color: #CBB36B;">dores</span> você ainda está carregando sem perceber?</h2>
+
+            <div style="background: linear-gradient(135deg, rgba(6,26,63,0.92), rgba(11,44,107,0.75)); border: 1px solid rgba(255,215,0,0.18); border-radius: 30px; padding: 45px 30px; max-width: 900px; margin: 0 auto; box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; overflow: hidden;">
+
+                <div style="position:absolute; top:-40px; right:-40px; width:120px; height:120px; background: rgba(255,215,0,0.05); border-radius:50%; filter: blur(5px);"></div>
+
+                <style>
+                    /* Container principal — coluna centralizada */
+                    .dor-grid-neon {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                        max-width: 500px;
+                        margin: 0 auto 28px;
+                        width: 100%;
+                    }
+                    /* Linha dupla: Medos + Culpas lado a lado */
+                    .dor-linha-dupla {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        width: 100%;
+                    }
+                    @media (max-width: 360px) {
+                        .dor-linha-dupla { flex-direction: column; }
+                        .dor-linha-dupla .dor-card-neon { flex: none; width: 100%; }
+                    }
+                    /* Card pílula horizontal */
+                    .dor-card-neon {
+                        background: rgba(255,255,255,0.06);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        border-radius: 50px;
+                        padding: 14px 22px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        width: 100%;
+                        transition: all 0.28s ease;
+                        cursor: default;
+                        backdrop-filter: blur(6px);
+                    }
+                    .dor-linha-dupla .dor-card-neon { flex: 1; }
+                    .dor-card-neon:hover {
+                        background: rgba(255,255,255,0.1);
+                        border-color: rgba(255,255,255,0.22);
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+                    }
+                    /* Cores individuais por card via classe */
+                    .dor-c1 { border-color: rgba(147,51,234,0.4); }
+                    .dor-c1:hover { border-color: rgba(147,51,234,0.75); box-shadow: 0 6px 20px rgba(147,51,234,0.2); }
+                    .dor-c2 { border-color: rgba(59,130,246,0.4); }
+                    .dor-c2:hover { border-color: rgba(59,130,246,0.75); box-shadow: 0 6px 20px rgba(59,130,246,0.2); }
+                    .dor-c3 { border-color: rgba(239,68,68,0.4); }
+                    .dor-c3:hover { border-color: rgba(239,68,68,0.75); box-shadow: 0 6px 20px rgba(239,68,68,0.2); }
+                    .dor-c4 { border-color: rgba(245,158,11,0.4); }
+                    .dor-c4:hover { border-color: rgba(245,158,11,0.75); box-shadow: 0 6px 20px rgba(245,158,11,0.2); }
+                    .dor-c5 { border-color: rgba(99,102,241,0.4); }
+                    .dor-c5:hover { border-color: rgba(99,102,241,0.75); box-shadow: 0 6px 20px rgba(99,102,241,0.2); }
+                    .dor-c6 { border-color: rgba(20,184,166,0.4); }
+                    .dor-c6:hover { border-color: rgba(20,184,166,0.75); box-shadow: 0 6px 20px rgba(20,184,166,0.2); }
+                    /* Ícone emoji — sem moldura, só o emoji */
+                    .dor-icon-neon {
+                        font-size: 22px;
+                        line-height: 1;
+                        flex-shrink: 0;
+                    }
+                    /* Label */
+                    .dor-label-neon {
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 800;
+                        font-size: 0.82rem;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .dor-c1 .dor-label-neon,
+                    .dor-c2 .dor-label-neon,
+                    .dor-c3 .dor-label-neon,
+                    .dor-c4 .dor-label-neon,
+                    .dor-c5 .dor-label-neon,
+                    .dor-c6 .dor-label-neon { color: #ffffff; }
+                </style>
+
+                <div class="dor-grid-neon">
+                    <!-- Linha dupla: Medos + Culpas -->
+                    <div class="dor-linha-dupla">
+                        <div class="dor-card-neon dor-c1">
+                            <span class="dor-icon-neon">🧠</span>
+                            <span class="dor-label-neon">Medos</span>
+                        </div>
+                        <div class="dor-card-neon dor-c2">
+                            <span class="dor-icon-neon">😔</span>
+                            <span class="dor-label-neon">Culpas</span>
+                        </div>
+                    </div>
+                    <!-- Mágoas -->
+                    <div class="dor-card-neon dor-c3">
+                        <span class="dor-icon-neon">💔</span>
+                        <span class="dor-label-neon">Mágoas</span>
+                    </div>
+                    <!-- Traumas -->
+                    <div class="dor-card-neon dor-c4">
+                        <span class="dor-icon-neon">🩹</span>
+                        <span class="dor-label-neon">Traumas</span>
+                    </div>
+                    <!-- Rejeições -->
+                    <div class="dor-card-neon dor-c5">
+                        <span class="dor-icon-neon">🚫</span>
+                        <span class="dor-label-neon">Rejeições</span>
+                    </div>
+                    <!-- Decepções -->
+                    <div class="dor-card-neon dor-c6">
+                        <span class="dor-icon-neon">😢</span>
+                        <span class="dor-label-neon">Decepções</span>
+                    </div>
+                </div>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    Tudo isso pesa… e impede você de viver o novo que Deus preparou para a sua vida.
+                </p>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    A verdadeira superação começa quando você decide <span class="texto-dourado-inline">soltar o que te prende ao passado</span> e assumir uma nova mentalidade. 💭🔥
+                </p>
+
+                <div style="background: rgba(255,255,255,0.04); border-left: 5px solid var(--verde-neon); padding: 25px; border-radius: 18px; margin: 35px auto;">
+                    <p style="font-size:1.2rem; font-weight:700; line-height:1.8; margin:0; color:#ffffff;">
+                        Você não nasceu para viver travado, desmotivado e andando em círculos.
+                        <span style="color: var(--verde-neon); font-weight:900;">Você nasceu para prosperar, evoluir e vencer.</span>
+                    </p>
+                </div>
+
+                <p class="descricao-longa" style="font-size:1.18rem; color:#f5f5f5; line-height:1.9;">
+                    Chegou a hora de tirar o peso emocional das costas e destravar sua mente de uma vez por todas.
+                </p>
+
+                <div style="margin-top:40px;">
+                    <p style="font-size:1.25rem; font-weight:900; text-transform:uppercase; background: var(--dourado-metalico); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:25px;">
+                        📘 Conheça o e-book Não Mais Escravos e transforme sua mentalidade
+                    </p>
+
+                    <button onclick="irParaCheckout()" class="btn-cta-pro">
+                        QUERO DESTRAVAR MINHA MENTE AGORA
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2 class="titulo-final-dourado">Dentro deste livro você vai aprender</h2>
+            <div class="grid">
+                <div class="card">⚡ Como identificar a mentalidade escrava que paralisa</div>
+                <div class="card">⚡ Como desenvolver a mentalidade de liberdade</div>
+                <div class="card">⚡ O segredo bíblico da prosperidade</div>
+                <div class="card">⚡ A chave poderosa que muda destinos</div>
+            </div>
+            <button onclick="irParaCheckout()" class="btn" style="margin-top:20px;">DESTRAVAR MINHA VIDA HOJE</button>
+            <span class="chamada-extra">Aproveite agora: esta condição especial com todos os bônus expira em breve.</span>
+        </section>
+
+        <section class="box-garantia-premium revelar">
+            <img src="https://raw.githubusercontent.com/admrutesilva-arch/Gatantia/main/Garantia-de-satisfacao-2023.webp" class="img-selo-garantia" alt="Garantia de Satisfação">
+            <div class="texto-garantia-vidal">
+                <p>Você tem 7 dias para aplicar os ensinamentos deste e-book. Se não sentir sua vida sendo transformada e destravada, devolvemos 100% do seu investimento.</p>
+            </div>
+        </section>
+
+        <section id="autor" style="max-width: 100%; width: 100%;">
+            <h2 class="titulo-final-dourado" style="font-size:2em; text-align: center;">Sobre a autora</h2>
+            
+            <div class="box-foto-autora">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Nova-foto-do-perfil-landing-page/main/ChatGPT%20Image%2016%20de%20mai.%20de%202026%2C%2015_26_52.webp" alt="Escritora Rute Alves" class="foto-circular">
+            </div>
+
+            <div class="secao-autor-premium">
+                <p><strong>Rute Alves</strong> já viveu na pele os ciclos de frustração e as limitações de uma mente aprisionada pela escassez. Mas, ao aplicar os princípios exatos revelados neste livro, experimentou uma <span class="frase-impacto-autor">verdadeira transformação, prosperidade e paz!</span></p>
+                
+                <p>Hoje, ela compartilha a mesma chave que mudou a sua história para que você também possa virar a sua chave.</p>
+                
+                <hr class="linha-separadora-autora">
+                
+                <p>”Neste e-book, eu vou te mostrar exatamente como funciona a 'mente de escravo' — aquela mentalidade oculta que paralisa os seus passos, te faz pensar pequeno, destrói a sua motivação e te impede de prosperar. Se você sente que não é capaz, se desespera nos momentos difíceis ou percebe que está sempre andando em círculos, saiba que esses são os sintomas claros de um bloqueio que precisa ser deixado para trás hoje mesmo!</p>
+                
+                <p>Mais adiante, vou te guiar na construção de uma mente <b>Não Mais Escrava:</b> uma mentalidade forte, preparada para superar qualquer obstáculo, altamente produtiva, focada e desenhada para vencer.</p>
+                
+                <p>E bem no coração deste livro, eu vou te entregar uma <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">chave poderosa que vai destravar o seu modelo mental</span> e <span style="color:#ffffff; font-weight:900;">fazer a sua vida disparar para um novo patamar!</span></p>
+                
+                <p>Deus não nos criou para vivermos na miséria; Ele deseja nos ver prosperar. Foi por isso que recebi a inspiração para escrever este guia prático que já está mudando destinos.</p>
+                
+                <p>Se você não aguenta mais a estagnação que te empurra para trás, <span class="frase-impacto-autor" style="display:inline; font-size: 1.1rem;">não permita que a paralisação domine o seu futuro. Assuma o controle da sua jornada agora para dar saltos reais de prosperidade e paz!”</span></p>
+                
+                <div style="text-align:center; margin-top:40px;">
+                    <button onclick="irParaCheckout()" class="btn">QUERO ACESSAR O CONTEÚDO AGORA</button>
+                    <p style="color: #fffef0; background: var(--ouro-branco-suave); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-style: italic; margin-top: 20px; font-size: 1.15em; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));">
+                        "A sua família não precisa carregar o peso da escassez por mais uma geração. A mudança começa em você hoje."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2 class="titulo-final-dourado">Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Como vou receber o e-book? <span>+</span></button>
+                <div class="faq-answer">Você receberá acesso imediato ao conteúdo do e-book diretamente no seu e-mail cadastrado após a compra.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Quando terei acesso aos bônus? <span>+</span></button>
+                <div class="faq-answer">Você terá acesso imediatamente aos bônus junto com o e-book principal assim que finalizar a compra.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Este site é confiável? <span>+</span></button>
+                <div class="faq-answer">Sim! Pagamento 100% seguro via Hotmart, a maior plataforma de infoprodutos do Brasil.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Preciso de conhecimento prévio? <span>+</span></button>
+                <div class="faq-answer">Não! O e-book traz métodos práticos e aplicáveis imediatamente por qualquer pessoa.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">E se eu não gostar do conteúdo? <span>+</span></button>
+                <div class="faq-answer">Oferecemos garantia de 7 dias! Devolvemos 100% do seu investimento se não estiver satisfeito.</div>
+            </div>
+        </section>
+
+        <footer class="footer-premium">
+
+            <div class="contato-box">
+                <span class="subtitulo-fale-conosco">Suporte</span>
+                <h2 class="titulo-duvida-footer">Ficou com alguma dúvida?</h2>
+                <p class="footer-subtexto">Estamos aqui para te ajudar.<br>Fale com a gente quando precisar.</p>
+
+                <button onclick="contatoZap()" class="btn-zap-custom">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 2.7em; animation: pulseWhatsPremium 1.4s infinite ease-in-out;"></i> Chamar no WhatsApp
+                </button>
+
+                <p class="footer-email">
+                    <i class="fa-regular fa-envelope"></i> adm.rute.silva@gmail.com
+                </p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="links-container">
+                <button onclick="toggleLegal('privacidade')" class="link-footer">Política de Privacidade</button>
+                <span style="color:rgba(255,255,255,0.18); font-size:0.6rem;">•</span>
+                <button onclick="toggleLegal('uso')" class="link-footer">Política de Uso</button>
+                <span style="color:rgba(255,255,255,0.18); font-size:0.6rem;">•</span>
+                <button onclick="toggleLegal('direitos')" class="link-footer">Direitos Autorais</button>
+            </div>
+
+            <div id="privacidade" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('privacidade')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Privacidade</h3>
+                <p>Seus dados estão 100% protegidos. Utilizamos cookies apenas para melhorar sua experiência no site. As informações fornecidas durante a compra são processadas com total segurança pela plataforma Hotmart.</p>
+            </div>
+
+            <div id="uso" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('uso')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Política de Uso</h3>
+                <p>Este conteúdo é exclusivo para uso pessoal e intransferível. A reprodução, revenda ou compartilhamento não autorizado deste material é proibida e protegida por lei.</p>
+            </div>
+
+            <div id="direitos" class="legal-content">
+                <button class="btn-fechar-legal" onclick="toggleLegal('direitos')">✕</button>
+                <h3 style="color:#FFD700; margin-top:0;">Direitos Autorais</h3>
+                <p>Todo o material (textos, imagens e vídeos) contido nesta página e no e-book é de propriedade exclusiva de Rute Alves e protegido pelas leis de direitos autorais vigentes.</p>
+            </div>
+
+            <p class="copyright">© 2026 Não Mais Escravos — Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const obsOptions = { 
+            threshold: 0.15, 
+            rootMargin: "0px 0px -80px 0px" 
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('ativo'); }
+            });
+        }, obsOptions);
+
+        document.querySelectorAll('.revelar, .revelar-direita, .revelar-subir, .revelar-subir-rapido, .combo-explosao-wrapper').forEach(el => { observer.observe(el); });
+
+        /* Observador dedicado e imediato apenas para a seção de preço */
+        const obsPreco = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('ativo'); }
+            });
+        }, { threshold: 0.01, rootMargin: "120px 0px 120px 0px" });
+
+        document.querySelectorAll('.revelar-preco').forEach(el => { obsPreco.observe(el); });
+
+        function irParaCheckout() {
+            const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10&offMobile=false";
+            sessionStorage.setItem('ultimaPosicaoScroll', window.scrollY);
+            sessionStorage.setItem('retornoCheckout', 'true');
+            window.location.assign(hotmartUrl);
+        }
+
+        window.addEventListener('pageshow', function(event) {
+            const voltouCheckout = sessionStorage.getItem('retornoCheckout');
+            if (event.persisted || voltouCheckout === 'true') {
+                document.body.style.display = 'block';
+                document.body.style.opacity = '1';
+                document.body.style.visibility = 'visible';
+                const posicao = sessionStorage.getItem('ultimaPosicaoScroll');
+                if (posicao) {
+                    setTimeout(() => {
+                        window.scrollTo(0, parseInt(posicao));
+                    }, 100);
+                }
+                document.body.offsetHeight;
+                sessionStorage.removeItem('retornoCheckout');
+            }
+        });
+
+        window.addEventListener('focus', function() {
+            document.body.style.display = 'block';
+            document.body.style.opacity = '1';
+            document.body.style.visibility = 'visible';
+        });
+        
+        function contatoZap() {
+            window.open("https://wa.me/5581999198026?text=Olá!%20Vim%20pelo%20Site%20do%20e-book%20Não%20mais%20escravos,%20gostaria%20de%20mais%20informações.%20Poderia%20me%20ajudar?", '_blank');
+        }
+
+        function toggleLegal(id) {
+            const boxes = document.querySelectorAll('.legal-content');
+            const target = document.getElementById(id);
+            const isOpen = target.style.display === 'block';
+            boxes.forEach(box => box.style.display = 'none');
+            if (!isOpen) {
+                target.style.display = 'block';
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.style.display === 'block';
+            document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+            answer.style.display = isOpen ? 'none' : 'block';
+            btn.querySelector('span').innerText = isOpen ? '+' : '-';
+        }
+
+        function toggleBtn(el) {
+            el.classList.toggle('check');
+            el.innerHTML = el.classList.contains('check') ? '<i class="fa-solid fa-circle-check"></i> Bônus garantido!' : 'Garantir este Bônus 🎁';
+        }
+
+        let time = 1799; 
+        const timerElement = document.getElementById('countdown');
+        setInterval(() => {
+            let m = Math.floor(time / 60);
+            let s = time % 60;
+            if(timerElement) timerElement.innerHTML = `00:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+            time > 0 ? time-- : time = 1799;
+        }, 1000);
+    </script>
+</body>
+</html>

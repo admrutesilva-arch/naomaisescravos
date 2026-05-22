@@ -206,7 +206,7 @@
             height: 200%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
             transform: skewX(-25deg);
-            animation: flashBaseSuave 4.5s infinite ease-in-out;
+            animation: flashBaseSuave 3s infinite ease-in-out;
             pointer-events: none;
         }
 
@@ -288,7 +288,7 @@
                 transparent 100%
             );
             transform: rotate(18deg);
-            animation: brilho-premium 7s infinite ease-in-out;
+            animation: brilho-premium 3s infinite ease-in-out;
         }
         @keyframes brilho-premium { 0%, 18% { left: -70%; } 52% { left: 120%; } 100% { left: 120%; } }
 
@@ -332,7 +332,7 @@
             top: -50%; left: -100%; width: 45%; height: 200%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
             transform: skewX(-25deg);
-            animation: flashBaseSuave 4.5s infinite ease-in-out;
+            animation: flashBaseSuave 3s infinite ease-in-out;
             pointer-events: none;
         }
 
@@ -571,7 +571,7 @@
             top: -50%; left: -100%; width: 45%; height: 200%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
             transform: skewX(-25deg);
-            animation: reflexoDouradoLP 4.5s infinite ease-in-out;
+            animation: reflexoDouradoLP 3s infinite ease-in-out;
         }
         @keyframes reflexoDouradoLP { 0% { left: -100%; } 30% { left: 160%; } 100% { left: 160%; } }
         
@@ -646,6 +646,7 @@
         .check-v-lux::before{
             content:'✔';
             color: #00ff66;
+            -webkit-text-fill-color: #00ff66 !important;
             font-size: 1.5rem;
             font-weight: 900;
             text-shadow: 0 0 18px rgba(0,255,102,0.8), 0 0 35px rgba(0,255,102,0.35);
@@ -1250,7 +1251,7 @@
                 <p>É hora de quebrar as correntes da escassez e assumir o controle da sua jornada. <strong>Você nasceu para prosperar, não apenas para sobreviver! 🚀</strong></p>
                 <div style="margin-top:40px; padding:30px; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px dashed var(--dourado-premium);">
                     <p style="margin-top:0;">📚 <strong>Dê o primeiro passo hoje:</strong> O e-book Não Mais Escravos é o guia prático que você precisa para viver a liberdade que sempre sonhou.</p>
-                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="animation: none; background: var(--dourado-metalico); color: #000; box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);">QUERO RECOMEÇAR MINHA HISTÓRIA</button>
+                    <button onclick="irParaCheckout()" class="btn-cta-pro" style="background: var(--dourado-metalico); color: #000; box-shadow: 0 10px 30px rgba(191, 149, 63, 0.4);">QUERO RECOMEÇAR MINHA HISTÓRIA</button>
                 </div>
             </div>
         </section>
@@ -1493,7 +1494,7 @@
                 <p class="footer-subtexto">Estamos aqui para te ajudar.<br>Fale com a gente quando precisar.</p>
 
                 <button onclick="contatoZap()" class="btn-zap-custom">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2em;"></i> Chamar no WhatsApp
+                    <i class="fa-brands fa-whatsapp" style="font-size: 2em; animation: zoomPulsar 2s infinite ease-in-out;"></i> Chamar no WhatsApp
                 </button>
 
                 <p class="footer-email">

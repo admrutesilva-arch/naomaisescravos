@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Não Mais Escravos – Rute Alves | Como Destravar sua Prosperidade</title>
-    <meta name="description" content="Descubra o método Não Mais Escravos de Rute Alves. Aprenda a quebrar bloqueios mentais de escassez e destravar a prosperidade financeira e emocional hoje.">
+    <meta name="description" content="Descubra o método Não Mais Escravos de Rute Alves. Aprenda a quebrar bloqueios mentais de escassez e destravar a prosperidade financeira e emotional hoje.">
     <meta name="keywords" content="Rute Alves, Não Mais Escravos, prosperidade, liberdade financeira, mentalidade de sucesso, e-book desenvolvimento pessoal, destravar vida">
     <meta name="author" content="Rute Alves">
 
@@ -599,7 +599,7 @@
         .secao-confronto { max-width: 850px; margin: 0 auto 50px; padding: 50px 25px; background: rgba(0, 0, 0, 0.3); border-radius: 25px; border: 1px solid rgba(191, 149, 63, 0.2); }
         .secao-confronto h3 { font-size: 1.6rem; color: #FCF6BA; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
         .texto-impacto { font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.95); text-align: left; }
-        .destaque-positivo { color: #00ff66; font-weight: 800; }
+        .destaque-positivo { color: #2e8b57; font-weight: 800; }
 
         .box-garantia-premium { 
             margin: 60px auto; 
@@ -653,15 +653,15 @@
             position: absolute;
             top: 0; left: 0;
             width: 5px; height: 100%;
-            background: linear-gradient(to bottom, #00ff66, #22c55e, #16a34a);
+            background: linear-gradient(to bottom, #2e8b57, #3cb371, #2e8b57);
             border-radius: 16px 0 0 16px;
             box-shadow: 0 0 14px rgba(0,255,102,0.65);
         }
 
         .check-v-lux::before{
             content:'✔';
-            color: #00ff66;
-            -webkit-text-fill-color: #00ff66 !important;
+            color: #2e8b57;
+            -webkit-text-fill-color: #2e8b57 !important;
             font-size: 1.38rem;
             font-weight: 900;
             text-shadow: 0 0 6px rgba(0,255,102,0.22);
@@ -1383,7 +1383,7 @@
             <div class="texto-impacto" style="background: linear-gradient(135deg, rgba(6,18,38,0.95) 0%, rgba(11,44,107,0.4) 100%); padding: 38px 32px; border-radius: 24px; border: 1px solid rgba(212,175,55,0.22); border-left: 4px solid var(--dourado-premium);
             backdrop-filter: blur(10px); box-shadow: 0 0 40px rgba(212,175,55,0.05), 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); position: relative; overflow: hidden;">
                 <div style="position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);"></div>
-                <p style="margin-top:0;">Um negócio de sucesso começa com uma <b>quebra de mentalidade.</b> Se você não romper com as velhas crenças que te mantêm preso operacionalmente, nunca alcançará a estratégia que te liberta.</p>
+                <p style="margin-top:0;">Um negócio de sucesso começa com uma <b>quebra de mentalidade.</b> Se você não romper with as velhas crenças que te mantêm preso operacionalmente, nunca alcançará a estratégia que te liberta.</p>
                 <p style="font-weight: 700; color: #fff;">🧠 Quer mudar esse jogo e parar de ser escravo da sua rotina?</p>
                 <p>Eu escrevi o e-book <b>Não Mais Escravos</b> justamente para te ajudar a romper essas barreiras mentais e construir o caminho que vende.</p>
                 <div style="margin-top:28px;">
@@ -1723,7 +1723,7 @@
             <h2 class="titulo-final-dourado" style="font-size:2em; text-align: center;">Sobre a autora</h2>
             
             <div class="box-foto-autora">
-                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Foto-escritora/main/c10a4644-7e96-4452-9f7d-0cf8bc18a193.webp" alt="Escritora Rute Alves" class="foto-circular">
+                <img src="https://raw.githubusercontent.com/admrutesilva-arch/Foto-escritora/main/aee8c971-7746-421a-bdb7-745d80cf55c9.webp" alt="Escritora Rute Alves" class="foto-circular">
             </div>
 
             <div class="secao-autor-premium">
@@ -1843,76 +1843,75 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) { entry.target.classList.add('ativo'); }
             });
-        }, { threshold: 0.01, rootMargin: "120px 0px 120px 0px" });
-
+        }, { threshold: 0.05 });
         document.querySelectorAll('.revelar-preco').forEach(el => { obsPreco.observe(el); });
 
-        function irParaCheckout() {
-            const hotmartUrl = "https://pay.hotmart.com/D101775305B?checkoutMode=10";
-            sessionStorage.setItem('ultimaPosicaoScroll', window.scrollY);
-            sessionStorage.setItem('retornoCheckout', 'true');
-            window.location.assign(hotmartUrl);
+        // CONTADOR DE TEMPO
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = "00:" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "00:00:00";
+                }
+            }, 1000);
         }
 
-        window.addEventListener('pageshow', function(event) {
-            const voltouCheckout = sessionStorage.getItem('retornoCheckout');
-            if (event.persisted || voltouCheckout === 'true') {
-                document.body.style.display = 'block';
-                document.body.style.opacity = '1';
-                document.body.style.visibility = 'visible';
-                const posicao = sessionStorage.getItem('ultimaPosicaoScroll');
-                if (posicao) {
-                    setTimeout(() => {
-                        window.scrollTo(0, parseInt(posicao));
-                    }, 100);
-                }
-                document.body.offsetHeight;
-                sessionStorage.removeItem('retornoCheckout');
-            }
-        });
+        window.onload = function () {
+            const thirtyMinutes = 30 * 60 - 1;
+            const display = document.querySelector('#countdown');
+            startTimer(thirtyMinutes, display);
+        };
 
-        window.addEventListener('focus', function() {
-            document.body.style.display = 'block';
-            document.body.style.opacity = '1';
-            document.body.style.visibility = 'visible';
-        });
-        
-        function contatoZap() {
-            window.open("https://wa.me/5581999198026?text=Olá!%20Vim%20pelo%20Site%20do%20e-book%20Não%20mais%20escravos,%20gostaria%20de%20mais%20informações.%20Poderia%20me%20ajudar?", '_blank');
+        // FUNÇÕES DE INTERAÇÃO
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span');
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.textContent = "+";
+            } else {
+                answer.style.display = "block";
+                icon.textContent = "-";
+            }
+        }
+
+        function toggleBtn(btn) {
+            btn.classList.toggle('check');
+            if(btn.classList.contains('check')) {
+                btn.textContent = "Bônus Ativado! 🎉";
+            } else {
+                btn.textContent = "Garantir este Bônus 🎁";
+            }
         }
 
         function toggleLegal(id) {
-            const boxes = document.querySelectorAll('.legal-content');
-            const target = document.getElementById(id);
-            const isOpen = target.style.display === 'block';
-            boxes.forEach(box => box.style.display = 'none');
-            if (!isOpen) {
-                target.style.display = 'block';
-                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const modal = document.getElementById(id);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                // Fecha outros modais abertos
+                document.querySelectorAll('.legal-content').forEach(el => el.style.display = "none");
+                modal.style.display = "block";
+                modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
-        function toggleFaq(btn) {
-            const answer = btn.nextElementSibling;
-            const isOpen = answer.style.display === 'block';
-            document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
-            answer.style.display = isOpen ? 'none' : 'block';
-            btn.querySelector('span').innerText = isOpen ? '+' : '-';
+        function irParaCheckout() {
+            window.location.href = "https://pay.hotmart.com/I96950256G?checkoutMode=10";
         }
 
-        function toggleBtn(el) {
-            el.classList.toggle('check');
-            el.innerHTML = el.classList.contains('check') ? '<i class="fa-solid fa-circle-check"></i> Bônus garantido!' : 'Garantir este Bônus 🎁';
+        function contatoZap() {
+            window.open("https://wa.me/5581986427357?text=Olá,%20Rute!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20o%20e-book%20Não%20Mais%20Escravos.", "_blank");
         }
-
-        let time = 1799; 
-        const timerElement = document.getElementById('countdown');
-        setInterval(() => {
-            let m = Math.floor(time / 60);
-            let s = time % 60;
-            if(timerElement) timerElement.innerHTML = `00:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-            time > 0 ? time-- : time = 1799;
-        }, 1000);
     </script>
 </body>
 </html>

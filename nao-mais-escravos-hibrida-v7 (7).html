@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Não Mais Escravos – Rute Alves | O método que quebrou o ciclo</title>
+<meta name="description" content="A história real de Rute Alves e o método que a tirou da escassez. Descubra os princípios que ela usou para construir uma vida de prosperidade."/>
+<meta property="og:title" content="Não Mais Escravos – Rute Alves"/>
+<meta property="og:description" content="De vendedora de água mineral a empresária. A história e o método completos."/>
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-2.0@main/meuEbookResetei%20(1).webp"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+<style>
+:root{
+  --terra: #14110D;
+  --terra-2: #1E1A14;
+  --argila: #A8542E;
+  --argila-clara: #C97748;
+  --broto: #6B8F3D;
+  --broto-claro: #8FB35E;
+  --luz: #E8B84B;
+  --creme: #F2E9D8;
+  --creme-alt: #EAE0CB;
+  --texto-claro: #F5F0E6;
+  --texto-escuro: #201B14;
+}
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--terra);
+  color:var(--texto-claro);
+  line-height:1.65;
+  overflow-x:hidden;
+  padding-top:52px;
+}
+
+/* BARRA FIXA SUPERIOR — marca */
+.barra-topo{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:linear-gradient(180deg,#221c14 0%, var(--terra-2) 100%);
+  border-bottom:1px solid rgba(232,184,75,0.3);
+  box-shadow:0 2px 14px rgba(0,0,0,0.35);
+  padding:15px 20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.barra-topo .marca{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:1.05rem;
+  letter-spacing:0.6px;
+  color:var(--texto-claro);
+}
+.barra-topo .marca em{color:var(--luz);font-style:normal;}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+img{max-width:100%;display:block;}
+button{cursor:pointer;font-family:inherit;border:none;}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.72rem;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--luz);
+  display:block;
+  margin-bottom:14px;
+}
+
+.divisor{width:100%;height:60px;display:block;}
+
+.revelar{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease;}
+.revelar.ativo{opacity:1;transform:translateY(0);}
+
+/* HERO */
+.hero{
+  background:radial-gradient(ellipse at top, #241d15 0%, var(--terra) 60%);
+  padding:56px 0 40px;
+  text-align:center;
+  border-bottom:1px solid rgba(232,184,75,0.18);
+}
+.hero h1{
+  font-size:clamp(1.6rem,5vw,2.3rem);
+  font-weight:700;
+  line-height:1.35;
+  margin:0 0 18px;
+  color:var(--texto-claro);
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--luz);
+}
+.hero p.sub{
+  font-size:1.05rem;
+  color:#c9c2b3;
+  max-width:520px;
+  margin:0 auto 30px;
+}
+.hero img{
+  border-radius:18px;
+  margin:0 auto 26px;
+  max-width:340px;
+  border:1px solid rgba(232,184,75,0.25);
+}
+.btn-primario{
+  background:var(--broto);
+  color:#0e1408;
+  font-weight:700;
+  font-size:1rem;
+  padding:17px 30px;
+  border-radius:6px;
+  display:inline-block;
+  letter-spacing:0.2px;
+  transition:transform .15s ease, background .2s ease;
+}
+.btn-primario:hover{background:var(--broto-claro);transform:translateY(-1px);}
+.micro-confianca{
+  display:block;
+  margin-top:14px;
+  font-size:0.82rem;
+  color:#8a8377;
+  font-family:'IBM Plex Mono',monospace;
+}
+
+/* DIVISOR ORGÂNICO — assinatura visual */
+.linha-organica{width:100%;height:40px;}
+.linha-organica svg{width:100%;height:100%;display:block;}
+
+/* SEÇÃO ESCURA — DOR */
+.secao-dor{background:var(--terra);padding:50px 0 30px;}
+.secao-dor h2{
+  font-size:clamp(1.4rem,4vw,1.9rem);
+  text-align:center;
+  color:var(--texto-claro);
+  margin:0 0 34px;
+  font-weight:600;
+}
+.grade-dor{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.card-dor{
+  background:var(--terra-2);
+  border-left:3px solid var(--argila);
+  border-radius:4px;
+  padding:18px 20px;
+}
+.card-dor b{color:var(--argila-clara);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;}
+.card-dor p{margin:0;color:#d8d2c4;font-size:0.98rem;}
+.paragrafo-dor{color:#b8b1a2;font-size:1rem;text-align:center;max-width:560px;margin:0 auto;}
+.paragrafo-dor strong{color:var(--texto-claro);}
+
+/* CONFRONTO / MARTELO */
+.secao-confronto{background:var(--terra-2);padding:50px 0;text-align:center;}
+.secao-confronto h2{font-size:clamp(1.5rem,4.5vw,2.1rem);margin:0 0 10px;line-height:1.3;}
+.secao-confronto h2 span{color:var(--argila-clara);display:block;}
+.secao-confronto img{border-radius:14px;width:min(90vw,420px);height:auto;object-fit:contain;margin:28px auto;border:1px solid rgba(168,84,46,0.3);}
+.box-confronto{
+  background:rgba(0,0,0,0.2);
+  border-radius:10px;
+  padding:28px 24px;
+  text-align:left;
+  max-width:560px;
+  margin:0 auto;
+}
+.box-confronto p{color:#d8d2c4;font-size:1rem;margin:0 0 14px;}
+.box-confronto p:last-child{margin-bottom:0;}
+.destaque-broto{color:var(--broto-claro);font-weight:600;}
+
+/* HISTÓRIA DA AUTORA */
+.secao-historia{background:var(--terra);padding:55px 0;}
+.foto-autora{
+  width:140px;height:140px;border-radius:50%;
+  object-fit:cover;margin:0 auto 22px;
+  border:2px solid var(--luz);
+  display:block;
+}
+.secao-historia h2{
+  text-align:center;font-size:clamp(1.3rem,3.8vw,1.7rem);
+  margin:0 0 30px;font-weight:600;
+}
+.texto-historia p{color:#d8d2c4;font-size:1.02rem;margin:0 0 16px;}
+.texto-historia hr{
+  border:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(232,184,75,0.4),transparent);
+  margin:28px 0;
+}
+.assinatura-nome{
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+  color:var(--luz);
+  font-style:italic;
+  margin-top:24px;
+  display:block;
+}
+
+/* POSICIONAMENTO */
+.secao-posicionamento{background:var(--terra-2);padding:50px 0;}
+.secao-posicionamento h2{
+  text-align:center;font-size:clamp(1.35rem,4vw,1.8rem);
+  margin:0 0 24px;
+}
+.duas-vias{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;}
+.via{border-radius:10px;padding:22px 20px;}
+.via-errada{background:rgba(168,84,46,0.12);border:1px solid rgba(168,84,46,0.35);}
+.via-certa{background:rgba(107,143,61,0.14);border:1px solid rgba(107,143,61,0.4);}
+.via h4{margin:0 0 8px;font-size:1.02rem;display:flex;align-items:center;gap:8px;}
+.via p{margin:0;color:#d8d2c4;font-size:0.96rem;}
+
+/* TRANSIÇÃO PARA A OFERTA — aqui a página começa a clarear */
+.transicao{
+  background:linear-gradient(180deg, var(--terra-2) 0%, #3a3320 50%, var(--creme) 100%);
+  padding:60px 0 20px;
+  text-align:center;
+}
+.transicao p{
+  color:var(--texto-claro);
+  font-size:1.1rem;
+  max-width:520px;
+  margin:0 auto;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+}
+
+/* OFERTA — fundo claro */
+.secao-oferta{background:var(--creme);color:var(--texto-escuro);padding:20px 0 40px;}
+.oferta-intro{text-align:center;margin-bottom:40px;}
+.oferta-intro .eyebrow{color:var(--argila);}
+.oferta-intro h2{font-size:clamp(1.5rem,4.5vw,2rem);margin:0 0 12px;color:var(--texto-escuro);}
+.oferta-intro p{color:#5c5342;max-width:480px;margin:0 auto;}
+
+.item-oferta{
+  background:#fff;
+  border:1px solid var(--creme-alt);
+  border-radius:14px;
+  padding:26px;
+  margin-bottom:20px;
+}
+.item-oferta img{border-radius:10px;margin:-20px auto 18px;width:105%;height:auto;max-width:420px;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.28));}
+.badge-item{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;
+  font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--argila);background:rgba(168,84,46,0.1);
+  padding:5px 12px;border-radius:20px;margin-bottom:10px;
+}
+.item-oferta h3{margin:0 0 10px;font-size:1.2rem;color:var(--texto-escuro);}
+.item-oferta p.desc{color:#5c5342;font-size:0.95rem;margin:0 0 14px;}
+.lista-item{list-style:none;margin:0;padding:0;}
+.lista-item li{
+  display:flex;gap:8px;font-size:0.92rem;color:#4a4335;
+  margin-bottom:8px;align-items:flex-start;
+}
+.lista-item li i{color:var(--broto);margin-top:3px;flex-shrink:0;}
+
+/* CAIXA DE PREÇO — estilo premium */
+.caixa-preco{
+  position:relative;
+  background:linear-gradient(180deg,#241d15 0%, var(--texto-escuro) 100%);
+  color:var(--texto-claro);
+  border-radius:18px;
+  border:1px solid rgba(232,184,75,0.4);
+  box-shadow:0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(232,184,75,0.08) inset;
+  padding:38px 26px 32px;
+  text-align:center;
+  margin:40px 0;
+}
+.selo-combo{
+  background:linear-gradient(135deg, var(--luz), #f2cd6f);
+  color:#241d0a;
+  font-family:'IBM Plex Mono',monospace;font-weight:700;
+  font-size:0.78rem;letter-spacing:1.2px;text-transform:uppercase;
+  padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:24px;
+  box-shadow:0 4px 14px rgba(232,184,75,0.35);
+}
+.combo-mockups{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin:6px 0 26px;flex-wrap:wrap;
+}
+.combo-mockups img{
+  width:112px;height:112px;border-radius:12px;object-fit:cover;
+  border:1px solid rgba(232,184,75,0.3);
+  box-shadow:0 8px 18px rgba(0,0,0,0.3);
+}
+.combo-mais{
+  font-family:'IBM Plex Mono',monospace;font-weight:700;
+  font-size:1.3rem;color:var(--luz);
+}
+.detalhe-valor p{
+  display:flex;justify-content:space-between;
+  font-size:0.9rem;color:#c9c2b3;margin:7px 0;
+  font-family:'IBM Plex Mono',monospace;
+}
+.linha-total{border-top:1px dashed rgba(232,184,75,0.35);padding-top:12px;margin-top:12px;font-weight:600;color:var(--texto-claro)!important;}
+.bloco-preco-final{margin:26px 0 4px;}
+.preco-de{
+  font-size:1.35rem;color:#a89d87;display:block;font-family:'IBM Plex Mono',monospace;
+}
+.preco-de s{color:#8a8377;}
+.preco-label{
+  display:block;text-transform:uppercase;font-size:.72rem;color:#c9c2b3;
+  letter-spacing:1.5px;margin-top:10px;font-family:'IBM Plex Mono',monospace;
+}
+.preco-por{
+  font-family:'Inter',sans-serif;
+  font-size:3rem;font-weight:800;
+  background:linear-gradient(135deg, var(--luz), #f6dd9a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin:4px 0 2px;
+  text-shadow:0 4px 20px rgba(232,184,75,0.25);
+}
+.preco-parcela{font-size:0.9rem;color:#c9c2b3;margin-bottom:6px;display:block;}
+.contador{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:1.3rem;color:var(--argila-clara);
+  margin-bottom:24px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:16px;
+}
+.contador span.label{
+  display:block;font-size:0.68rem;letter-spacing:1.5px;
+  text-transform:uppercase;color:#8a8377;margin-bottom:4px;
+}
+.btn-checkout{
+  background:linear-gradient(135deg, var(--broto), var(--broto-claro));
+  color:#0e1408;font-weight:700;
+  font-size:1.08rem;padding:19px 32px;border-radius:9px;
+  width:100%;max-width:340px;margin:0 auto 16px;display:block;
+  box-shadow:0 10px 26px rgba(107,143,61,0.35);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-checkout:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(107,143,61,0.45);}
+.seguranca-linha{
+  font-size:0.82rem;color:#8a8377;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+
+/* GARANTIA */
+.secao-garantia{background:var(--creme);padding:0 0 40px;text-align:center;}
+.box-garantia{
+  background:#fff;border:1px solid var(--creme-alt);
+  border-radius:14px;padding:30px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.box-garantia img{max-width:280px;width:100%;height:auto;}
+.box-garantia p{color:#5c5342;font-size:0.98rem;margin:0;max-width:400px;}
+
+/* FAQ */
+.secao-faq{background:var(--creme);padding:0 0 50px;}
+.secao-faq h2{text-align:center;color:var(--texto-escuro);font-size:1.5rem;margin:0 0 26px;}
+.faq-item{border-bottom:1px solid var(--creme-alt);padding:16px 0;}
+.faq-pergunta{
+  background:none;width:100%;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:600;color:var(--texto-escuro);font-size:0.98rem;padding:0;
+}
+.faq-resposta{display:none;color:#5c5342;font-size:0.92rem;margin-top:10px;line-height:1.6;}
+
+/* RODAPÉ */
+.rodape{background:var(--texto-escuro);color:#c9c2b3;padding:44px 0 30px;text-align:center;}
+.rodape h3{color:var(--texto-claro);font-size:1.2rem;margin:0 0 8px;}
+.rodape p{font-size:0.9rem;margin:0 0 20px;color:#a89d87;}
+.btn-zap{
+  background:#25D366;color:#0e1408;font-weight:700;
+  padding:14px 26px;border-radius:50px;
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:18px;font-size:0.9rem;
+}
+.email-rodape{font-size:0.85rem;color:#a89d87;margin-bottom:24px;}
+.links-legais{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.link-legal{background:none;color:#8a8377;font-size:0.75rem;padding:4px 8px;}
+.conteudo-legal{display:none;text-align:left;background:#1c170f;border-radius:10px;padding:20px;margin:10px auto;max-width:480px;font-size:0.85rem;color:#a89d87;}
+.conteudo-legal h4{color:var(--luz);margin:0 0 8px;}
+.copyright{font-size:0.75rem;color:#5c5342;margin-top:10px;}
+
+
+@media(max-width:639px){
+  .item-oferta img{width:105%;max-width:420px;}
+}
+
+@media(min-width:640px){
+  .grade-dor,.duas-vias{flex-direction:row;flex-wrap:wrap;}
+  .card-dor,.via{flex:1 1 45%;}
+}
+
+/* AJUSTES FINAIS — imagens proporcionais e copy híbrida */
+.hero img{width:min(90vw,360px)!important;height:auto!important;object-fit:contain;}
+.item-oferta img{width:min(72vw,260px)!important;height:auto!important;max-width:260px!important;object-fit:contain;}
+.secao-confronto img{width:min(90vw,420px)!important;height:auto!important;max-width:420px!important;object-fit:contain;}
+.box-garantia img{width:min(80vw,280px)!important;height:auto!important;max-width:280px!important;object-fit:contain;}
+.foto-autora{width:200px!important;height:200px!important;}
+@media(max-width:480px){
+ .hero img{width:82vw!important;max-width:320px!important;}
+ .item-oferta img{width:62vw!important;max-width:230px!important;}
+ .secao-confronto img{width:85vw!important;max-width:340px!important;}
+ .box-garantia img{width:72vw!important;max-width:240px!important;}
+ .secao-historia .foto-autora{width:170px!important;height:170px!important;}
+ .caixa-preco{padding:28px 18px!important;}
+ .preco-por{font-size:2.7rem!important;}
+}
+</style>
+</head>
+<body>
+
+<div class="barra-topo"><span class="marca">NÃO MAIS <em>ESCRAVOS</em></span></div>
+
+<section class="hero wrap">
+<span class="eyebrow">Uma história real</span>
+<h1>Rute Alves já chegou a vender água mineral no centro da cidade.<br/>Hoje ela revela o método que a tirou da <em>escassez</em> para a <em>prosperidade.</em></h1>
+<p class="sub">Os princípios que a tiraram da escassez agora podem ajudar você a enxergar o que está por trás dos padrões que se repetem na sua vida.</p>
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-2.0@main/Gemini_Generated_Image_nsxxk6nsxxk6nsxx.webp" alt="Ilustração sobre romper o ciclo de escassez" width="900" height="900" loading="eager"/>
+<a class="btn-primario" href="#oferta" onclick="return false;" id="ctaHero">Quero entender o que está me prendendo</a>
+<span class="micro-confianca">ACESSO IMEDIATO · GARANTIA DE 7 DIAS</span>
+</section>
+
+<div class="linha-organica" id="div1"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 L60,20 L70,8 L80,32 L90,20 L140,20 L150,14 L160,26 L170,20 L400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
+
+<section class="secao-dor">
+<div class="wrap">
+<h2>Você se identifica com alguma dessas situações?</h2>
+<div class="grade-dor">
+<div class="card-dor"><b>Estagnação</b><p>Sempre tenta, mas parece que nada sai do lugar. Você trabalha incansavelmente, porém os resultados nunca acompanham o esforço.</p></div>
+<div class="card-dor"><b>Exclusão</b><p>Parece que o sucesso acontece para todo mundo, menos para você. Você se sente um eterno espectador da vitória alheia.</p></div>
+<div class="card-dor"><b>Bloqueio</b><p>Sempre que está prestes a avançar, alguma coisa parece puxar você de volta. E isso pode estar ligado a padrões que você ainda não percebeu.</p></div>
+<div class="card-dor"><b>Frustração</b><p>Já tentou várias formas de prosperar e nada funcionou como esperava. O tempo passa e a sensação de estar sempre recomeçando pesa.</p></div>
+<div class="card-dor"><b>Escassez</b><p>O dinheiro entra e sai rápido demais. Você vive sob a sombra da instabilidade e do medo do amanhã.</p></div>
+</div>
+<p class="paragrafo-dor">Se você se reconheceu em duas ou mais dessas situações, talvez não seja falta de esforço. <strong>Pode ser um padrão — e padrões se repetem até serem interrompidos.</strong></p>
+</div>
+</section>
+
+<div class="linha-organica"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 L50,20 L58,10 L66,30 L74,20 L120,20 L128,12 L136,28 L144,20 L400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
+
+<section class="secao-confronto">
+<div class="wrap">
+<h2>O PROBLEMA NUNCA FOI FALTA DE ESFORÇO.<span>FOI O CAMINHO.</span></h2>
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/N-o-mais-sabotador-de-sonhos-imagem@main/a32696d2-c6e9-4f6a-903d-daf1b5350a74.webp" alt="Representação da luta contra a ignorância financeira" width="900" height="900" loading="lazy"/>
+<div class="box-confronto">
+<p><strong>Trabalhar até a exaustão não deveria ser o preço da sobrevivência.</strong> Sem direção, até o maior esforço vira apenas desgaste — cansaço, frustração e estagnação.</p>
+<p>Você pode mudar a estratégia, assistir mais vídeos, tentar outra oportunidade e recomeçar mais uma vez. Mas, sem mudar os princípios que guiam suas decisões, é fácil voltar ao mesmo lugar.</p>
+<p><span class="destaque-broto">A virada não está apenas em trabalhar mais. Está em aprender a pensar, decidir e agir de uma forma diferente.</span></p>
+</div>
+</div>
+</section>
+
+<div class="linha-organica"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 Q100,5 200,20 T400,20" fill="none" stroke="#8FB35E" stroke-width="1.5" opacity="0.6"/></svg></div>
+
+<section class="secao-historia">
+<div class="wrap">
+<img class="foto-autora" src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Foto-escritora@main/aee8c971-7746-421a-bdb7-745d80cf55c9.webp" alt="Rute Alves"/>
+<h2>Eu já estive exatamente onde você está hoje</h2>
+<div class="texto-historia">
+<p>Como passei de uma vendedora de água mineral, que muitas vezes dependia da ajuda de outras pessoas para sobreviver, a uma empresária que hoje impacta vidas e ajuda muitas famílias?</p>
+<p>A resposta não está apenas no que fiz, mas na transformação que aconteceu dentro de mim.</p>
+<p>Meu nome é Rute Alves. Minha história começou muito longe da realidade que vivo hoje.</p>
+<p>Na infância, a escassez fazia parte da minha rotina. Muitas vezes, o que tínhamos para comer era apenas o angu com leite distribuído pelo governo ou um ovo na mesa. As roupas que eu usava eram doações e os brinquedos que eu recebia eram aqueles que outras crianças já não queriam mais.</p>
+<p>Mas, mesmo sem entender tudo naquela época, eu já percebia que a vida parecia mais difícil para algumas pessoas do que para outras.</p>
+<p>O tempo passou, cresci e comecei a trabalhar muito cedo. Fiz de tudo um pouco para melhorar minha situação. Empurrei carrinho de água pelas ruas, vendi brigadeiros, maquiagens e tentei criar negócios dentro de casa.</p>
+<p>Eu acreditava que, se trabalhasse duro o suficiente, tudo mudaria. Mas, por mais que eu me esforçasse, os resultados pareciam nunca acompanhar o meu esforço.</p>
+<p>Hoje entendo que meu maior inimigo não era a falta de esforço, mas estar presa a um ciclo: quanto mais eu trabalhava tentando mudar de vida, mais permanecia presa às mesmas dificuldades.</p>
+<p><strong>Houve um período em que cheguei ao fundo do poço.</strong> Enfrentei perdas financeiras, vivi momentos de frustração profunda e vi sonhos que pareciam promissores não se concretizarem. Era como se eu estivesse sempre recomeçando.</p>
+<p>As contas chegavam. Os desafios aumentavam. E eu me perguntava o que estava faltando.</p>
+<p>Eu sabia trabalhar. Eu tinha vontade de vencer. Então por que continuava presa ao mesmo lugar?</p>
+<hr/>
+<p><strong>Foi justamente no momento de maior desespero, quando eu já não enxergava nenhuma saída, que a luz no fim do túnel apareceu, e Deus me deu o conhecimento que mudaria completamente a minha vida.</strong></p>
+<p>Naquele momento, eu ainda não compreendia toda a profundidade daquilo que havia recebido.</p>
+<p>Passei a observar, estudar e buscar respostas.</p>
+<p>Quanto mais eu aprendia, mais percebia que a diferença não estava na sorte, na origem, nos contatos ou nas oportunidades que cada pessoa recebia.</p>
+<p>Percebi que existia algo que separava as pessoas que passavam a vida inteira apenas sobrevivendo daquelas que conseguiam construir uma vida de prosperidade.</p>
+<p>Havia algo muito mais profundo.</p>
+<p>Algo invisível para a maioria das pessoas, mas presente na vida de quem construía prosperidade de forma consistente.</p>
+<p><strong>Foi com a direção e a sabedoria de Deus que comecei a compreender esses fundamentos.</strong> Minha forma de enxergar a vida começou a mudar.</p>
+<hr/>
+<p>Passei a perceber oportunidades que antes não enxergava, a tomar decisões diferentes e a entender que a verdadeira transformação começa de dentro para fora.</p>
+<p>Foi então que compreendi uma verdade que mudou completamente a minha trajetória: prosperidade não é resultado apenas de trabalhar mais. Ela é consequência dos fundamentos que orientam a forma como pensamos, decidimos e agimos.</p>
+<p>Quando comecei a colocar esses fundamentos em prática, minha realidade começou a mudar. Não porque a vida ficou mais fácil, mas porque eu me tornei uma pessoa diferente. Minha forma de pensar mudou. Minhas decisões mudaram. E decisões diferentes produzem resultados diferentes.</p>
+<p>Foi nesse processo que percebi algo ainda maior: aquilo que transformou a minha vida não precisava ficar apenas comigo.</p>
+<p>Dessa convicção nasceu o <strong>Método Não Mais Escravos</strong>.</p>
+<p>Nele, compartilho os mesmos fundamentos que transformaram a minha vida, organizados de forma clara e prática para que você possa aplicá-los no seu dia a dia e construir uma vida com mais liberdade, propósito e abundância.</p>
+<p>Este método não é para quem já desistiu, mas para quem continua tentando. Para quem trabalha duro, mas sente que está preso no mesmo lugar. Para quem acredita que nasceu para viver algo maior e está disposto a transformar primeiro a própria mente para, então, transformar a própria realidade.</p>
+<p>Ele foi criado para ajudar pessoas que estão cansadas de viver presas aos mesmos ciclos e desejam desenvolver disciplina financeira, visão de oportunidades, sabedoria para multiplicar recursos e uma nova relação com o dinheiro.</p>
+<p>Eu sei que muitas pessoas também vivem apertos financeiros. Sei o que é olhar para uma lista de necessidades e não conseguir comprar tudo o que gostaria. Sei o que é trabalhar duro, fazer o possível e ainda sentir que os resultados nunca acompanham o esforço.</p>
+<p>Eu conheço essa realidade porque vivi isso.</p>
+<p>Hoje, meu propósito é compartilhar os mesmos fundamentos que transformaram a minha vida e mostrar como eles podem ajudar outras pessoas a romper o ciclo da escassez e construir uma vida com mais liberdade, propósito e abundância.</p>
+<p>Se você sente que trabalha muito e avança pouco, talvez o que esteja faltando não seja mais esforço.</p>
+<p>Talvez esteja faltando conhecer os fundamentos que podem libertar sua mente, transformar suas decisões e abrir caminho para uma realidade completamente diferente da que você vive hoje.</p>
+<p>Porque, se esses fundamentos foram capazes de levar uma menina que cresceu em meio à escassez a construir uma vida de prosperidade, ajudar famílias e contribuir com projetos sociais, acredito que eles também podem transformar a sua.</p>
+<span class="assinatura-nome">— Rute Alves</span>
+</div>
+</div>
+</section>
+
+<div class="linha-organica"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 Q100,8 200,20 T400,20" fill="none" stroke="#8FB35E" stroke-width="1.5" opacity="0.6"/></svg></div>
+
+<section class="secao-posicionamento">
+<div class="wrap">
+<h2>VOCÊ NÃO NASCEU PARA SER ESCRAVO DO SEU PRÓPRIO ESFORÇO</h2>
+<div class="duas-vias">
+<div class="via via-errada"><h4><i class="fa-solid fa-lock" style="color:var(--argila-clara)"></i> O ciclo do erro</h4><p>Você muda a estratégia, assiste mais vídeos, tenta outra oportunidade e recomeça mais uma vez. Mas, sem mudar os princípios que guiam suas decisões, é fácil retornar ao mesmo lugar.</p></div>
+<div class="via via-certa"><h4><i class="fa-solid fa-seedling" style="color:var(--broto-claro)"></i> O caminho certo</h4><p>Você aprende os princípios que realmente constroem prosperidade. O esforço continua existindo — mas agora cada passo pode ser direcionado para progresso, patrimônio e liberdade.</p></div>
+</div>
+</div>
+</section>
+
+<div class="transicao">
+<div class="wrap">
+<p>"Os mesmos princípios que começaram a transformar a minha vida agora estão ao seu alcance."</p>
+</div>
+</div>
+
+<section class="secao-oferta" id="oferta">
+<div class="wrap">
+
+<div class="oferta-intro">
+<span class="eyebrow">A oferta</span>
+<h2>O que você recebe hoje</h2>
+<p>Um e-book principal e dois bônus, pensados para funcionar juntos: primeiro você identifica e rompe os bloqueios, depois aplica o passo a passo prático.</p>
+</div>
+
+<div class="item-oferta">
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-2.0@main/meuEbookResetei%20(1).webp" alt="Capa do e-book Não Mais Escravos" width="500" height="420" loading="lazy"/>
+<span class="badge-item">E-book principal</span>
+<h3>Não Mais Escravos</h3>
+<p class="desc">Você vai entender por que, mesmo se esforçando, pode continuar preso aos mesmos resultados. Vai identificar os padrões de escassez que influenciam suas escolhas, reconhecer os bloqueios que passam despercebidos e compreender os princípios que mudam a forma de pensar, decidir e agir. Não é apenas sobre ganhar mais — é sobre aprender a construir uma relação diferente com o dinheiro e com a própria vida.</p>
+<ul class="lista-item">
+<li><i class="fa-solid fa-check"></i> Quebra dos bloqueios de escassez que se repetem há anos</li>
+<li><i class="fa-solid fa-check"></i> Os fundamentos por trás de quem constrói prosperidade real</li>
+<li><i class="fa-solid fa-check"></i> Um plano prático, não só teoria</li>
+</ul>
+</div>
+
+<div class="item-oferta">
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei%20%281%29%20%282%29.webp" alt="Capa do bônus Quebrando as Correntes" width="500" height="420" loading="lazy"/>
+<span class="badge-item">Bônus 1</span>
+<h3>Quebrando as Correntes</h3>
+<p class="desc">Existem correntes que ninguém vê, mas que continuam influenciando suas decisões todos os dias. Neste desafio de 7 dias, você será conduzido por exercícios simples e profundos para identificar crenças, medos e padrões que mantêm você preso ao mesmo ciclo. Um exercício por dia para começar a romper aquilo que durante muito tempo pareceu impossível de mudar.</p>
+<ul class="lista-item">
+<li><i class="fa-solid fa-check"></i> Desafio de 7 dias, um exercício por dia</li>
+<li><i class="fa-solid fa-check"></i> Identificação de crenças limitantes</li>
+<li><i class="fa-solid fa-check"></i> Perguntas de reflexão para destravar decisões</li>
+</ul>
+</div>
+
+<div class="item-oferta">
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei.webp" alt="Capa do bônus O Caminho da Prosperidade" width="500" height="420" loading="lazy"/>
+<span class="badge-item">Bônus 2</span>
+<h3>O Caminho da Prosperidade</h3>
+<p class="desc">Mudar a mentalidade é apenas o começo. Agora é hora de transformar aquilo que você aprendeu em decisões práticas. Este bônus mostra como organizar sua vida financeira, identificar vazamentos, definir prioridades e criar metas possíveis. Você vai sair da reflexão e partir para a ação, com ferramentas para acompanhar sua evolução e começar a construir resultados concretos no dia a dia.</p>
+<ul class="lista-item">
+<li><i class="fa-solid fa-check"></i> Diagnóstico financeiro: para onde seu dinheiro está indo</li>
+<li><i class="fa-solid fa-check"></i> Desafio de 30 dias com metas reais</li>
+<li><i class="fa-solid fa-check"></i> Checklist semanal de evolução</li>
+</ul>
+</div>
+
+<div class="caixa-preco">
+<span class="selo-combo">LEVE 3 PELO PREÇO DE 1</span>
+<div class="combo-mockups">
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-2.0@main/meuEbookResetei%20(1).webp" alt="E-book Não Mais Escravos" loading="lazy"/>
+<span class="combo-mais">+</span>
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei%20%281%29%20%282%29.webp" alt="Bônus Quebrando as Correntes" loading="lazy"/>
+<span class="combo-mais">+</span>
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei.webp" alt="Bônus O Caminho da Prosperidade" loading="lazy"/>
+</div>
+<div class="bloco-preco-final">
+<span class="preco-de">De <s>R$ 72,80</s></span>
+<span class="preco-label">Por apenas</span>
+<span class="preco-por">R$ 33,00</span>
+<span class="preco-parcela">ou em até 7x de R$ 5,39*</span>
+</div>
+<div class="contador" style="font-size:.78rem;color:#9b9283;line-height:1.5;"><span class="label">Condição especial</span><span>3 materiais pelo valor promocional apresentado nesta página.</span></div>
+<button class="btn-checkout" onclick="irParaCheckout()">Quero garantir meu acesso</button>
+<div class="seguranca-linha"><i class="fa-solid fa-lock"></i> Pagamento seguro · Entrega imediata</div>
+</div>
+
+</div>
+</section>
+
+<section class="secao-garantia">
+<div class="wrap">
+<div class="box-garantia">
+<img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Gatantia@main/Garantia-de-satisfacao-2023.webp" alt="Selo de garantia de satisfação" width="500" height="327" loading="lazy"/>
+<p>Você tem 7 dias para aplicar os ensinamentos. Se não sentir sua vida mudando, devolvemos 100% do valor investido.</p>
+</div>
+</div>
+</section>
+
+<section class="secao-faq">
+<div class="wrap">
+<h2>Perguntas frequentes</h2>
+<div class="faq-item">
+<button class="faq-pergunta" onclick="toggleFaq(this)">Como vou receber o material? <span>+</span></button>
+<div class="faq-resposta">Acesso imediato por e-mail assim que a compra for confirmada, em formato PDF digital — leia no celular, tablet ou computador.</div>
+</div>
+<div class="faq-item">
+<button class="faq-pergunta" onclick="toggleFaq(this)">Os bônus vêm junto com o e-book principal? <span>+</span></button>
+<div class="faq-resposta">Sim. Você recebe os três materiais ao mesmo tempo, assim que finalizar a compra.</div>
+</div>
+<div class="faq-item">
+<button class="faq-pergunta" onclick="toggleFaq(this)">Serve para quem está começando do zero? <span>+</span></button>
+<div class="faq-resposta">Sim. O método foi feito tanto para quem está começando quanto para quem já tenta há anos sem resultado — os princípios são os mesmos.</div>
+</div>
+<div class="faq-item">
+<button class="faq-pergunta" onclick="toggleFaq(this)">Este site é confiável? <span>+</span></button>
+<div class="faq-resposta">Sim. Pagamento processado com segurança pela Eduzz, uma das maiores plataformas de infoprodutos do Brasil.</div>
+</div>
+<div class="faq-item">
+<button class="faq-pergunta" onclick="toggleFaq(this)">E se eu não gostar do conteúdo? <span>+</span></button>
+<div class="faq-resposta">Você tem 7 dias de garantia. Se não sentir resultado, devolvemos 100% do seu dinheiro.</div>
+</div>
+</div>
+</section>
+
+<footer class="rodape">
+<div class="wrap">
+<h3>Ficou com alguma dúvida?</h3>
+<p>Estamos aqui para te ajudar.</p>
+<a class="btn-zap" href="#" onclick="contatoZap();return false;"><i class="fa-brands fa-whatsapp" style="font-size:1.4rem;"></i> Chamar no WhatsApp</a>
+<p class="email-rodape"><i class="fa-regular fa-envelope"></i> adm.rute.silva@gmail.com</p>
+<div class="links-legais">
+<button class="link-legal" onclick="toggleLegal('privacidade')">Política de privacidade</button>
+<button class="link-legal" onclick="toggleLegal('uso')">Política de uso</button>
+<button class="link-legal" onclick="toggleLegal('direitos')">Direitos autorais</button>
+</div>
+<div class="conteudo-legal" id="privacidade"><h4>Privacidade</h4><p>Seus dados são protegidos. Cookies são usados apenas para melhorar sua experiência no site. Pagamentos são processados com segurança pela plataforma Eduzz.</p></div>
+<div class="conteudo-legal" id="uso"><h4>Política de uso</h4><p>Este conteúdo é de uso pessoal e intransferível. Reprodução, revenda ou compartilhamento não autorizado é proibida e protegida por lei.</p></div>
+<div class="conteudo-legal" id="direitos"><h4>Direitos autorais</h4><p>Todo o material desta página e do e-book pertence exclusivamente a Rute Alves, protegido pelas leis de direitos autorais vigentes.</p></div>
+<p class="copyright">© 2026 Não Mais Escravos — Todos os direitos reservados.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById('ctaHero').addEventListener('click', function(){
+  document.getElementById('oferta').scrollIntoView({behavior:'smooth'});
+});
+
+function irParaCheckout(){
+  window.location.href = "https://chk.eduzz.com/39YNZ883WO";
+}
+function contatoZap(){
+  window.open("https://wa.me/5581999198026?text=Ol%C3%A1!%20Vim%20do%20site%20n%C3%A3o%20mais%20escravos%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.%20Poderia%20me%20ajudar%3F", "_blank");
+}
+function toggleFaq(btn){
+  var resposta = btn.nextElementSibling;
+  var icon = btn.querySelector('span');
+  var aberto = resposta.style.display === 'block';
+  resposta.style.display = aberto ? 'none' : 'block';
+  icon.textContent = aberto ? '+' : '-';
+}
+function toggleLegal(id){
+  var alvo = document.getElementById(id);
+  var aberto = alvo.style.display === 'block';
+  document.querySelectorAll('.conteudo-legal').forEach(function(el){ el.style.display = 'none'; });
+  if(!aberto){ alvo.style.display = 'block'; alvo.scrollIntoView({behavior:'smooth',block:'center'}); }
+}
+
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('ativo'); });
+}, {threshold:0.15});
+document.querySelectorAll('.revelar').forEach(function(el){ obs.observe(el); });
+
+</script>
+
+</body>
+</html>

@@ -138,22 +138,66 @@ button{cursor:pointer;font-family:inherit;border:none;}
   margin:0 0 34px;
   font-weight:600;
 }
-.grade-dor{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.grade-dor{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:50px;padding-top:6px;}
 .card-dor{
-  background:var(--terra-2);
-  border-left:3px solid var(--argila);
-  border-radius:4px;
-  padding:18px 20px;
+  position:relative;
+  background:var(--creme);
+  border-radius:20px;
+  padding:34px 28px 28px;
+  margin-top:26px;
+  box-shadow:0 16px 34px rgba(0,0,0,0.26);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
 }
-.card-dor b{color:var(--argila-clara);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:6px;}
-.card-dor p{margin:0;color:#d8d2c4;font-size:0.98rem;}
+.card-dor::before{
+  content:"";
+  position:absolute;inset:9px;
+  border:1px dashed rgba(168,84,46,0.3);
+  border-radius:13px;
+  pointer-events:none;
+}
+.card-dor:hover{transform:translateY(-5px);box-shadow:0 24px 46px rgba(0,0,0,0.32);}
+.card-dor .num-dor{
+  position:absolute;
+  top:-26px;left:28px;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, #2c2316, var(--texto-escuro) 75%);
+  border:2px solid var(--luz);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:1.25rem;
+  color:var(--luz);
+  box-shadow:0 8px 18px rgba(0,0,0,0.35);
+}
+.card-dor b{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  font-weight:600;
+  font-size:0.74rem;
+  letter-spacing:3.5px;
+  text-transform:uppercase;
+  color:var(--argila);
+  margin:6px 0 12px 76px;
+}
+.card-dor p{
+  margin:0;
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  font-size:1.18rem;
+  line-height:1.56;
+  color:var(--texto-escuro);
+}
 .paragrafo-dor{color:#b8b1a2;font-size:1rem;text-align:center;max-width:560px;margin:0 auto;}
 .paragrafo-dor strong{color:var(--texto-claro);}
 
 /* CONFRONTO / MARTELO */
 .secao-confronto{background:var(--terra-2);padding:50px 0;text-align:center;}
 .secao-confronto h2{font-size:clamp(1.5rem,4.5vw,2.1rem);margin:0 0 10px;line-height:1.3;}
-.secao-confronto h2 span{color:var(--argila-clara);display:block;}
+.secao-confronto h2 .quebra-linha{display:block;}
+.secao-confronto h2 .destaque-titulo{color:var(--argila-clara);}
+.branco-puro{color:#FFFFFF;font-weight:600;}
 .secao-confronto img{border-radius:14px;width:min(90vw,420px);height:auto;object-fit:contain;margin:28px auto;border:1px solid rgba(168,84,46,0.3);}
 .box-confronto{
   background:rgba(0,0,0,0.2);
@@ -178,8 +222,16 @@ button{cursor:pointer;font-family:inherit;border:none;}
 .secao-historia h2{
   text-align:center;font-size:clamp(1.3rem,3.8vw,1.7rem);
   margin:0 0 30px;font-weight:600;
+  color:var(--broto-claro);
 }
 .texto-historia p{color:#d8d2c4;font-size:1.02rem;margin:0 0 16px;}
+.apresentacao-autora{
+  text-align:center;
+  font-family:'Fraunces',serif;
+  font-size:1.2rem;
+  color:var(--luz);
+  margin:0 0 22px!important;
+}
 .texto-historia hr{
   border:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(232,184,75,0.4),transparent);
@@ -243,12 +295,13 @@ button{cursor:pointer;font-family:inherit;border:none;}
   color:var(--argila);background:rgba(168,84,46,0.1);
   padding:5px 12px;border-radius:20px;margin-bottom:10px;
 }
-.item-oferta h3{margin:0 0 10px;font-size:1.2rem;color:var(--texto-escuro);}
-.item-oferta p.desc{color:#5c5342;font-size:0.95rem;margin:0 0 14px;}
+.item-oferta h3{margin:0 0 10px;font-size:1.3rem;color:var(--texto-escuro);}
+.item-oferta p.desc{color:#5c5342;font-size:1.05rem;line-height:1.55;margin:0 0 14px;}
+.hook-oferta{font-style:italic;color:#8a8377;font-size:1rem;line-height:1.5;margin:0 0 10px;}
 .lista-item{list-style:none;margin:0;padding:0;}
 .lista-item li{
-  display:flex;gap:8px;font-size:0.92rem;color:#4a4335;
-  margin-bottom:8px;align-items:flex-start;
+  display:flex;gap:8px;font-size:1.02rem;line-height:1.5;color:#4a4335;
+  margin-bottom:10px;align-items:flex-start;
 }
 .lista-item li i{color:var(--broto);margin-top:3px;flex-shrink:0;}
 
@@ -268,8 +321,8 @@ button{cursor:pointer;font-family:inherit;border:none;}
   background:linear-gradient(135deg, var(--luz), #f2cd6f);
   color:#241d0a;
   font-family:'IBM Plex Mono',monospace;font-weight:700;
-  font-size:0.78rem;letter-spacing:1.2px;text-transform:uppercase;
-  padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:24px;
+  font-size:0.92rem;letter-spacing:1.2px;text-transform:uppercase;
+  padding:10px 24px;border-radius:20px;display:inline-block;margin-bottom:24px;
   box-shadow:0 4px 14px rgba(232,184,75,0.35);
 }
 .combo-mockups{
@@ -277,13 +330,13 @@ button{cursor:pointer;font-family:inherit;border:none;}
   margin:6px 0 26px;flex-wrap:wrap;
 }
 .combo-mockups img{
-  width:112px;height:112px;border-radius:12px;object-fit:cover;
+  width:120px;height:120px;border-radius:12px;object-fit:cover;
   border:1px solid rgba(232,184,75,0.3);
   box-shadow:0 8px 18px rgba(0,0,0,0.3);
 }
 .combo-mais{
   font-family:'IBM Plex Mono',monospace;font-weight:700;
-  font-size:1.3rem;color:var(--luz);
+  font-size:1.4rem;color:var(--luz);
 }
 .detalhe-valor p{
   display:flex;justify-content:space-between;
@@ -396,6 +449,10 @@ button{cursor:pointer;font-family:inherit;border:none;}
  .secao-historia .foto-autora{width:170px!important;height:170px!important;}
  .caixa-preco{padding:28px 18px!important;}
  .preco-por{font-size:2.7rem!important;}
+ .card-dor{padding:30px 20px 24px!important;}
+ .card-dor .num-dor{width:48px!important;height:48px!important;font-size:1.05rem!important;top:-22px!important;left:20px!important;}
+ .card-dor b{margin-left:60px!important;font-size:0.68rem!important;letter-spacing:2.5px!important;}
+ .card-dor p{font-size:1.05rem!important;}
 }
 </style>
 </head>
@@ -408,36 +465,35 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <h1>Rute Alves já chegou a vender água mineral no centro da cidade.<br/>Hoje ela revela o método que a tirou da <em>escassez</em> para a <em>prosperidade.</em></h1>
 <p class="sub">Os princípios que a tiraram da escassez agora podem ajudar você a enxergar o que está por trás dos padrões que se repetem na sua vida.</p>
 <img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-2.0@main/Gemini_Generated_Image_nsxxk6nsxxk6nsxx.webp" alt="Ilustração sobre romper o ciclo de escassez" width="900" height="900" loading="eager"/>
-<a class="btn-primario" href="#oferta" onclick="return false;" id="ctaHero">Quero entender o que está me prendendo</a>
-<span class="micro-confianca">ACESSO IMEDIATO · GARANTIA DE 7 DIAS</span>
 </section>
 
-<div class="linha-organica" id="div1"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 L60,20 L70,8 L80,32 L90,20 L140,20 L150,14 L160,26 L170,20 L400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
+<div class="linha-organica" id="div1"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 Q100,4 200,20 T400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
 
 <section class="secao-dor">
 <div class="wrap">
 <h2>Você se identifica com alguma dessas situações?</h2>
 <div class="grade-dor">
-<div class="card-dor"><b>Estagnação</b><p>Sempre tenta, mas parece que nada sai do lugar. Você trabalha incansavelmente, porém os resultados nunca acompanham o esforço.</p></div>
-<div class="card-dor"><b>Exclusão</b><p>Parece que o sucesso acontece para todo mundo, menos para você. Você se sente um eterno espectador da vitória alheia.</p></div>
-<div class="card-dor"><b>Bloqueio</b><p>Sempre que está prestes a avançar, alguma coisa parece puxar você de volta. E isso pode estar ligado a padrões que você ainda não percebeu.</p></div>
-<div class="card-dor"><b>Frustração</b><p>Já tentou várias formas de prosperar e nada funcionou como esperava. O tempo passa e a sensação de estar sempre recomeçando pesa.</p></div>
-<div class="card-dor"><b>Escassez</b><p>O dinheiro entra e sai rápido demais. Você vive sob a sombra da instabilidade e do medo do amanhã.</p></div>
+<div class="card-dor"><span class="num-dor">01</span><b>Estagnação</b><p>Você se dedica, trabalha e busca melhorar, mas sente que não tem o controle sobre sua vida financeira?</p></div>
+<div class="card-dor"><span class="num-dor">02</span><b>Bloqueio</b><p>Mesmo quando surge uma oportunidade de avançar, algo invisível te puxa de volta. Isso não é azar — é uma barreira mental que precisa ser quebrada.</p></div>
+<div class="card-dor"><span class="num-dor">03</span><b>Exclusão</b><p>Você vê gente prosperando ao seu redor e pensa: "Quando vai ser a minha vez?" Você não quer a vida de ninguém. Quer a chance de conquistar a sua.</p></div>
+<div class="card-dor"><span class="num-dor">04</span><b>Frustração</b><p>Tentou de tudo e nada funcionou? O problema não é o seu esforço, mas padrões e bloqueios enraizados que sabotam as suas decisões todos os dias.</p></div>
+<div class="card-dor"><span class="num-dor">05</span><b>Escassez</b><p>Seu dinheiro parece acabar antes do mês terminar, dificultando seus planos para o futuro?</p></div>
 </div>
-<p class="paragrafo-dor">Se você se reconheceu em duas ou mais dessas situações, talvez não seja falta de esforço. <strong>Pode ser um padrão — e padrões se repetem até serem interrompidos.</strong></p>
+<p class="paragrafo-dor">Se você se reconheceu em duas ou mais dessas situações, elas têm uma raiz em comum: <strong>padrões e bloqueios que estão atuando agora mesmo — e é hora de identificá-los.</strong></p>
 </div>
 </section>
 
-<div class="linha-organica"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 L50,20 L58,10 L66,30 L74,20 L120,20 L128,12 L136,28 L144,20 L400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
+<div class="linha-organica"><svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0,20 Q100,32 200,20 T400,20" fill="none" stroke="#A8542E" stroke-width="1.5" opacity="0.5"/></svg></div>
 
 <section class="secao-confronto">
 <div class="wrap">
-<h2>O PROBLEMA NUNCA FOI FALTA DE ESFORÇO.<span>FOI O CAMINHO.</span></h2>
+<h2>Não é falta de esforço.<span class="quebra-linha">São os <span class="destaque-titulo">padrões</span> e <span class="destaque-titulo">bloqueios</span> que criam o <span class="branco-puro">descontrole financeiro.</span></span></h2>
 <img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/N-o-mais-sabotador-de-sonhos-imagem@main/a32696d2-c6e9-4f6a-903d-daf1b5350a74.webp" alt="Representação da luta contra a ignorância financeira" width="900" height="900" loading="lazy"/>
 <div class="box-confronto">
-<p><strong>Trabalhar até a exaustão não deveria ser o preço da sobrevivência.</strong> Sem direção, até o maior esforço vira apenas desgaste — cansaço, frustração e estagnação.</p>
-<p>Você pode mudar a estratégia, assistir mais vídeos, tentar outra oportunidade e recomeçar mais uma vez. Mas, sem mudar os princípios que guiam suas decisões, é fácil voltar ao mesmo lugar.</p>
-<p><span class="destaque-broto">A virada não está apenas em trabalhar mais. Está em aprender a pensar, decidir e agir de uma forma diferente.</span></p>
+<p><strong>Padrão não é preguiça nem falta de vontade.</strong> É a forma como sua mente aprendeu a lidar com o dinheiro — muitas vezes sem você perceber. Cenas que você presenciou, faltas que sentiu, medos que viu nos adultos ao seu redor: tudo isso foi moldando, no seu subconsciente, uma ideia de que o dinheiro é escasso e a vida é difícil.</p>
+<p>Esse padrão passou a agir nos bastidores, decidindo o que você acredita ser possível, o quanto você acha que merece e até onde se permite ir — muito antes de qualquer decisão consciente. É por isso que, mesmo mudando de estratégia, o resultado insiste em se repetir.</p>
+<p>E é aí que nasce o bloqueio: aquele momento em que você está prestes a avançar e algo invisível te puxa de volta. Não é falta de esforço — é um padrão que se repete sozinho porque ninguém nunca te ensinou a identificá-lo e quebrá-lo.</p>
+<p><span class="branco-puro">O bloqueio perde a força quando você aprende a reconhecer esse padrão, e você para de recomeçar do zero e começa, enfim, a avançar e a ter controle financeiro.</span></p>
 </div>
 </div>
 </section>
@@ -449,40 +505,29 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <img class="foto-autora" src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Foto-escritora@main/aee8c971-7746-421a-bdb7-745d80cf55c9.webp" alt="Rute Alves"/>
 <h2>Eu já estive exatamente onde você está hoje</h2>
 <div class="texto-historia">
-<p>Como passei de uma vendedora de água mineral, que muitas vezes dependia da ajuda de outras pessoas para sobreviver, a uma empresária que hoje impacta vidas e ajuda muitas famílias?</p>
-<p>A resposta não está apenas no que fiz, mas na transformação que aconteceu dentro de mim.</p>
-<p>Meu nome é Rute Alves. Minha história começou muito longe da realidade que vivo hoje.</p>
+<p class="apresentacao-autora">Meu nome é Rute Alves.</p>
+<p>Como passei de uma vendedora de água mineral, que muitas vezes dependia da ajuda de outras pessoas para sobreviver, a uma empresária que hoje transforma vidas e ajuda muitas famílias?</p>
+<p>A resposta não está apenas no que fiz, mas nos padrões que eu carregava e nos bloqueios que precisei quebrar dentro de mim — padrões que começaram a se formar ainda muito cedo.</p>
 <p>Na infância, a escassez fazia parte da minha rotina. Muitas vezes, o que tínhamos para comer era apenas o angu com leite distribuído pelo governo ou um ovo na mesa. As roupas que eu usava eram doações e os brinquedos que eu recebia eram aqueles que outras crianças já não queriam mais.</p>
 <p>Mas, mesmo sem entender tudo naquela época, eu já percebia que a vida parecia mais difícil para algumas pessoas do que para outras.</p>
-<p>O tempo passou, cresci e comecei a trabalhar muito cedo. Fiz de tudo um pouco para melhorar minha situação. Empurrei carrinho de água pelas ruas, vendi brigadeiros, maquiagens e tentei criar negócios dentro de casa.</p>
+<p>O tempo passou, cresci e comecei a trabalhar muito cedo. Fiz de tudo um pouco para melhorar minha situação: empurrei carrinho de água pelas ruas, vendi brigadeiros, maquiagens e tentei criar negócios dentro de casa.</p>
 <p>Eu acreditava que, se trabalhasse duro o suficiente, tudo mudaria. Mas, por mais que eu me esforçasse, os resultados pareciam nunca acompanhar o meu esforço.</p>
-<p>Hoje entendo que meu maior inimigo não era a falta de esforço, mas estar presa a um ciclo: quanto mais eu trabalhava tentando mudar de vida, mais permanecia presa às mesmas dificuldades.</p>
+<p>Hoje entendo que meu maior inimigo não era a falta de esforço, mas os padrões que eu carregava e os bloqueios que eles criavam: quanto mais eu trabalhava tentando mudar de vida, mais permanecia presa às mesmas dificuldades.</p>
 <p><strong>Houve um período em que cheguei ao fundo do poço.</strong> Enfrentei perdas financeiras, vivi momentos de frustração profunda e vi sonhos que pareciam promissores não se concretizarem. Era como se eu estivesse sempre recomeçando.</p>
-<p>As contas chegavam. Os desafios aumentavam. E eu me perguntava o que estava faltando.</p>
-<p>Eu sabia trabalhar. Eu tinha vontade de vencer. Então por que continuava presa ao mesmo lugar?</p>
+<p>As contas chegavam, os desafios aumentavam, e eu me perguntava o que estava faltando. Eu sabia trabalhar, tinha vontade de vencer. Então por que continuava presa ao mesmo lugar?</p>
 <hr/>
 <p><strong>Foi justamente no momento de maior desespero, quando eu já não enxergava nenhuma saída, que a luz no fim do túnel apareceu, e Deus me deu o conhecimento que mudaria completamente a minha vida.</strong></p>
-<p>Naquele momento, eu ainda não compreendia toda a profundidade daquilo que havia recebido.</p>
-<p>Passei a observar, estudar e buscar respostas.</p>
-<p>Quanto mais eu aprendia, mais percebia que a diferença não estava na sorte, na origem, nos contatos ou nas oportunidades que cada pessoa recebia.</p>
-<p>Percebi que existia algo que separava as pessoas que passavam a vida inteira apenas sobrevivendo daquelas que conseguiam construir uma vida de prosperidade.</p>
-<p>Havia algo muito mais profundo.</p>
-<p>Algo invisível para a maioria das pessoas, mas presente na vida de quem construía prosperidade de forma consistente.</p>
+<p>Naquele momento, eu ainda não compreendia toda a profundidade daquilo que havia recebido. Passei a observar, estudar e buscar respostas — e quanto mais aprendia, mais percebia que a diferença não estava na sorte, na origem, nos contatos ou nas oportunidades que cada pessoa recebia.</p>
+<p>Percebi que existia algo que separava as pessoas que passavam a vida inteira apenas sobrevivendo daquelas que conseguiam construir prosperidade. Não era sorte, nem mais oportunidades. Era o fato de terem identificado e quebrado os padrões e bloqueios que as prendiam.</p>
 <p><strong>Foi com a direção e a sabedoria de Deus que comecei a compreender esses fundamentos.</strong> Minha forma de enxergar a vida começou a mudar.</p>
 <hr/>
-<p>Passei a perceber oportunidades que antes não enxergava, a tomar decisões diferentes e a entender que a verdadeira transformação começa de dentro para fora.</p>
+<p>Passei a perceber oportunidades que antes não enxergava, a identificar e quebrar, um a um, os padrões e bloqueios que me prendiam, e a entender que a verdadeira transformação começa de dentro para fora.</p>
 <p>Foi então que compreendi uma verdade que mudou completamente a minha trajetória: prosperidade não é resultado apenas de trabalhar mais. Ela é consequência dos fundamentos que orientam a forma como pensamos, decidimos e agimos.</p>
 <p>Quando comecei a colocar esses fundamentos em prática, minha realidade começou a mudar. Não porque a vida ficou mais fácil, mas porque eu me tornei uma pessoa diferente. Minha forma de pensar mudou. Minhas decisões mudaram. E decisões diferentes produzem resultados diferentes.</p>
-<p>Foi nesse processo que percebi algo ainda maior: aquilo que transformou a minha vida não precisava ficar apenas comigo.</p>
-<p>Dessa convicção nasceu o <strong>Método Não Mais Escravos</strong>.</p>
+<p>Foi nesse processo que percebi algo ainda maior: aquilo que transformou a minha vida não precisava ficar apenas comigo. Dessa convicção nasceu o <strong>Método Não Mais Escravos</strong>.</p>
 <p>Nele, compartilho os mesmos fundamentos que transformaram a minha vida, organizados de forma clara e prática para que você possa aplicá-los no seu dia a dia e construir uma vida com mais liberdade, propósito e abundância.</p>
-<p>Este método não é para quem já desistiu, mas para quem continua tentando. Para quem trabalha duro, mas sente que está preso no mesmo lugar. Para quem acredita que nasceu para viver algo maior e está disposto a transformar primeiro a própria mente para, então, transformar a própria realidade.</p>
-<p>Ele foi criado para ajudar pessoas que estão cansadas de viver presas aos mesmos ciclos e desejam desenvolver disciplina financeira, visão de oportunidades, sabedoria para multiplicar recursos e uma nova relação com o dinheiro.</p>
-<p>Eu sei que muitas pessoas também vivem apertos financeiros. Sei o que é olhar para uma lista de necessidades e não conseguir comprar tudo o que gostaria. Sei o que é trabalhar duro, fazer o possível e ainda sentir que os resultados nunca acompanham o esforço.</p>
-<p>Eu conheço essa realidade porque vivi isso.</p>
-<p>Hoje, meu propósito é compartilhar os mesmos fundamentos que transformaram a minha vida e mostrar como eles podem ajudar outras pessoas a romper o ciclo da escassez e construir uma vida com mais liberdade, propósito e abundância.</p>
-<p>Se você sente que trabalha muito e avança pouco, talvez o que esteja faltando não seja mais esforço.</p>
-<p>Talvez esteja faltando conhecer os fundamentos que podem libertar sua mente, transformar suas decisões e abrir caminho para uma realidade completamente diferente da que você vive hoje.</p>
+<p>Este método não é para quem já desistiu, mas para quem continua tentando — para quem trabalha duro, mas sente que está preso no mesmo lugar, e deseja retomar o controle financeiro, desenvolver visão de oportunidades e uma nova relação com o dinheiro.</p>
+<p>Se você sente que trabalha muito e avança pouco, talvez o que esteja faltando não seja mais esforço. Talvez esteja faltando conhecer os fundamentos que podem libertar sua mente, transformar suas decisões e abrir caminho para uma realidade completamente diferente da que você vive hoje.</p>
 <p>Porque, se esses fundamentos foram capazes de levar uma menina que cresceu em meio à escassez a construir uma vida de prosperidade, ajudar famílias e contribuir com projetos sociais, acredito que eles também podem transformar a sua.</p>
 <span class="assinatura-nome">— Rute Alves</span>
 </div>
@@ -495,8 +540,8 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <div class="wrap">
 <h2>VOCÊ NÃO NASCEU PARA SER ESCRAVO DO SEU PRÓPRIO ESFORÇO</h2>
 <div class="duas-vias">
-<div class="via via-errada"><h4><i class="fa-solid fa-lock" style="color:var(--argila-clara)"></i> O ciclo do erro</h4><p>Você muda a estratégia, assiste mais vídeos, tenta outra oportunidade e recomeça mais uma vez. Mas, sem mudar os princípios que guiam suas decisões, é fácil retornar ao mesmo lugar.</p></div>
-<div class="via via-certa"><h4><i class="fa-solid fa-seedling" style="color:var(--broto-claro)"></i> O caminho certo</h4><p>Você aprende os princípios que realmente constroem prosperidade. O esforço continua existindo — mas agora cada passo pode ser direcionado para progresso, patrimônio e liberdade.</p></div>
+<div class="via via-errada"><h4><i class="fa-solid fa-lock" style="color:var(--argila-clara)"></i> O ciclo do erro</h4><p>Você muda de estratégia, se esforça ainda mais, tenta outra oportunidade — mas sem identificar e quebrar os padrões e bloqueios por trás das suas decisões, o resultado sempre volta a se repetir.</p></div>
+<div class="via via-certa"><h4><i class="fa-solid fa-seedling" style="color:var(--broto-claro)"></i> O caminho certo</h4><p>Você identifica e quebra os padrões e bloqueios que estavam por trás dos seus resultados. O esforço continua existindo — mas agora cada passo é direcionado para progresso, propósito e estabilidade financeira.</p></div>
 </div>
 </div>
 </section>
@@ -524,7 +569,7 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <ul class="lista-item">
 <li><i class="fa-solid fa-check"></i> Quebra dos bloqueios de escassez que se repetem há anos</li>
 <li><i class="fa-solid fa-check"></i> Os fundamentos por trás de quem constrói prosperidade real</li>
-<li><i class="fa-solid fa-check"></i> Um plano prático, não só teoria</li>
+<li><i class="fa-solid fa-check"></i> A diferença entre a mentalidade de escassez e a mentalidade de prosperidade</li>
 </ul>
 </div>
 
@@ -532,11 +577,13 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei%20%281%29%20%282%29.webp" alt="Capa do bônus Quebrando as Correntes" width="500" height="420" loading="lazy"/>
 <span class="badge-item">Bônus 1</span>
 <h3>Quebrando as Correntes</h3>
-<p class="desc">Existem correntes que ninguém vê, mas que continuam influenciando suas decisões todos os dias. Neste desafio de 7 dias, você será conduzido por exercícios simples e profundos para identificar crenças, medos e padrões que mantêm você preso ao mesmo ciclo. Um exercício por dia para começar a romper aquilo que durante muito tempo pareceu impossível de mudar.</p>
+<p class="desc">Existem crenças que influenciam suas decisões financeiras sem que você perceba. Ao longo de 7 dias, com um exercício por dia, você vai identificar os pensamentos de escassez que sabotam suas escolhas e substituí-los por novas formas de pensar. Porque mudança de verdade não acontece só quando você entende o problema — ela começa quando você para de repetir o mesmo ciclo e escolhe rompê-lo.</p>
 <ul class="lista-item">
-<li><i class="fa-solid fa-check"></i> Desafio de 7 dias, um exercício por dia</li>
-<li><i class="fa-solid fa-check"></i> Identificação de crenças limitantes</li>
-<li><i class="fa-solid fa-check"></i> Perguntas de reflexão para destravar decisões</li>
+<li><i class="fa-solid fa-check"></i> Um desafio de 7 dias, com um exercício por dia — sem enrolação</li>
+<li><i class="fa-solid fa-check"></i> Identifique os pensamentos de escassez que sabotam você sem perceber</li>
+<li><i class="fa-solid fa-check"></i> Substitua crenças limitantes por novas formas de decidir</li>
+<li><i class="fa-solid fa-check"></i> Perguntas de reflexão que destravam onde você mais trava</li>
+<li><i class="fa-solid fa-check"></i> Pequenas ações práticas para começar a mudar sua relação com o dinheiro hoje mesmo</li>
 </ul>
 </div>
 
@@ -544,11 +591,17 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Imagens-webp-novos-b-nus-@main/meuEbookResetei.webp" alt="Capa do bônus O Caminho da Prosperidade" width="500" height="420" loading="lazy"/>
 <span class="badge-item">Bônus 2</span>
 <h3>O Caminho da Prosperidade</h3>
-<p class="desc">Mudar a mentalidade é apenas o começo. Agora é hora de transformar aquilo que você aprendeu em decisões práticas. Este bônus mostra como organizar sua vida financeira, identificar vazamentos, definir prioridades e criar metas possíveis. Você vai sair da reflexão e partir para a ação, com ferramentas para acompanhar sua evolução e começar a construir resultados concretos no dia a dia.</p>
+<p class="hook-oferta">Para quem já percebeu que precisa mudar, mas ainda não sabe exatamente o que fazer para colocar a vida financeira nos trilhos.</p>
+<p class="desc">Entender o problema é só o primeiro passo. Este bônus transforma consciência em resultado: você vai fazer um diagnóstico completo da sua vida financeira, identificar os bloqueios que ainda restam e descobrir exatamente onde o dinheiro está escapando. Você também vai sair da passividade com um desafio de 30 dias, organizando sua vida financeira e explorando estratégias práticas para aumentar sua renda usando habilidades e conhecimentos que você já possui.</p>
 <ul class="lista-item">
-<li><i class="fa-solid fa-check"></i> Diagnóstico financeiro: para onde seu dinheiro está indo</li>
-<li><i class="fa-solid fa-check"></i> Desafio de 30 dias com metas reais</li>
-<li><i class="fa-solid fa-check"></i> Checklist semanal de evolução</li>
+<li><i class="fa-solid fa-check"></i> Diagnóstico financeiro pessoal para entender com clareza sua situação atual</li>
+<li><i class="fa-solid fa-check"></i> Identifique os principais bloqueios que ainda seguram seu progresso</li>
+<li><i class="fa-solid fa-check"></i> Descubra exatamente onde seu dinheiro está escapando</li>
+<li><i class="fa-solid fa-check"></i> Desafio de 30 dias para sair da passividade e entrar em ação</li>
+<li><i class="fa-solid fa-check"></i> Metas financeiras realistas — e um plano pra alcançá-las</li>
+<li><i class="fa-solid fa-check"></i> Estratégias práticas para buscar novas formas de aumentar sua renda</li>
+<li><i class="fa-solid fa-check"></i> Ideias para transformar conhecimentos e habilidades que você já possui em possibilidades de renda</li>
+<li><i class="fa-solid fa-check"></i> Checklist semanal para acompanhar sua evolução e manter o foco</li>
 </ul>
 </div>
 
@@ -567,8 +620,8 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <span class="preco-por">R$ 33,00</span>
 <span class="preco-parcela">ou em até 7x de R$ 5,39*</span>
 </div>
-<div class="contador" style="font-size:.78rem;color:#9b9283;line-height:1.5;"><span class="label">Condição especial</span><span>3 materiais pelo valor promocional apresentado nesta página.</span></div>
-<button class="btn-checkout" onclick="irParaCheckout()">Quero garantir meu acesso</button>
+<div class="contador" style="font-size:.78rem;color:#9b9283;line-height:1.5;"><span class="label">Condição especial</span><span>Você leva o e-book + 2 bônus completos — tudo incluso nesse valor.</span></div>
+<button class="btn-checkout" onclick="irParaCheckout()">Quero ter controle financeiro agora</button>
 <div class="seguranca-linha"><i class="fa-solid fa-lock"></i> Pagamento seguro · Entrega imediata</div>
 </div>
 
@@ -579,7 +632,7 @@ button{cursor:pointer;font-family:inherit;border:none;}
 <div class="wrap">
 <div class="box-garantia">
 <img src="https://cdn.jsdelivr.net/gh/admrutesilva-arch/Gatantia@main/Garantia-de-satisfacao-2023.webp" alt="Selo de garantia de satisfação" width="500" height="327" loading="lazy"/>
-<p>Você tem 7 dias para aplicar os ensinamentos. Se não sentir sua vida mudando, devolvemos 100% do valor investido.</p>
+<p>Esse método já transformou a minha vida e a de milhares de pessoas, e posso afirmar com total confiança: aplique os ensinamentos por 7 dias — se não sentir mais domínio sobre seus padrões e mais controle sobre suas finanças, devolvemos 100% do valor investido.</p>
 </div>
 </div>
 </section>
